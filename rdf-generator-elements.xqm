@@ -1,3 +1,60 @@
 module namespace rdfGenElements = 'rdf/generetor/elements';
 
-declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+import module namespace rdfGen = 'rdf/generetor' at 'rdf-generator.xqm';
+
+declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+
+(:~
+ : Генерирует элемент rdfGen:Description
+ : @param $about контекст данных (данные и общие параметры схемы)
+ : @param $elements элементы для добавления в контектс
+ : @return возвращает контекст 
+:)
+declare
+  %public
+function rdfGenElements:buidElementAbout(
+  $context as element(data),
+  $schema as element()*,
+  $aliases as element(aliases)
+) as attribute(rdf:about)*
+{
+  if($schema)
+  then(
+    attribute{'rdf:about'}{rdfGen:propertyValue($context, $schema, $aliases)}
+  )
+  else()
+};
+
+(:~
+ : Генерирует элемент rdf:about
+ : @param $about контекст данных (данные и общие параметры схемы)
+ : @param $elements элементы для добавления в контектс
+ : @return возвращает контекст 
+:)
+declare
+  %public
+function rdfGenElements:description(
+  $context as element(data),
+  $schema as element()*,
+  $aliases as element(aliases),
+  $body as element()*
+) as element(rdf:Description)
+{
+  let $about :=
+    rdfGenElements:buidElementAbout($context, $schema/about, $aliases)
+  return
+    element{'rdf:Description'}{if($about)then($about)else(), $body}
+};
+
+(:~
+ : Генерирует элемент rdf:RDF
+ : @param $body тело элемента
+:)
+declare
+  %public
+function rdfGenElements:RDF(
+  $body as element()*
+) as element(rdf:RDF)
+{
+  <rdf:RDF>{$body}</rdf:RDF>
+};

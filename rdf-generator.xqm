@@ -1,6 +1,7 @@
 module namespace rdfGen = 'rdf/generetor';
 
-declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+import module namespace rdfGenElements = 'rdf/generetor/elements'
+  at 'rdf-generator-elements.xqm';
 
 (:~
  : Генерирует фильтр
@@ -26,7 +27,6 @@ function rdfGen:filter(
   else(true())
 };
 
-
 (:~
  : Генерирует значение элемента
  : @param $data контекст данных (данные и общие параметры схемы)
@@ -35,7 +35,7 @@ function rdfGen:filter(
  : @return возвращает значение 
 :)
 declare
-  %private
+  %public
 function rdfGen:propertyValue(
   $context as element(data),
   $schema as element(),
@@ -134,46 +134,6 @@ function rdfGen:buidContext(
 };
 
 (:~
- : Генерирует элемент rdf:about
- : @param $about контекст данных (данные и общие параметры схемы)
- : @param $elements элементы для добавления в контектс
- : @return возвращает контекст 
-:)
-declare
-  %public
-function rdfGen:buidElementAbout(
-  $context as element(data),
-  $schema as element()*,
-  $aliases as element(aliases)
-) as attribute(rdf:about)*
-{
-  if($schema)
-  then(
-    attribute{'rdf:about'}{rdfGen:propertyValue($context, $schema, $aliases)}
-  )
-  else()
-};
-
-(:~
- : Генерирует элемент rdfGen:Description
- : @param $about контекст данных (данные и общие параметры схемы)
- : @param $elements элементы для добавления в контектс
- : @return возвращает контекст 
-:)
-declare
-  %public
-function rdfGen:buidElementDescription(
-  $about as attribute(rdf:about)*,
-  $elements as element()*
-) as element(rdf:Description)
-{
-  element{'rdf:Description'}{
-    if($about)then($about)else(),
-    $elements
-  }
-};
-
-(:~
  : Генерирует RDF из строк таблицы 
  : @param $context контекст данных (данные и общие параметры схемы)
  : @param $schema схема для обработки строк
@@ -191,12 +151,7 @@ function rdfGen:row(
   let $body := $context/row
   return
     if($schema/type = "subject")
-    then(
-      rdfGen:buidElementDescription(
-        rdfGen:buidElementAbout($context, $schema/about, $aliases),
-       $body
-      )
-    )
+    then(rdfGenElements:description($context, $schema, $aliases, $body))
     else($body)
 };
 
@@ -242,12 +197,7 @@ function rdfGen:table(
   let $body := rdfGen:rows($context, $schema/row, $aliases)
   return
     if($schema/type = "subject")
-    then(
-      rdfGen:buidElementDescription(
-        rdfGen:buidElementAbout($context, $schema/about, $aliases),
-        $body
-      )
-    )
+    then(rdfGenElements:description($context, $schema, $aliases, $body))
     else($body)
 };
 
@@ -277,7 +227,7 @@ function rdfGen:tables(
 declare function rdfGen:rdf(
   $context as element(data),
   $schema as element(schema)
-) as element(rdf:RDF)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
 {
   let $aliases := rdfGen:aliases($schema)
   let $parameters := rdfGen:parameters($context, $schema/parameters, $aliases)
@@ -285,5 +235,5 @@ declare function rdfGen:rdf(
   let $localContext := rdfGen:buidContext($context, $parameters)
   let $body := rdfGen:tables($localContext, $schema/table, $aliases)
   return
-    <rdf:RDF>{$body}</rdf:RDF>
+    rdfGenElements:RDF($body)
 };
