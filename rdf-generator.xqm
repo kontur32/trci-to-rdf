@@ -3,155 +3,88 @@ module namespace rdfGen = 'rdf/generetor';
 import module namespace rdfGenElements = 'rdf/generetor/elements'
   at 'rdf-generator-elements.xqm';
 
+import module namespace rdfGenLib = 'rdf/generetor/lib'
+  at 'rdf-generator-lib.xqm';
+
 (:~
- : Генерирует фильтр
+ : Генерирует RDF ячейки 
  : @param $context контекст данных (данные и общие параметры схемы)
- : @param $schema схема содержит непосредственно значение или указание на обработчик
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения -на них могут ссылаться элементы схемы
- : @return возвращает значение 
+ : @param $schema схема для обработки ячеек
+ : @return возвращает набор триплетов RDF/XML 
 :)
 declare
   %private
-function rdfGen:filter(
+function rdfGen:cell(
   $context as element(data),
-  $schema as element(),
-  $aliases as element(aliases)
-) as xs:boolean
+  $schema as element(properties)
+) as element()*
 {
-  if($schema/filter)
-  then(
-    let $result := rdfGen:propertyValue($context, $schema/filter, $aliases)
-    return
-      if($result)then(true())else(false())
-  )
-  else(true())
-};
-
-(:~
- : Генерирует значение элемента
- : @param $data контекст данных (данные и общие параметры схемы)
- : @param $schema схема содержит непосредственно значение или указание на обработчик
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения -на них могут ссылаться элементы схемы
- : @return возвращает значение 
-:)
-declare
-  %public
-function rdfGen:propertyValue(
-  $context as element(data),
-  $schema as element(),
-  $aliases as element(aliases)
-) as item()*
-{
-  let $value :=
-    if($schema/value/child::*)
-      then(
-        let $xquery :=
-          switch ($schema/value/child::*/name())
-          case 'xquery'
-            return
-              $schema/value/xquery/text()
-          case 'parameter'
-            return 
-              $context/parameters/child::*[name()=$schema/value/parameter/text()]/text()
-          case 'alias'
-            return
-              $aliases/child::*[name()=$schema/value/alias/text()]/xquery/text()
-          default
-            return
-              $schema/value/xquery/text()
-        return
-          xquery:eval($xquery, map{'':$context})
-      )
-      else(
-        if($schema/value/text())
-        then($schema/value/text())
-        else($context/text())
-      )
-   return
-     $value
-};
-
-
-(:~
- : Формирует набор алиасов из схемы
- : @param $schema схема
- : @return возвращает значение 
-:)
-declare
-  %public
-function rdfGen:aliases(
-  $schema as element(schema)
-) as element(aliases)
-{
-  <aliases>{$schema/aliases/child::*}</aliases>
-};
-
-(:~
- : Генерирует параметры схемы (доступны в конектсе в теге parameters)
- : @param $data контекст данных (данные и общие параметры схемы)
- : @param $parameters описание параметров, в т.ч инструкции для генерации
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения -на них могут ссылаться элементы схемы
- : @return возвращает значение 
-:)
-declare
-  %public
-function rdfGen:parameters(
-  $data as element(data),
-  $parameters as element(parameters),
-  $aliases as element(aliases)
-) as element(parameters)
-{
-  <parameters>{
-    for $parameter in $parameters/child::*
-    return
-      if($parameter/value/child::*)
-      then(
-        let $value := rdfGen:propertyValue($data, $parameter, $aliases)
-        return
-          $parameter update replace value of node . with $value
-      )
-      else($parameter)
-    }</parameters>
-};
-
-(:~
- : Формирует (расширяет) контекст 
- : @param $data контекст данных (данные и общие параметры схемы)
- : @param $elements элементы для добавления в контектс
- : @return возвращает контекст 
-:)
-declare
-  %public
-function rdfGen:buidContext(
-  $contex as element(data),
-  $elements as element()*
-) as element(data)
-{
-  let $f :=
-    function($c as element(data), $v as element()){$c update insert node $v into .}
+  for $property in $schema/_[type="property"]
+  let $cell :=  $context/cell[matches(@label, $property/mask)]
+  where $cell/text()
   return
-    fold-left($elements, $contex, $f)
+    rdfGenLib:property($cell, $property, $context/aliases),
+  
+  for $property in $schema/_[type="subject"]
+  for $cell in $context/cell[matches(@label, $property/mask)]
+  where $cell/text()
+  let $cellRootProperty :=
+    $property/rdfGenLib:property(<data/>, ., $context/aliases)
+  let $cellProperties := 
+    $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
+  let $cellDescription :=
+    rdfGenElements:description($context, $schema, $cellProperties)
+  return
+    $cellRootProperty update insert node $cellDescription into .
 };
+
+(:~
+ : Генерирует RDF ячеек строки таблицы 
+ : @param $context контекст данных (данные и общие параметры схемы)
+ : @param $schema схема для обработки ячеек
+ : @return возвращает набор триплетов RDF/XML 
+:)
+declare
+  %private
+function rdfGen:cells(
+  $context as element(data),
+  $schema as element(cell)
+) as element()*
+{
+  for $cell in $context/row/cell
+  let $localContext := rdfGenLib:buidContext($context, $cell)
+  let $filter := rdfGenLib:filter($localContext, $schema)
+  where $filter 
+  return
+    rdfGen:cell($localContext, $schema/properties)
+};
+
 
 (:~
  : Генерирует RDF из строк таблицы 
  : @param $context контекст данных (данные и общие параметры схемы)
  : @param $schema схема для обработки строк
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения
  : @return возвращает набор триплетов RDF/XML 
 :)
 declare
   %private
 function rdfGen:row(
   $context as element(data),
-  $schema as element(row),
-  $aliases as element(aliases)
+  $schema as element(row)
 ) as element()*
 {
-  let $body := $context/row
+  let $body := rdfGen:cells($context, $schema/cell)
+  let $properties := rdfGenLib:properties($context, $schema)
   return
     if($schema/type = "subject")
-    then(rdfGenElements:description($context, $schema, $aliases, $body))
+    then(
+      let $rowRootPropery :=
+        rdfGenLib:property(<data/>, $schema, $context/aliases)
+      let $rowDescription :=
+        rdfGenElements:description($context, $schema, ($properties, $body))
+      return
+        $rowRootPropery update insert node $rowDescription into .
+    )
     else($body)
 };
 
@@ -159,23 +92,21 @@ function rdfGen:row(
  : Генерирует RDF из строк таблицы 
  : @param $context контекст данных (данные и общие параметры схемы)
  : @param $schema схема для обработки строк
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения
  : @return возвращает набор триплетов RDF/XML 
 :)
 declare
   %private
 function rdfGen:rows(
   $context as element(data),
-  $schema as element(row),
-  $aliases as element(aliases)
+  $schema as element(row)
 ) as element()*
 {
   for $row in $context/table/row
-  let $localContext := rdfGen:buidContext($context, $row)
-  let $filter := rdfGen:filter($localContext, $schema, $aliases)
+  let $localContext := rdfGenLib:buidContext($context, $row)
+  let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return
-    rdfGen:row($localContext, $schema, $aliases)
+    rdfGen:row($localContext, $schema)
 };
 
 
@@ -183,45 +114,44 @@ function rdfGen:rows(
  : Генерирует RDF из таблицы 
  : @param $context контекст данных (данные и общие параметры схемы)
  : @param $schema схема для обработки таблицы
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения
  : @return возвращает набор триплетов RDF/XML 
 :)
 declare
   %private
 function rdfGen:table(
   $context as element(data),
-  $schema as element(table),
-  $aliases as element(aliases)
+  $schema as element(table)
 ) as element()*
 {
-  let $body := rdfGen:rows($context, $schema/row, $aliases)
+  let $rows := rdfGen:rows($context, $schema/row)
+  let $properties := rdfGenLib:properties($context, $schema)
   return
     if($schema/type = "subject")
-    then(rdfGenElements:description($context, $schema, $aliases, $body))
-    else($body)
+    then(
+      rdfGenElements:description($context, $schema, ($properties, $rows))
+    )
+    else($rows)
 };
 
 (:~
  : Генерирует RDF из таблиц 
  : @param $context контекст данных (данные и общие параметры схемы)
  : @param $schema схема для обработки таблицы
- : @param $aliases набор елементов, содержащих инструкции и непосредственно значения
  : @return возвращает набор триплетов RDF/XML 
 :)
 declare
   %private
 function rdfGen:tables(
   $context as element(data),
-  $schema as element(table),
-  $aliases as element(aliases)
+  $schema as element(table)
 ) as element()*
 {
   for $tableData in $context/file/table
-  let $localContext := rdfGen:buidContext($context, $tableData)
-  let $filter := rdfGen:filter($localContext, $schema, $aliases)
+  let $localContext := rdfGenLib:buidContext($context, $tableData)
+  let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return
-    rdfGen:table($localContext, $schema, $aliases)
+    rdfGen:table($localContext, $schema)
 };
 
 declare function rdfGen:rdf(
@@ -229,11 +159,10 @@ declare function rdfGen:rdf(
   $schema as element(schema)
 ) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
 {
-  let $aliases := rdfGen:aliases($schema)
-  let $parameters := rdfGen:parameters($context, $schema/parameters, $aliases)
-  
-  let $localContext := rdfGen:buidContext($context, $parameters)
-  let $body := rdfGen:tables($localContext, $schema/table, $aliases)
+  let $localContext :=
+    rdfGenLib:buidRootContext($context, $schema) 
+  let $body := 
+    rdfGen:tables($localContext, $schema/table)
   return
     rdfGenElements:RDF($body)
 };
