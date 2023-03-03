@@ -5,6 +5,12 @@ import module namespace rdfGenElements = 'rdf/generetor/elements'
 
 import module namespace rdfGenLib = 'rdf/generetor/lib'
   at 'rdf-generator-lib.xqm';
+  
+import module namespace rdfGenTools = 'rdf/generetor/tools'
+  at 'rdf-generator-tools.xqm';
+
+import module namespace genSchema = 'rdf/generetor/schema'
+  at 'rdf-generator-schema.xqm';
 
 (:~
  : Генерирует RDF ячейки 
@@ -165,4 +171,23 @@ declare function rdfGen:rdf(
     rdfGen:tables($localContext, $schema/table)
   return
     rdfGenElements:RDF($body)
+};
+
+declare function rdfGen:trci-to-rdf(
+  $context as element(data),
+  $params
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+  let $result := 
+    for $table in $context/file/table
+    let $schema :=
+      rdfGenTools:schema(genSchema:Sample($table), $params)
+    let $localContext :=
+      rdfGenLib:buidRootContext($context, $schema) 
+    let $body :=
+      rdfGen:tables($localContext, $schema/table)
+    return
+      $body
+  return
+    rdfGenElements:RDF($result)
 };
