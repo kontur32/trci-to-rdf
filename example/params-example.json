@@ -1,0 +1,9 @@
+{
+	"домен.онтология": "http://misis.roz37.ru/semantic/онтология/",
+	"домен.схема": "http://misis.roz37.ru/semantic/schema/",
+	"домен.сущности": "http://misis.roz37.ru/semantic/сущности/",
+	"RDF-enpoint": "http://a.roz37.ru:3030/gs/query",
+    "xmlns.rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "class.table": "Анкеты",
+    "class.row": "Преподаватели"
+}

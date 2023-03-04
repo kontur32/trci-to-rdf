@@ -1,0 +1,391 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.587+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Анкетные данные</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/49d4738e-c827-4163-ac17-6e08d15e0e36">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Характеристика</misis:label>
+            <misis:значение>Значение</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>ФИО</misis:label>
+            <misis:значение>Хоботов Лев Евгеньевич</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Год рождения</misis:label>
+            <misis:значение>1974</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+        <misis:свойство-4>
+          <rdf:Description>
+            <misis:label>Должность</misis:label>
+            <misis:значение>профессор</misis:значение>
+          </rdf:Description>
+        </misis:свойство-4>
+        <misis:свойство-5>
+          <rdf:Description>
+            <misis:label>Кабинет</misis:label>
+            <misis:значение>Б-903</misis:значение>
+          </rdf:Description>
+        </misis:свойство-5>
+        <misis:свойство-6>
+          <rdf:Description>
+            <misis:label>Рабочая эл. почта</misis:label>
+            <misis:значение>hobotov.l.e@misis.ru</misis:значение>
+          </rdf:Description>
+        </misis:свойство-6>
+        <misis:свойство-8>
+          <rdf:Description>
+            <misis:label>Ученая степень, год присуждения</misis:label>
+            <misis:значение>д.экон.н.</misis:значение>
+          </rdf:Description>
+        </misis:свойство-8>
+        <misis:свойство-9>
+          <rdf:Description>
+            <misis:label>Ученое звание, год присуждения</misis:label>
+            <misis:значение>доцент</misis:значение>
+          </rdf:Description>
+        </misis:свойство-9>
+        <misis:свойство-11>
+          <rdf:Description>
+            <misis:label>ORCID</misis:label>
+            <misis:значение>https://orcid.org/0000-0001-6695-3208</misis:значение>
+          </rdf:Description>
+        </misis:свойство-11>
+        <misis:свойство-13>
+          <rdf:Description>
+            <misis:label>Общий стаж работы</misis:label>
+            <misis:значение>25</misis:значение>
+          </rdf:Description>
+        </misis:свойство-13>
+        <misis:свойство-14>
+          <rdf:Description>
+            <misis:label>Стаж работы в НИТУ "МИСиС"</misis:label>
+            <misis:значение>1</misis:значение>
+          </rdf:Description>
+        </misis:свойство-14>
+        <misis:свойство-15>
+          <rdf:Description>
+            <misis:label>Пед. стаж работы</misis:label>
+            <misis:значение>21</misis:значение>
+          </rdf:Description>
+        </misis:свойство-15>
+        <misis:свойство-16>
+          <rdf:Description>
+            <misis:label>Количество научных трудов всего</misis:label>
+            <misis:значение>30</misis:значение>
+          </rdf:Description>
+        </misis:свойство-16>
+        <misis:свойство-17>
+          <rdf:Description>
+            <misis:label>Количество учебно-методических трудов всего</misis:label>
+            <misis:значение>8</misis:значение>
+          </rdf:Description>
+        </misis:свойство-17>
+        <misis:свойство-19>
+          <rdf:Description>
+            <misis:label>Количество цитирований за последние 5 лет по Scopus/WoS</misis:label>
+            <misis:значение>3</misis:значение>
+          </rdf:Description>
+        </misis:свойство-19>
+        <misis:свойство-20>
+          <rdf:Description>
+            <misis:label>Выпуск аспирантов</misis:label>
+            <misis:значение>0</misis:значение>
+          </rdf:Description>
+        </misis:свойство-20>
+        <misis:свойство-21>
+          <rdf:Description>
+            <misis:label>Выпуск докторантов</misis:label>
+            <misis:значение>0</misis:значение>
+          </rdf:Description>
+        </misis:свойство-21>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.603+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Интересы и достижения</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/85ad5bcc-cc6e-44e1-9cd0-a1bc8664902c">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Курсы, которые читает</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2022</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Значение</misis:label>
+            <misis:значение>Системный анализ и принятие решений, курсовая научно-исследовательская работа магистрантов, научное руководство дипломными работами в бакалавриате и магистратуре</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/5f65112d-8f3b-402f-88af-be59a2f5f495">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Научные интересы</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Значение</misis:label>
+            <misis:значение>Семантическая организация данных, пространственная организация хозяйственных систем</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/97e99816-242c-4832-8a71-95edb715790f">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Награды</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2022</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Значение</misis:label>
+            <misis:значение>Благодарность Президента РФ (распоряжение от 01.04.2022 № 92-рп)</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/b0c3997e-12eb-4083-b62f-4b66b7eff9bc">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Грант</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2020</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Значение</misis:label>
+            <misis:значение>Грант РФФИ 20-410-370005 р_а "Очарование текстиля"</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.603+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Научные публикации</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/71640a91-beae-4475-b415-d6385f1cf04d">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Год публикации</misis:label>
+            <misis:значение>2019</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/f7f0f518-e61d-4145-888e-f756d9bea6e3">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Год публикации</misis:label>
+            <misis:значение>2019</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/67314408-25db-4220-9da8-26b019b79bb3">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Год публикации</misis:label>
+            <misis:значение>2022</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+        <misis:свойство-6>
+          <rdf:Description>
+            <misis:label>DOI</misis:label>
+            <misis:значение>10.1109/ACCESS.2022.3157619</misis:значение>
+          </rdf:Description>
+        </misis:свойство-6>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.603+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Методическая работа</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/95323fbd-7a7b-45c5-afd6-77e4ab5ca363">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Учебное пособие</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2020</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Название</misis:label>
+            <misis:значение>Лайфхаки проектного обучения Практическое руководство проектной деятельностью, Романова К. Е. , Мишуров С. С., 2020</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/cb58d42d-424a-4e12-8795-cff1e1a1ac6b">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Категория</misis:label>
+            <misis:значение>Онлайн курс</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2022</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Название</misis:label>
+            <misis:значение>Система Moodle: быстрый старт </misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.603+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Профессиональная деятельность</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/3412c611-07a9-4911-b1b5-3fd7b792d653">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Год начала</misis:label>
+            <misis:значение>2000</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Год окончания</misis:label>
+            <misis:значение>2021</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Должность</misis:label>
+            <misis:значение>доцент, профессор</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+        <misis:свойство-4>
+          <rdf:Description>
+            <misis:label>Организация</misis:label>
+            <misis:значение>Ивановский государственный политехнический университет</misis:значение>
+          </rdf:Description>
+        </misis:свойство-4>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/db635901-843c-425a-b55d-e8a2c037da9d">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Год начала</misis:label>
+            <misis:значение>2021</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Должность</misis:label>
+            <misis:значение>заместитель генерального директора по образовательной и исследовательской работе</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+        <misis:свойство-4>
+          <rdf:Description>
+            <misis:label>Организация</misis:label>
+            <misis:значение>ООО "Гарпикс" (основное место работы)</misis:значение>
+          </rdf:Description>
+        </misis:свойство-4>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-03T14:39:10.618+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Повышение квалификации</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/8c75dd4b-1e1e-4eed-be4e-706b33d93162">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:свойство-1>
+          <rdf:Description>
+            <misis:label>Год</misis:label>
+            <misis:значение>2022</misis:значение>
+          </rdf:Description>
+        </misis:свойство-1>
+        <misis:свойство-2>
+          <rdf:Description>
+            <misis:label>Программа</misis:label>
+            <misis:значение>Разработка электронных курсов в LMS Moodle</misis:значение>
+          </rdf:Description>
+        </misis:свойство-2>
+        <misis:свойство-3>
+          <rdf:Description>
+            <misis:label>Где проходил</misis:label>
+            <misis:значение>НИТУ МИСИС</misis:значение>
+          </rdf:Description>
+        </misis:свойство-3>
+        <misis:свойство-4>
+          <rdf:Description>
+            <misis:label>Объем часов</misis:label>
+            <misis:значение>36</misis:значение>
+          </rdf:Description>
+        </misis:свойство-4>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+</rdf:RDF>
