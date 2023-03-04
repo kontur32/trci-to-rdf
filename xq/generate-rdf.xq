@@ -1,3 +1,7 @@
+(:~ 
+  генериует RDF/XML из trci-таблицы с использованием параметров 
+:)
+
 import module namespace rdfGen = 'rdf/generetor'
   at '../lib/rdf-generator.xqm';
 import module namespace rdfGenTools = 'rdf/generetor/tools'

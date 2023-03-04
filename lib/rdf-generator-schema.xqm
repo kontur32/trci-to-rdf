@@ -55,7 +55,7 @@ declare function genSchema:Sample($table){
             <type>subject</type>
             <filter type="object">
               <value type="object">
-                <xquery>matches(./table/@label, '^{$table/@label/data()}')</xquery>
+                <xquery>true()</xquery>
               </value>
             </filter>
             <properties type="array">
