@@ -17,7 +17,7 @@ let $params :=
   )
 let $schema :=
     fetch:text(
-       $pathSchemas || "schema-example-modified-1.json"
+       $pathSchemas || "schema-example.json"
     )
 let $rdf :=
    rdfGen:rdf($context, rdfGenTools:schema($schema, $params))

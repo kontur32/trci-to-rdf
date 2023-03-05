@@ -68,7 +68,7 @@
           "properties":[
             {
               "mask":"^Характеристика",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-1",
               "value":{
@@ -98,7 +98,7 @@
             },
             {
               "mask":"^ФИО",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-2",
               "value":{
@@ -128,7 +128,7 @@
             },
             {
               "mask":"^Год рождения",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-3",
               "value":{
@@ -158,7 +158,7 @@
             },
             {
               "mask":"^Должность",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-4",
               "value":{
@@ -188,7 +188,7 @@
             },
             {
               "mask":"^Кабинет",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-5",
               "value":{
@@ -218,7 +218,7 @@
             },
             {
               "mask":"^Рабочая эл. почта",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-6",
               "value":{
@@ -248,7 +248,7 @@
             },
             {
               "mask":"^Образование (вуз, специальность, год окончания)",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-7",
               "value":{
@@ -278,7 +278,7 @@
             },
             {
               "mask":"^Ученая степень, год присуждения",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-8",
               "value":{
@@ -308,7 +308,7 @@
             },
             {
               "mask":"^Ученое звание, год присуждения",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-9",
               "value":{
@@ -338,7 +338,7 @@
             },
             {
               "mask":"^Форма трудового договора (основное место работы\/внешнее совместительство\/внутреннее совместительство)",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-10",
               "value":{
@@ -368,7 +368,7 @@
             },
             {
               "mask":"^ORCID",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-11",
               "value":{
@@ -398,7 +398,7 @@
             },
             {
               "mask":"^РИНЦ ID (SPIN-код)",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-12",
               "value":{
@@ -428,7 +428,7 @@
             },
             {
               "mask":"^Общий стаж работы",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-13",
               "value":{
@@ -458,7 +458,7 @@
             },
             {
               "mask":"^Стаж работы в НИТУ \"МИСиС\"",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-14",
               "value":{
@@ -488,7 +488,7 @@
             },
             {
               "mask":"^Пед. стаж работы",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-15",
               "value":{
@@ -518,7 +518,7 @@
             },
             {
               "mask":"^Количество научных трудов всего",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-16",
               "value":{
@@ -548,7 +548,7 @@
             },
             {
               "mask":"^Количество учебно-методических трудов всего",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-17",
               "value":{
@@ -578,7 +578,7 @@
             },
             {
               "mask":"^h-индекс по Scopus\/WoS (максимальный)",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-18",
               "value":{
@@ -608,7 +608,7 @@
             },
             {
               "mask":"^Количество цитирований за последние 5 лет по Scopus\/WoS",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-19",
               "value":{
@@ -638,7 +638,7 @@
             },
             {
               "mask":"^Выпуск аспирантов",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-20",
               "value":{
@@ -668,7 +668,7 @@
             },
             {
               "mask":"^Выпуск докторантов",
-              "type":"source",
+              "type":"resource",
               "nameSpace":"{{домен.схема}}",
               "localName":"misis:свойство-21",
               "value":{
