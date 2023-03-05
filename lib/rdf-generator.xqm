@@ -25,13 +25,23 @@ function rdfGen:cell(
   $schema as element(properties)
 ) as element()*
 {
-  for $property in $schema/_[type="property"]
+  for $property in $schema/_[type="property" or empty(type)]
   let $cell :=  $context/cell[matches(@label, $property/mask)]
   where $cell/text()
+  let $filter := rdfGenLib:filter(<data>{$cell}</data>, $schema)
+  where $filter 
   return
     rdfGenLib:property($cell, $property, $context/aliases),
   
-  for $property in $schema/_[type="subject"]
+  for $property in $schema/_[type="properties"]
+  for $cell in $context/cell[matches(@label, $property/mask)]
+  where $cell/text()
+  let $cellProperties := 
+    $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
+  return
+    $cellProperties,
+    
+  for $property in $schema/_[type="resource"]
   for $cell in $context/cell[matches(@label, $property/mask)]
   where $cell/text()
   let $cellRootProperty :=
@@ -58,7 +68,7 @@ function rdfGen:cells(
 ) as element()*
 {
   for $cell in $context/row/cell
-  let $localContext := rdfGenLib:buidContext($context, $cell)
+  let $localContext := rdfGenLib:buildContext($context, $cell)
   let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return
@@ -108,7 +118,7 @@ function rdfGen:rows(
 ) as element()*
 {
   for $row in $context/table/row
-  let $localContext := rdfGenLib:buidContext($context, $row)
+  let $localContext := rdfGenLib:buildContext($context, $row)
   let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return
@@ -153,7 +163,7 @@ function rdfGen:tables(
 ) as element()*
 {
   for $tableData in $context/file/table
-  let $localContext := rdfGenLib:buidContext($context, $tableData)
+  let $localContext := rdfGenLib:buildContext($context, $tableData)
   let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return

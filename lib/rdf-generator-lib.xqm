@@ -166,7 +166,7 @@ function rdfGenLib:buidRootContext(
   let $parameters :=
     rdfGenLib:parameters($context, $schema)
   return
-    rdfGenLib:buidContext($context, ($aliases, $parameters))
+    rdfGenLib:buildContext($context, ($aliases, $parameters))
 };
 
 
@@ -178,7 +178,7 @@ function rdfGenLib:buidRootContext(
 :)
 declare
   %public
-function rdfGenLib:buidContext(
+function rdfGenLib:buildContext(
   $context as element(data),
   $elements as element()*
 ) as element(data)
