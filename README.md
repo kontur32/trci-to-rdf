@@ -15,6 +15,6 @@
 - `lib/generate-rdf-with-schema.xq` на основе [готовой схемы](example/schemas/schema-example-2.json) из такого [файла trci](example/TRCI/TRCI-example.xml) получится такой [RDF/XML](example/RDF/RDF-example-2.xml)
 
 ## Сценарий работы со схемами  
-1. [автоматически сгенерировать схему](xq/generate-schema.xq), из которой получится такой [RDF](example/RDF/RDF-example.xml), из которого можно извлечь данные вот таким [SPARQL запросом](example/SPARQL/SPARQL-example.rq)
+1. автоматически [сгенерировать схему](xq/generate-schema.xq), вот такую [схему](example/schemas/schema-example.json) из которой получится такой [RDF](example/RDF/RDF-example.xml), из которого можно извлечь данные вот таким [SPARQL запросом](example/SPARQL/SPARQL-example.rq)
 1. в схеме явно указать имена свойств ([модификация схемы 1](example/schemas/schema-example-1.json)), из которой получится такой [RDF](example/RDF/RDF-example-1.xml), из которого можно извлечь данные вот таким [SPARQL запросом](example/SPARQL/SPARQL-example-1.rq)
 1. добавить в схему инструкции для обработки "сложных полей" и фильтры для исключения полей с нерелевантными значениями ([модификация схемы 2](example/schemas/schema-example-2.json)), из которой получится такой [RDF](example/RDF/RDF-example-2.xml), из которого можно извлечь данные вот таким [SPARQL запросом](example/SPARQL/SPARQL-example-2.rq)
