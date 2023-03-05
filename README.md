@@ -15,6 +15,6 @@
 - `lib/generate-rdf-with-schema.xq` [RDF/XML на основе готовой схемы](example/RDF/RDF-auto-generate.xml) 
 
 ## Ручная доработка схемы
-Схему, которая автоматически сегенерирована, можно дорабоать:
+Схему, которая автоматически сегенерирована, можно доработать:
 1. явно указать имена свойств ([модификация схемы 1](example/schemas/modified-schema-example.json)) и получится такой [RDF](example/RDF/RDF-modified-schema-example.xml)
 1. добавить инструкции для обработки "сложных полей" и фильтры для исключения полей с нерелевантными значениями ([модификация схемы 2](example/schemas/modified-schema-example-resource.json)) и получится такой [RDF](example/RDF/RDF-modified-schema-example-resource.xml)
