@@ -1,0 +1,28 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-04T17:13:55.533+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Анкетные данные</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/246dd2e4-9849-4371-9cad-5e8e4f277428">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:ФИО>Хоботов Лев Евгеньевич</misis:ФИО>
+        <misis:годРождения>1974</misis:годРождения>
+        <misis:должность>профессор</misis:должность>
+        <misis:кабинет>Б-903</misis:кабинет>
+        <misis:email>hobotov.l.e@misis.ru</misis:email>
+        <misis:ученаяСтепень>д.экон.н.</misis:ученаяСтепень>
+        <misis:ученоеЗвание>доцент</misis:ученоеЗвание>
+        <misis:ORCID>https://orcid.org/0000-0001-6695-3208</misis:ORCID>
+        <misis:общийСтаж>25</misis:общийСтаж>
+        <misis:стажВОрганизации>1</misis:стажВОрганизации>
+        <misis:педагогическийСтаж>21</misis:педагогическийСтаж>
+        <misis:количествоНаучныхТрудов>30</misis:количествоНаучныхТрудов>
+        <количествоМетодическихТрудов xmlns="http://misis.roz37.ru/semantic/schema/">8</количествоМетодическихТрудов>
+        <misis:количествоЦитирований>3</misis:количествоЦитирований>
+        <misis:выпущеноАспирантов>0</misis:выпущеноАспирантов>
+        <misis:выпущеноДокторантов>0</misis:выпущеноДокторантов>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+</rdf:RDF>

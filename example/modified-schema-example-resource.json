@@ -1,0 +1,369 @@
+{
+    "schema":{
+      "context":{
+        "aliases":{
+          "парсер-нормализация-пробелов":{
+            "xquery":"normalize-space(.)"
+          },
+          "парсер-больше-нуля":{
+            "xquery":"xs:integer(./cell/text()) > 0"
+          }
+        },
+        "parameters":{
+          "домен.сущности":"{{домен.сущности}}",
+          "домен.сущности.строки":"{{домен.сущности}}строки"
+        }
+      },
+      "table":{
+        "type":"subject",
+        "filter":{
+          "value":{
+            "xquery":"matches(./table/@label/data(), '^Анкетные данные')"
+          }
+        },
+        "properties":[
+          {
+            "nameSpace":"{{домен.схема}}",
+            "localName":"misis:дата",
+            "value":{
+              "xquery":"current-dateTime()"
+            }
+          },
+          {
+            "nameSpace":"{{домен.схема}}",
+            "localName":"misis:label",
+            "value":{
+              "xquery":"./table/@label/data()"
+            }
+          },
+          {
+            "nameSpace":"{{xmlns.rdf}}",
+            "localName":"rdf:type",
+            "value":"{{домен.онтология}}{{class.table}}"
+          }
+        ],
+        "row":{
+          "type":"subject",
+          "about":{
+            "value":{
+              "xquery":"'{{домен.схема}}' || random:uuid()"
+            }
+          },
+          "nameSpace":"{{домен.схема}}",
+          "localName":"misis:свойстваСтроки",
+          "filter":{
+            "value":{
+              "xquery":"true()"
+            }
+          },
+          "properties":[
+            {
+              "nameSpace":"{{xmlns.rdf}}",
+              "localName":"rdf:type",
+              "value":"{{домен.онтология}}{{class.row}}"
+            }
+          ],
+          "cell":{
+            "properties":[
+              {
+                "mask":"^ФИО",
+                "type": "properties",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:ФИО",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                },
+                "properties": [
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:фамилия",
+                      "value":{"xquery": "normalize-space(tokenize(./text())[1])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  },
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:имя",
+                      "value":{"xquery": "normalize-space(tokenize(./text())[2])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  },
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:отчество",
+                      "value":{"xquery": "normalize-space(tokenize(./text())[3])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  }
+                ]
+              },
+              {
+                "mask":"^Год рождения",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:годРождения",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Должность",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:должность",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Кабинет",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:кабинет",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Рабочая эл. почта",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:email",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Образование (вуз, специальность, год окончания)",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:образование",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Ученая степень, год присуждения",
+                "type": "resource",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:ученаяСтепень",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                },
+                "properties": [
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:label",
+                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[1])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  },
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:год",
+                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[2])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  }
+                ]
+              },
+              {
+                "mask":"^Ученое звание, год присуждения",
+                "type": "resource",               
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:ученоеЗвание",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                },
+                "properties": [
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:label",
+                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[1])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  },
+                  {
+                      "nameSpace": "{{домен.схема}}",
+                      "localName": "misis:год",
+                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[2])"},
+                      "validator": {"alias": "валидация-десятичного-числа"}
+                  }
+                ]
+              },
+              {
+                "mask":"^Форма трудового договора (основное место работы\/внешнее совместительство\/внутреннее совместительство)",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:формаТрудовогоДоговора",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^ORCID",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:ORCID",
+                "value":{
+                  "xquery": "normalize-space(tokenize(./text(), '/')[last()])"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^РИНЦ ID (SPIN-код)",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:SPINкод",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Общий стаж работы",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:общийСтаж",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Стаж работы в НИТУ \"МИСиС\"",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:стажВОрганизации",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Пед. стаж работы",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:педагогическийСтаж",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Количество научных трудов всего",
+                "filter": {
+                  "value":{
+                    "xquery":"xs:integer(./cell/text()) > 0"
+                  }
+                },
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:количествоНаучныхТрудов",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Количество учебно-методических трудов всего",
+                "filter": {
+                  "value":{
+                    "alias": "парсер-больше-нуля"
+                  }
+                },
+                "nameSpace":"{{домен.схема}}",
+                "localName":"количествоМетодическихТрудов",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^h-индекс по Scopus\/WoS (максимальный)",
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:индексХирша",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Количество цитирований за последние 5 лет по Scopus\/WoS",
+                "filter": {
+                  "value":{
+                    "alias": "парсер-больше-нуля"
+                  }
+                },
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:количествоЦитирований",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Выпуск аспирантов",
+                "filter": {
+                  "value":{
+                    "alias": "парсер-больше-нуля"
+                  }
+                },
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:выпущеноАспирантов",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              },
+              {
+                "mask":"^Выпуск докторантов",
+                "filter": {
+                  "value":{
+                    "alias": "парсер-больше-нуля"
+                  }
+                },
+                "nameSpace":"{{домен.схема}}",
+                "localName":"misis:выпущеноДокторантов",
+                "value":{
+                  "alias":"парсер-нормализация-пробелов"
+                },
+                "validator":{
+                  "alias":"валидация-текста"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
