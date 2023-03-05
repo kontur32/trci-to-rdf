@@ -8,7 +8,7 @@ declare function genSchema:Sample($table){
       <_ type="object">
         {
           element{'mask'}{'^'||$i/@label},
-          element{'type'}{'subject'},
+          element{'type'}{'resource'},
           element{'nameSpace'}{'{{домен.схема}}'},
           element{'localName'}{'misis:свойство-' || $c},
           element{'value'}{
@@ -52,7 +52,7 @@ declare function genSchema:Sample($table){
             </parameters>
           </context>
           <table type="object">
-            <type>subject</type>
+            <type>resource</type>
             <filter type="object">
               <value type="object">
                 <xquery>true()</xquery>
@@ -79,7 +79,7 @@ declare function genSchema:Sample($table){
               </_>
             </properties>
             <row type="object">
-              <type>subject</type>
+              <type>resource</type>
               <about type="object">
                 <value type="object">
                   <xquery><![CDATA['{{домен.схема}}' || random:uuid()]]></xquery>

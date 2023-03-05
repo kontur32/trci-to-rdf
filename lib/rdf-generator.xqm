@@ -90,7 +90,7 @@ function rdfGen:row(
   let $body := rdfGen:cells($context, $schema/cell)
   let $properties := rdfGenLib:properties($context, $schema)
   return
-    if($schema/type = "subject")
+    if($schema/type = "resource")
     then(
       let $rowRootPropery :=
         rdfGenLib:property(<data/>, $schema, $context/aliases)
@@ -140,7 +140,7 @@ function rdfGen:table(
   let $rows := rdfGen:rows($context, $schema/row)
   let $properties := rdfGenLib:properties($context, $schema)
   return
-    if($schema/type = "subject")
+    if($schema/type = "resource")
     then(
       rdfGenElements:description($context, $schema, ($properties, $rows))
     )

@@ -11,7 +11,7 @@ import module namespace genSchema = 'rdf/generetor/schema'
 
 
 let $dataPath := file:base-dir() || '..\example\'
-let $context := <data>{fetch:xml($dataPath||"trci-example.xml")/file}</data>
+let $context := <data>{fetch:xml($dataPath||"TRCI\trci-example.xml")/file}</data>
 let $params :=
   rdfGenTools:json-to-map(fetch:text($dataPath||'params-example.json')) 
 
