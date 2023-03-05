@@ -1,0 +1,15 @@
+# находит email преподавателя по заданным ФИО
+
+PREFIX схема: <http://misis.roz37.ru/semantic/schema/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?email
+WHERE {
+  GRAPH <http://misis.roz37.ru/cv/hobotov-1>
+  {
+    ?всеПреподаватели 
+      	rdf:type "http://misis.roz37.ru/semantic/онтология/Преподаватели";
+        схема:ФИО "Хоботов Лев Евгеньевич" ; # преподаватели с ФИО = "Хоботов Лев Евгеньевич"
+    	схема:email ?email # получаем email выбранного преподавателя
+  }
+}
