@@ -16,7 +16,8 @@ function rdfGenLib:filter(
 {
   if($schema/filter)
   then(
-    let $result := rdfGenLib:propertyValue($context, $schema/filter, $context/aliases)
+    let $result := 
+      rdfGenLib:propertyValue($context, $schema/filter, $context/aliases)
     return
       if($result)then(true())else(false())
   )

@@ -28,7 +28,7 @@ function rdfGen:cell(
   for $property in $schema/_[type="property" or empty(type)]
   let $cell :=  $context/cell[matches(@label, $property/mask)]
   where $cell/text()
-  let $filter := rdfGenLib:filter(<data>{$cell}</data>, $schema)
+  let $filter := rdfGenLib:filter($context, $property)
   where $filter 
   return
     rdfGenLib:property($cell, $property, $context/aliases),
@@ -69,8 +69,6 @@ function rdfGen:cells(
 {
   for $cell in $context/row/cell
   let $localContext := rdfGenLib:buildContext($context, $cell)
-  let $filter := rdfGenLib:filter($localContext, $schema)
-  where $filter 
   return
     rdfGen:cell($localContext, $schema/properties)
 };
