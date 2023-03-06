@@ -14,14 +14,31 @@ function rdfGenLib:filter(
   $schema as element()
 ) as xs:boolean
 {
-  if($schema/filter)
+  if($schema/filter/child::*)
   then(
     let $result := 
       rdfGenLib:propertyValue($context, $schema/filter, $context/aliases)
     return
       if($result)then(true())else(false())
   )
-  else(true())
+  else(
+    if($schema/filter/text())
+    then(
+      let $filter := 
+        <filter>
+          <value>
+            <xquery>{
+              replace("matches(./cell/@label/data(), '%1')", '%1', $schema/filter/text())
+            }</xquery>
+          </value>
+        </filter>
+      let $result := 
+        rdfGenLib:propertyValue($context, $filter, $context/aliases)
+      return
+        if($result)then(true())else(false())
+    )
+    else(false())
+  )
 };
 
 (:~
