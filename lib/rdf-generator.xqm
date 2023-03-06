@@ -28,14 +28,20 @@ function rdfGen:cell(
   for $property in $schema/_[type="property" or empty(type)]
   let $cell :=  $context/cell[matches(@label, $property/mask)]
   where $cell/text()
+  
   let $filter := rdfGenLib:filter($context, $property)
   where $filter 
+  
   return
     rdfGenLib:property($cell, $property, $context/aliases),
   
   for $property in $schema/_[type="properties"]
   for $cell in $context/cell[matches(@label, $property/mask)]
   where $cell/text()
+  
+  let $filter := rdfGenLib:filter($context, $property)
+  where $filter
+  
   let $cellProperties := 
     $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
   return
@@ -44,6 +50,10 @@ function rdfGen:cell(
   for $property in $schema/_[type="resource"]
   for $cell in $context/cell[matches(@label, $property/mask)]
   where $cell/text()
+  
+  let $filter := rdfGenLib:filter($context, $property)
+  where $filter
+  
   let $cellRootProperty :=
     $property/rdfGenLib:property(<data/>, ., $context/aliases)
   let $cellProperties := 
