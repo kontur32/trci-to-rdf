@@ -16,11 +16,7 @@
       },
       "table":{
         "type":"resource",
-        "filter":{
-          "value":{
-            "xquery":"matches(./table/@label/data(), '^Анкетные данные')"
-          }
-        },
+        "filter": "^Анкетные данные",
         "properties":[
           {
             "nameSpace":"{{домен.схема}}",
@@ -67,11 +63,6 @@
             "properties":[
               {
                 "filter":"^ФИО",
-                "filter1":{
-                    "value":{
-                      "xquery":"true()"
-                    }
-                  },
                 "type": "properties",
                 "nameSpace":"{{домен.схема}}",
                 "localName":"{{домен.схема.префикс}}:ФИО",
@@ -107,7 +98,7 @@
                     "value":{
                       "xquery":"matches(./cell/@label/data(), '^Год рождения')"
                     }
-                  },
+                },
                 "nameSpace":"{{домен.схема}}",
                 "localName":"{{домен.схема.префикс}}:годРождения",
                 "value":{
@@ -151,7 +142,7 @@
                 }
               },
               {
-                "filter":"^Образование \\\\(вуз",
+                "filter":"^Образование \\(вуз",
                 "nameSpace":"{{домен.схема}}",
                 "localName":"{{домен.схема.префикс}}:образование",
                 "value":{

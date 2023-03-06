@@ -83,7 +83,7 @@ function rdfGen:cells(
 ) as element()*
 {
   for $cell in $context/row/cell
-  let $localContext := rdfGenLib:buildContext($context, $cell)
+  let $localContext := rdfGenLib:buildContext($context, (<currentNode>cell</currentNode>, $cell))
   return
     rdfGen:cell($localContext, $schema/properties)
 };
@@ -131,7 +131,10 @@ function rdfGen:rows(
 ) as element()*
 {
   for $row in $context/table/row
-  let $localContext := rdfGenLib:buildContext($context, $row)
+  let $localContext :=
+    rdfGenLib:buildContext(
+      $context, (<currentNode>row</currentNode>, $row)
+    )
   let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return
@@ -175,8 +178,12 @@ function rdfGen:tables(
   $schema as element(table)
 ) as element()*
 {
-  for $tableData in $context/file/table
-  let $localContext := rdfGenLib:buildContext($context, $tableData)
+  for $table in $context/file/table
+  let $localContext := 
+    rdfGenLib:buildContext(
+      $context,
+      (<currentNode>table</currentNode>, $table)
+    )
   let $filter := rdfGenLib:filter($localContext, $schema)
   where $filter 
   return

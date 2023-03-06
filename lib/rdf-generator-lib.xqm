@@ -24,11 +24,12 @@ function rdfGenLib:filter(
   else(
     if($schema/filter/text())
     then(
+      let $currentNodeName := $context/currentNode[last()]/text()
       let $filter := 
         <filter>
           <value>
             <xquery>{
-              replace("matches(./cell/@label/data(), '%1')", '%1', $schema/filter/text())
+             "matches(./" || $currentNodeName || "/@label/data(), '" || $schema/filter/text() || "')"
             }</xquery>
           </value>
         </filter>
