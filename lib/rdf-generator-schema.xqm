@@ -10,7 +10,7 @@ declare function genSchema:Sample($table){
           element{'mask'}{'^'||$i/@label},
           element{'type'}{'resource'},
           element{'nameSpace'}{'{{домен.схема}}'},
-          element{'localName'}{'misis:свойство-' || $c},
+          element{'localName'}{'{{домен.схема.префикс}}:свойство-' || $c},
           element{'value'}{
              attribute{'type'}{'object'},
              element{'alias'}{'парсер-нормализация-пробелов'}
@@ -23,13 +23,13 @@ declare function genSchema:Sample($table){
               <_ type="object">
                 <type>property</type>
                 <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-                <localName>misis:label</localName>
+                <localName><![CDATA[{{домен.схема.префикс}}:label]]></localName>
                 <value type="object"><xquery>./@label/data()</xquery></value>
               </_>
               <_ type="object">
                 <type>property</type>
                 <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-                <localName>misis:значение</localName>
+                <localName><![CDATA[{{домен.схема.префикс}}:значение]]></localName>
                 <value type="object"><xquery>./text()</xquery></value>
               </_>
             </properties>
@@ -62,13 +62,13 @@ declare function genSchema:Sample($table){
               <_ type="object">
                 <type>property</type>
                 <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-                <localName>misis:дата</localName>
+                <localName><![CDATA[{{домен.схема.префикс}}:дата]]></localName>
                 <value type="object"><xquery>current-dateTime()</xquery></value>
               </_>
               <_ type="object">
                 <type>property</type>
                 <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-                <localName>misis:label</localName>
+                <localName><![CDATA[{{домен.схема.префикс}}:label]]></localName>
                 <value type="object"><xquery>./table/@label/data()</xquery></value>
               </_>
               <_ type="object">
@@ -86,7 +86,7 @@ declare function genSchema:Sample($table){
                 </value>
               </about>
               <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-              <localName>misis:свойстваСтроки</localName>
+              <localName><![CDATA[{{домен.схема.префикс}}:свойстваСтроки]]></localName>
               <filter type="object">
                 <value type="object">
                   <xquery>.</xquery>

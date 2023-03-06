@@ -22,7 +22,7 @@
         {
           "type":"property",
           "nameSpace":"{{домен.схема}}",
-          "localName":"misis:дата",
+          "localName":"{{домен.схема.префикс}}:дата",
           "value":{
             "xquery":"current-dateTime()"
           }
@@ -30,7 +30,7 @@
         {
           "type":"property",
           "nameSpace":"{{домен.схема}}",
-          "localName":"misis:label",
+          "localName":"{{домен.схема.префикс}}:label",
           "value":{
             "xquery":".\/table\/@label\/data()"
           }
@@ -50,7 +50,7 @@
           }
         },
         "nameSpace":"{{домен.схема}}",
-        "localName":"misis:свойстваСтроки",
+        "localName":"{{домен.схема.префикс}}:свойстваСтроки",
         "filter":{
           "value":{
             "xquery":"."
@@ -70,7 +70,7 @@
               "mask":"^Характеристика",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-1",
+              "localName":"{{домен.схема.префикс}}:свойство-1",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -81,7 +81,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -89,7 +89,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -100,7 +100,7 @@
               "mask":"^ФИО",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-2",
+              "localName":"{{домен.схема.префикс}}:свойство-2",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -111,7 +111,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -119,7 +119,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -130,7 +130,7 @@
               "mask":"^Год рождения",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-3",
+              "localName":"{{домен.схема.префикс}}:свойство-3",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -141,7 +141,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -149,7 +149,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -160,7 +160,7 @@
               "mask":"^Должность",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-4",
+              "localName":"{{домен.схема.префикс}}:свойство-4",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -171,7 +171,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -179,7 +179,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -190,7 +190,7 @@
               "mask":"^Кабинет",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-5",
+              "localName":"{{домен.схема.префикс}}:свойство-5",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -201,7 +201,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -209,7 +209,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -220,7 +220,7 @@
               "mask":"^Рабочая эл. почта",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-6",
+              "localName":"{{домен.схема.префикс}}:свойство-6",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -231,7 +231,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -239,7 +239,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -250,7 +250,7 @@
               "mask":"^Образование (вуз, специальность, год окончания)",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-7",
+              "localName":"{{домен.схема.префикс}}:свойство-7",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -261,7 +261,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -269,7 +269,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -280,7 +280,7 @@
               "mask":"^Ученая степень, год присуждения",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-8",
+              "localName":"{{домен.схема.префикс}}:свойство-8",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -291,7 +291,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -299,7 +299,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -310,7 +310,7 @@
               "mask":"^Ученое звание, год присуждения",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-9",
+              "localName":"{{домен.схема.префикс}}:свойство-9",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -321,7 +321,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -329,7 +329,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -340,7 +340,7 @@
               "mask":"^Форма трудового договора (основное место работы\/внешнее совместительство\/внутреннее совместительство)",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-10",
+              "localName":"{{домен.схема.префикс}}:свойство-10",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -351,7 +351,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -359,7 +359,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -370,7 +370,7 @@
               "mask":"^ORCID",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-11",
+              "localName":"{{домен.схема.префикс}}:свойство-11",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -381,7 +381,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -389,7 +389,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -400,7 +400,7 @@
               "mask":"^РИНЦ ID (SPIN-код)",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-12",
+              "localName":"{{домен.схема.префикс}}:свойство-12",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -411,7 +411,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -419,7 +419,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -430,7 +430,7 @@
               "mask":"^Общий стаж работы",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-13",
+              "localName":"{{домен.схема.префикс}}:свойство-13",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -441,7 +441,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -449,7 +449,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -460,7 +460,7 @@
               "mask":"^Стаж работы в НИТУ \"МИСиС\"",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-14",
+              "localName":"{{домен.схема.префикс}}:свойство-14",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -471,7 +471,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -479,7 +479,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -490,7 +490,7 @@
               "mask":"^Пед. стаж работы",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-15",
+              "localName":"{{домен.схема.префикс}}:свойство-15",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -501,7 +501,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -509,7 +509,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -520,7 +520,7 @@
               "mask":"^Количество научных трудов всего",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-16",
+              "localName":"{{домен.схема.префикс}}:свойство-16",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -531,7 +531,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -539,7 +539,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -550,7 +550,7 @@
               "mask":"^Количество учебно-методических трудов всего",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-17",
+              "localName":"{{домен.схема.префикс}}:свойство-17",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -561,7 +561,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -569,7 +569,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -580,7 +580,7 @@
               "mask":"^h-индекс по Scopus\/WoS (максимальный)",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-18",
+              "localName":"{{домен.схема.префикс}}:свойство-18",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -591,7 +591,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -599,7 +599,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -610,7 +610,7 @@
               "mask":"^Количество цитирований за последние 5 лет по Scopus\/WoS",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-19",
+              "localName":"{{домен.схема.префикс}}:свойство-19",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -621,7 +621,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -629,7 +629,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -640,7 +640,7 @@
               "mask":"^Выпуск аспирантов",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-20",
+              "localName":"{{домен.схема.префикс}}:свойство-20",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -651,7 +651,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -659,7 +659,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
@@ -670,7 +670,7 @@
               "mask":"^Выпуск докторантов",
               "type":"resource",
               "nameSpace":"{{домен.схема}}",
-              "localName":"misis:свойство-21",
+              "localName":"{{домен.схема.префикс}}:свойство-21",
               "value":{
                 "alias":"парсер-нормализация-пробелов"
               },
@@ -681,7 +681,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:label",
+                  "localName":"{{домен.схема.префикс}}:label",
                   "value":{
                     "xquery":".\/@label\/data()"
                   }
@@ -689,7 +689,7 @@
                 {
                   "type":"property",
                   "nameSpace":"{{домен.схема}}",
-                  "localName":"misis:значение",
+                  "localName":"{{домен.схема.префикс}}:значение",
                   "value":{
                     "xquery":".\/text()"
                   }
