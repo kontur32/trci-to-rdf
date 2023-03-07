@@ -79,7 +79,15 @@ function rdfGenLib:propertyValue(
       )
       else(
         if($schema/value/text())
-        then($schema/value/text())
+        then(
+          if($schema/type/text()="resource" and not($schema/properties))
+          then(
+            attribute{"resource"}{$schema/value/text()}
+          )
+          else(
+            $schema/value/text()
+          )
+        )
         else($context/text())
       )
    return
@@ -102,10 +110,9 @@ function rdfGenLib:property(
 {
   let $nameSpace := $schema/nameSpace/text()
   let $localName := $schema/localName/text()
-  return
-    element{QName($nameSpace, $localName)}{
-      rdfGenLib:propertyValue($context, $schema, $aliases)
-    }
+  let $value := rdfGenLib:propertyValue($context, $schema, $aliases)
+  return 
+    element{QName($nameSpace, $localName)}{$value}
 };
 
 (:~

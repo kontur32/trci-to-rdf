@@ -1,11 +1,11 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description>
-    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:01.504+03:00</misis:дата>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T17:32:51.898+03:00</misis:дата>
     <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Анкетные данные</misis:label>
-    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Анкеты"/>
     <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/66ef3520-a372-471e-b4eb-ecefc5e8bd09">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/851e12ab-914c-4497-8fca-c708e4ef8aa5">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Преподаватели"/>
         <misis:фамилия>Хоботов</misis:фамилия>
         <misis:имя>Лев</misis:имя>
         <misis:отчество>Евгеньевич</misis:отчество>
@@ -24,48 +24,48 @@
     </misis:свойстваСтроки>
   </rdf:Description>
   <rdf:Description>
-    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:01.733+03:00</misis:дата>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T17:32:52.057+03:00</misis:дата>
     <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Интересы и достижения</misis:label>
-    <rdf:type>http://misis.roz37.ru/semantic/онтология/ИнтересыДостижения</rdf:type>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/96462b16-f80c-42e4-a96a-4424ae3007ca">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+    <rdf:type resource="http://misis.roz37.ru/semantic/онтология/ИнтересыДостижения"/>
+    <misis:записьДостиженияНаграды xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/d04a4714-2017-4182-b4eb-cfa0757726a5">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Преподаватели"/>
         <misis:категорияДостиженийИнтересов>Курсы, которые читает</misis:категорияДостиженийИнтересов>
         <misis:год>2022</misis:год>
         <misis:содержание>Системный анализ и принятие решений, курсовая научно-исследовательская работа магистрантов, научное руководство дипломными работами в бакалавриате и магистратуре</misis:содержание>
       </rdf:Description>
-    </misis:свойстваСтроки>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/f6a5724d-cde9-46ad-b965-4aac319cf320">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+    </misis:записьДостиженияНаграды>
+    <misis:записьДостиженияНаграды xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/238b4858-f0b1-4eee-b5d0-351ba0865f17">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Преподаватели"/>
         <misis:категорияДостиженийИнтересов>Научные интересы</misis:категорияДостиженийИнтересов>
         <misis:содержание>Семантическая организация данных, пространственная организация хозяйственных систем</misis:содержание>
       </rdf:Description>
-    </misis:свойстваСтроки>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/0b8668d7-6394-402a-be4e-4c99ae57cc8e">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+    </misis:записьДостиженияНаграды>
+    <misis:записьДостиженияНаграды xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/49f7ceea-f86d-407e-bd15-ad4e004cf24f">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Преподаватели"/>
         <misis:категорияДостиженийИнтересов>Награды</misis:категорияДостиженийИнтересов>
         <misis:год>2022</misis:год>
         <misis:содержание>Благодарность Президента РФ (распоряжение от 01.04.2022 № 92-рп)</misis:содержание>
       </rdf:Description>
-    </misis:свойстваСтроки>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/3da07ab7-052b-4a1e-89df-7c6bbc83cd1a">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+    </misis:записьДостиженияНаграды>
+    <misis:записьДостиженияНаграды xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/1ad30937-1bed-4a94-9e23-ea0bce75929c">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/Преподаватели"/>
         <misis:категорияДостиженийИнтересов>Грант</misis:категорияДостиженийИнтересов>
         <misis:год>2020</misis:год>
         <misis:содержание>Грант РФФИ 20-410-370005 р_а "Очарование текстиля"</misis:содержание>
       </rdf:Description>
-    </misis:свойстваСтроки>
+    </misis:записьДостиженияНаграды>
   </rdf:Description>
   <rdf:Description>
-    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:02.133+03:00</misis:дата>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T17:32:52.196+03:00</misis:дата>
     <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Научные публикации</misis:label>
-    <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/9573bbca-0df3-4678-aa0f-82339e450ac1">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+    <rdf:type resource="http://misis.roz37.ru/semantic/онтология/НаучныеПубликации"/>
+    <misis:записьНаучнойПубликации xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/9a8e892e-4027-4a59-92d9-ea5e7193d9a2">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/НаучныеПубликации"/>
         <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
         <misis:квартильВИндексеЦитирований>Q4</misis:квартильВИндексеЦитирований>
         <misis:годПубликации>2019</misis:годПубликации>
@@ -77,10 +77,10 @@
           </rdf:Description>
         </misis:текстПубликации>
       </rdf:Description>
-    </misis:свойстваСтроки>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/3f5bbad0-2fa5-425c-b52e-fa4d3837ded1">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+    </misis:записьНаучнойПубликации>
+    <misis:записьНаучнойПубликации xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/0c7cf510-24de-4bc0-b8c1-be0b3c9019dd">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/НаучныеПубликации"/>
         <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
         <misis:квартильВИндексеЦитирований>Q4</misis:квартильВИндексеЦитирований>
         <misis:годПубликации>2019</misis:годПубликации>
@@ -92,10 +92,10 @@
           </rdf:Description>
         </misis:текстПубликации>
       </rdf:Description>
-    </misis:свойстваСтроки>
-    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
-      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/32ef4e5c-cad5-46ec-a319-977b56e83de8">
-        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+    </misis:записьНаучнойПубликации>
+    <misis:записьНаучнойПубликации xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/aef4df31-be75-4ba7-9af7-1800184e060b">
+        <rdf:type resource="http://misis.roz37.ru/semantic/онтология/НаучныеПубликации"/>
         <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
         <misis:квартильВИндексеЦитирований>Q1</misis:квартильВИндексеЦитирований>
         <misis:годПубликации>2022</misis:годПубликации>
@@ -108,6 +108,6 @@
         </misis:текстПубликации>
         <misis:DOI>10.1109/ACCESS.2022.3157619</misis:DOI>
       </rdf:Description>
-    </misis:свойстваСтроки>
+    </misis:записьНаучнойПубликации>
   </rdf:Description>
 </rdf:RDF>

@@ -33,6 +33,7 @@
             }
           },
           {
+            "type":"resource",
             "nameSpace":"{{xmlns.rdf}}",
             "localName":"rdf:type",
             "value":"{{домен.онтология}}{{class.table}}"
@@ -54,6 +55,7 @@
           },
           "properties":[
             {
+              "type":"resource",
               "nameSpace":"{{xmlns.rdf}}",
               "localName":"rdf:type",
               "value":"{{домен.онтология}}{{class.row}}"
