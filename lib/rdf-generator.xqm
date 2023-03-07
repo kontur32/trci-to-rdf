@@ -190,17 +190,17 @@ function rdfGen:tables(
     rdfGen:table($localContext, $schema)
 };
 
-declare function rdfGen:rdf(
+declare function rdfGen:description(
   $context as element(data),
   $schema as element(schema)
-) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+) as element()*
 {
   let $localContext :=
     rdfGenLib:buidRootContext($context, $schema) 
   let $body := 
     rdfGen:tables($localContext, $schema/table)
   return
-    rdfGenElements:RDF($body)
+    $body
 };
 
 declare function rdfGen:trci-to-rdf(

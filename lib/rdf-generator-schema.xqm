@@ -1,13 +1,15 @@
 module namespace genSchema = 'rdf/generetor/schema';
 
-declare function genSchema:Sample($table){
+declare
+  %public
+function genSchema:Sample($table as element(table)){
   let $поля := 
     for $i in $table/row[1]/cell
     count $c
     return
       <_ type="object">
         {
-          element{'mask'}{'^'||$i/@label},
+          element{'filter'}{'^'||$i/@label},
           element{'type'}{'resource'},
           element{'nameSpace'}{'{{домен.схема}}'},
           element{'localName'}{'{{домен.схема.префикс}}:свойство-' || $c},
@@ -53,11 +55,7 @@ declare function genSchema:Sample($table){
           </context>
           <table type="object">
             <type>resource</type>
-            <filter type="object">
-              <value type="object">
-                <xquery>true()</xquery>
-              </value>
-            </filter>
+            <filter>^{tokenize($table/@label/data())[1]}</filter>
             <properties type="array">
               <_ type="object">
                 <type>property</type>

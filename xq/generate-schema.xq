@@ -5,8 +5,8 @@
 import module namespace genSchema = 'rdf/generetor/schema'
   at '../lib/rdf-generator-schema.xqm';
 
-let $table := 
-  fetch:xml(file:base-dir() || "..\example\TRCI\trci-example.xml")/file/table[1]
+let $table as element(table):= 
+  fetch:xml(file:base-dir() || "..\example\TRCI\trci-example.xml")/file/table[3]
 
 return
   genSchema:Sample($table)

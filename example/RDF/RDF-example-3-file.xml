@@ -1,0 +1,113 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:01.504+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Анкетные данные</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/Анкеты</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/66ef3520-a372-471e-b4eb-ecefc5e8bd09">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:фамилия>Хоботов</misis:фамилия>
+        <misis:имя>Лев</misis:имя>
+        <misis:отчество>Евгеньевич</misis:отчество>
+        <misis:годРождения>1974</misis:годРождения>
+        <misis:должность>профессор</misis:должность>
+        <misis:кабинет>Б-903</misis:кабинет>
+        <misis:email>hobotov.l.e@misis.ru</misis:email>
+        <misis:образование>Ивановская государственная текстильная академия, технология текстильного производства, 1996</misis:образование>
+        <misis:ученаяСтепень>
+          <rdf:Description>
+            <misis:label>д.экон.н.</misis:label>
+            <misis:год>2006</misis:год>
+          </rdf:Description>
+        </misis:ученаяСтепень>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:01.733+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Интересы и достижения</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/ИнтересыДостижения</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/96462b16-f80c-42e4-a96a-4424ae3007ca">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:категорияДостиженийИнтересов>Курсы, которые читает</misis:категорияДостиженийИнтересов>
+        <misis:год>2022</misis:год>
+        <misis:содержание>Системный анализ и принятие решений, курсовая научно-исследовательская работа магистрантов, научное руководство дипломными работами в бакалавриате и магистратуре</misis:содержание>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/f6a5724d-cde9-46ad-b965-4aac319cf320">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:категорияДостиженийИнтересов>Научные интересы</misis:категорияДостиженийИнтересов>
+        <misis:содержание>Семантическая организация данных, пространственная организация хозяйственных систем</misis:содержание>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/0b8668d7-6394-402a-be4e-4c99ae57cc8e">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:категорияДостиженийИнтересов>Награды</misis:категорияДостиженийИнтересов>
+        <misis:год>2022</misis:год>
+        <misis:содержание>Благодарность Президента РФ (распоряжение от 01.04.2022 № 92-рп)</misis:содержание>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/3da07ab7-052b-4a1e-89df-7c6bbc83cd1a">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/Преподаватели</rdf:type>
+        <misis:категорияДостиженийИнтересов>Грант</misis:категорияДостиженийИнтересов>
+        <misis:год>2020</misis:год>
+        <misis:содержание>Грант РФФИ 20-410-370005 р_а "Очарование текстиля"</misis:содержание>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+  <rdf:Description>
+    <misis:дата xmlns:misis="http://misis.roz37.ru/semantic/schema/">2023-03-07T15:44:02.133+03:00</misis:дата>
+    <misis:label xmlns:misis="http://misis.roz37.ru/semantic/schema/">Научные публикации</misis:label>
+    <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/9573bbca-0df3-4678-aa0f-82339e450ac1">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+        <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
+        <misis:квартильВИндексеЦитирований>Q4</misis:квартильВИндексеЦитирований>
+        <misis:годПубликации>2019</misis:годПубликации>
+        <misis:библиографическаяЗапись>КОНЦЕПЦИЯ ЦИФРОВИЗАЦИИ ОБРАЗОВАТЕЛЬНОЙ СРЕДЫ СОВРЕМЕННОГО ИНЖЕНЕРНОГО ОБРАЗОВАНИЯ В УСЛОВИЯХ ГЛОБАЛИЗАЦИИ, Румянцев Е.В., Матрохин А.Ю., Мишуров С.С., Romanova K.E., Инженерное образование. 2019. № 25. С. 56-64.</misis:библиографическаяЗапись>
+        <misis:текстПубликации>
+          <rdf:Description>
+            <misis:тип>ссылка</misis:тип>
+            <misis:URL>https://elibrary.ru/download/elibrary_42210720_89706857.pdf</misis:URL>
+          </rdf:Description>
+        </misis:текстПубликации>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/3f5bbad0-2fa5-425c-b52e-fa4d3837ded1">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+        <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
+        <misis:квартильВИндексеЦитирований>Q4</misis:квартильВИндексеЦитирований>
+        <misis:годПубликации>2019</misis:годПубликации>
+        <misis:библиографическаяЗапись>ПОТЕНЦИАЛ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА ПРИ РЕАЛИЗАЦИИ ГЕНЕРАТИВНЫХ ОБРАЗОВАТЕЛЬНЫХ ТЕХНОЛОГИЙ, Романова К.Е., Мишуров С.С., Румянцев Е.В., Матрохин А.Ю., Инженерное образование. 2019. № 26. С. 75-83.</misis:библиографическаяЗапись>
+        <misis:текстПубликации>
+          <rdf:Description>
+            <misis:тип>ссылка</misis:тип>
+            <misis:URL>https://elibrary.ru/download/elibrary_43962421_17120187.pdf</misis:URL>
+          </rdf:Description>
+        </misis:текстПубликации>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+    <misis:свойстваСтроки xmlns:misis="http://misis.roz37.ru/semantic/schema/">
+      <rdf:Description rdf:about="http://misis.roz37.ru/semantic/schema/32ef4e5c-cad5-46ec-a319-977b56e83de8">
+        <rdf:type>http://misis.roz37.ru/semantic/онтология/НаучныеПубликации</rdf:type>
+        <misis:наличиеВИндексеЦитирований>Scopus</misis:наличиеВИндексеЦитирований>
+        <misis:квартильВИндексеЦитирований>Q1</misis:квартильВИндексеЦитирований>
+        <misis:годПубликации>2022</misis:годПубликации>
+        <misis:библиографическаяЗапись>A. Osipov et al., "Identification and Classification of Mechanical Damage During Continuous Harvesting of Root Crops Using Computer Vision Methods," in IEEE Access, vol. 10, pp. 28885-28894, 2022, doi: 10.1109/ACCESS.2022.3157619.</misis:библиографическаяЗапись>
+        <misis:текстПубликации>
+          <rdf:Description>
+            <misis:тип>ссылка</misis:тип>
+            <misis:URL>https://ieeexplore.ieee.org/document/9729819/</misis:URL>
+          </rdf:Description>
+        </misis:текстПубликации>
+        <misis:DOI>10.1109/ACCESS.2022.3157619</misis:DOI>
+      </rdf:Description>
+    </misis:свойстваСтроки>
+  </rdf:Description>
+</rdf:RDF>

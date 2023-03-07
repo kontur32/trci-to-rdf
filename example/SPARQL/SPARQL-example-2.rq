@@ -1,5 +1,6 @@
-# находит email преподавателей, которые защитили диссертацию после в 2005 года
+# находит email преподавателей, которые защитили диссертацию докторскую после в 2005 года
 
+PREFIX xs: <http://www.w3.org/2001/XMLSchema#>
 PREFIX схема: <http://misis.roz37.ru/semantic/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
@@ -7,10 +8,11 @@ SELECT DISTINCT ?email
 WHERE {
   GRAPH <http://misis.roz37.ru/cv/hobotov-2>
   {
-    ?строкаДанных ?p2 ?признакиСтрокиДанных;
+    ?строкаДанных ?признаки ?признакиСтрокиДанных;
                   rdf:type "http://misis.roz37.ru/semantic/онтология/Преподаватели". 
     ?строкаДанных схема:ученаяСтепень [схема:label ?ученаяСтепень; схема:год ?годПрисуждения];
                   схема:email ?email
   }
-  FILTER (?годПрисуждения >= "2005")
+  FILTER (xs:integer(?годПрисуждения) >= 2005)
+  FILTER STRSTARTS(?ученаяСтепень, "д")
 }
