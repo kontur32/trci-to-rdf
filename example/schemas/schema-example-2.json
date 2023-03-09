@@ -1,203 +1,208 @@
 {
-    "schema":{
-      "context":{
-        "aliases":{
-          "парсер-нормализация-пробелов":{
-            "xquery":"normalize-space(.)"
-          },
-          "парсер-больше-нуля":{
-            "xquery":"xs:integer(./cell/text()) > 0"
-          }
+  "schema":{
+    "context":{
+      "aliases":{
+        "парсер-нормализация-пробелов":{
+          "xquery":"normalize-space(.)"
         },
-        "parameters":{
-          "домен.сущности":"{{домен.сущности}}",
-          "домен.сущности.строки":"{{домен.сущности}}строки",
-          "RDF-endpoint": "http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp-artmotor1500/query"
+        "парсер-больше-нуля":{
+          "xquery":"xs:integer(./cell/text()) > 0"
         }
       },
-      "table":{
+      "parameters":{
+        "домен.сущности":"{{домен.сущности}}",
+        "домен.сущности.строки":"{{домен.сущности}}строки",
+        "RDF-endpoint": "http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp-artmotor1500/query"
+      }
+    },
+    "table":{
+      "type":"resource",
+      "filter": "^Анкетные данные",
+      "properties":[
+        {
+          "nameSpace":"{{домен.схема}}",
+          "localName":"{{домен.схема.префикс}}:дата",
+          "value":{
+            "xquery":"current-dateTime()"
+          }
+        },
+        {
+          "nameSpace":"{{домен.схема}}",
+          "localName":"{{домен.схема.префикс}}:label",
+          "value":{
+            "xquery":"./table/@label/data()"
+          }
+        },
+        {
+          "type":"resource",
+          "nameSpace":"{{xmlns.rdf}}",
+          "localName":"rdf:type",
+          "value":"{{домен.онтология}}{{class.table}}"
+        }
+      ],
+      "row":{
         "type":"resource",
-        "filter": "^Анкетные данные",
+        "context": [
+          {
+            "nameSpace":"",
+            "localName":"ФИО",
+            "value": {
+              "xquery": "./row/cell[@label='ФИО']/text()"
+            }
+          }
+        ],
+        "about1":{
+          "value":{
+            "xquery":"./context/ФИО/text()"
+          }
+        },
+        "about2":{
+          "value":{
+            "sparql":"PREFIX свойство: <http://misis.roz37.ru/semantic/schema/> PREFIX класс: <http://misis.roz37.ru/semantic/онтология/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (?преподаватели AS ?result) WHERE { GRAPH ?g { ?graph rdf:type класс:РеестрППС. ?преподаватели rdf:type класс:Преподаватели; свойство:фамилия ?фамилия; свойство:имя ?имя; свойство:отчество ?отчество } FILTER (CONCAT(?фамилия, ' ', ?имя, ' ', ?отчество)='{{ФИО}}')}"
+          }
+        },
+        "about":{
+          "value":{
+            "sparql": {"URL":"{{семантический.контракт}}about-by-fio.rq"}
+          }
+        },
+        "nameSpace":"{{домен.схема}}",
+        "localName":"{{домен.схема.префикс}}:свойстваСтроки",
+        "filter":{
+          "value":{
+            "xquery":"./row/cell[@label='ФИО']"
+          }
+        },
         "properties":[
-          {
-            "nameSpace":"{{домен.схема}}",
-            "localName":"{{домен.схема.префикс}}:дата",
-            "value":{
-              "xquery":"current-dateTime()"
-            }
-          },
-          {
-            "nameSpace":"{{домен.схема}}",
-            "localName":"{{домен.схема.префикс}}:label",
-            "value":{
-              "xquery":"./table/@label/data()"
-            }
-          },
           {
             "type":"resource",
             "nameSpace":"{{xmlns.rdf}}",
             "localName":"rdf:type",
-            "value":"{{домен.онтология}}{{class.table}}"
+            "value":"{{домен.онтология}}{{class.row}}"
           }
         ],
-        "row":{
-          "type":"resource",
-          "context": [
-            {
-              "nameSpace":"",
-              "localName":"ФИО",
-              "value": {
-                "xquery": "./row/cell[@label='ФИО']/text()"
-              }
-            }
-          ],
-          "about2":{
-            "value":{
-              "sparql":"PREFIX свойство: <http://misis.roz37.ru/semantic/schema/> PREFIX класс: <http://misis.roz37.ru/semantic/онтология/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (?преподаватели AS ?result) WHERE { GRAPH ?g { ?graph rdf:type класс:РеестрППС. ?преподаватели rdf:type класс:Преподаватели; свойство:фамилия ?фамилия; свойство:имя ?имя; свойство:отчество ?отчество } FILTER (CONCAT(?фамилия, ' ', ?имя, ' ', ?отчество)='{{ФИО}}')}"
-            }
-          },
-          "about":{
-            "value":{
-              "sparql": {"URL":"{{семантический.контракт}}about-by-fio.rq"}
-            }
-          },
-          "nameSpace":"{{домен.схема}}",
-          "localName":"{{домен.схема.префикс}}:свойстваСтроки",
-          "filter":{
-            "value":{
-              "xquery":"./row/cell[@label='ФИО']"
-            }
-          },
+        "cell":{
           "properties":[
             {
-              "type":"resource",
-              "nameSpace":"{{xmlns.rdf}}",
-              "localName":"rdf:type",
-              "value":"{{домен.онтология}}{{class.row}}"
-            }
-          ],
-          "cell":{
-            "properties":[
-              {
-                "filter":"^ФИО",
-                "type": "properties",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:ФИО",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
+              "filter":"^ФИО",
+              "type": "properties",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:ФИО",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              },
+              "properties": [
+                {
+                    "nameSpace": "{{домен.схема}}",
+                    "localName": "{{домен.схема.префикс}}:ф",
+                    "value":{"xquery": "normalize-space(tokenize(./text())[1])"},
+                    "validator": {"alias": "валидация-десятичного-числа"}
                 },
-                "validator":{
-                  "alias":"валидация-текста"
+                {
+                    "nameSpace": "{{домен.схема}}",
+                    "localName": "{{домен.схема.префикс}}:и",
+                    "value":{"xquery": "normalize-space(tokenize(./text())[2])"},
+                    "validator": {"alias": "валидация-десятичного-числа"}
                 },
-                "properties": [
-                  {
-                      "nameSpace": "{{домен.схема}}",
-                      "localName": "{{домен.схема.префикс}}:фамилия",
-                      "value":{"xquery": "normalize-space(tokenize(./text())[1])"},
-                      "validator": {"alias": "валидация-десятичного-числа"}
-                  },
-                  {
-                      "nameSpace": "{{домен.схема}}",
-                      "localName": "{{домен.схема.префикс}}:имя",
-                      "value":{"xquery": "normalize-space(tokenize(./text())[2])"},
-                      "validator": {"alias": "валидация-десятичного-числа"}
-                  },
-                  {
-                      "nameSpace": "{{домен.схема}}",
-                      "localName": "{{домен.схема.префикс}}:отчество",
-                      "value":{"xquery": "normalize-space(tokenize(./text())[3])"},
-                      "validator": {"alias": "валидация-десятичного-числа"}
+                {
+                    "nameSpace": "{{домен.схема}}",
+                    "localName": "{{домен.схема.префикс}}:о",
+                    "value":{"xquery": "normalize-space(tokenize(./text())[3])"},
+                    "validator": {"alias": "валидация-десятичного-числа"}
+                }
+              ]
+            },
+            {
+              "filter":{
+                  "value":{
+                    "xquery":"matches(./cell/@label/data(), '^Год рождения')"
                   }
-                ]
               },
-              {
-                "filter":{
-                    "value":{
-                      "xquery":"matches(./cell/@label/data(), '^Год рождения')"
-                    }
-                },
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:годРождения",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                }
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:годРождения",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
               },
-              {
-                "filter":"^Должность",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:должность",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                }
-              },
-              {
-                "filter":"^Кабинет",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:кабинет",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                }
-              },
-              {
-                "filter":"^Рабочая эл. почта",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:email",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                }
-              },
-              {
-                "filter":"^Образование \\(вуз",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:образование",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                }
-              },
-              {
-                "filter":"^Ученая степень, год присуждения",
-                "type": "resource",
-                "nameSpace":"{{домен.схема}}",
-                "localName":"{{домен.схема.префикс}}:ученаяСтепень",
-                "value":{
-                  "alias":"парсер-нормализация-пробелов"
-                },
-                "validator":{
-                  "alias":"валидация-текста"
-                },
-                "properties": [
-                  {
-                      "nameSpace": "{{домен.схема}}",
-                      "localName": "{{домен.схема.префикс}}:label",
-                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[1])"},
-                      "validator": {"alias": "валидация-десятичного-числа"}
-                  },
-                  {
-                      "nameSpace": "{{домен.схема}}",
-                      "localName": "{{домен.схема.префикс}}:год",
-                      "value":{"xquery": "normalize-space(tokenize(./text(), ',')[2])"},
-                      "validator": {"alias": "валидация-десятичного-числа"}
-                  }
-                ]
+              "validator":{
+                "alias":"валидация-текста"
               }
-            ]
-          }
+            },
+            {
+              "filter":"^Должность",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:должность",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Кабинет",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:кабинет",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Рабочая эл. почта",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:email",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Образование \\(вуз",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:образование",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Ученая степень, год присуждения",
+              "type": "resource",
+              "nameSpace":"{{домен.схема}}",
+              "localName":"{{домен.схема.префикс}}:ученаяСтепень",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              },
+              "properties": [
+                {
+                    "nameSpace": "{{домен.схема}}",
+                    "localName": "{{домен.схема.префикс}}:label",
+                    "value":{"xquery": "normalize-space(tokenize(./text(), ',')[1])"},
+                    "validator": {"alias": "валидация-десятичного-числа"}
+                },
+                {
+                    "nameSpace": "{{домен.схема}}",
+                    "localName": "{{домен.схема.префикс}}:год",
+                    "value":{"xquery": "normalize-space(tokenize(./text(), ',')[2])"},
+                    "validator": {"alias": "валидация-десятичного-числа"}
+                }
+              ]
+            }
+          ]
         }
       }
     }
+  }
 }
