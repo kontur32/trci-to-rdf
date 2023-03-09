@@ -1,5 +1,23 @@
 module namespace rdfGenTools = 'rdf/generetor/tools';
 
+
+declare function rdfGenTools:getValue($element as element()) as xs:string*
+{
+  if($element/text())
+  then($element/text())
+  else(
+    if($element/URL)
+    then(
+      fetch:text(
+        iri-to-uri(
+          $element/URL/text()
+        )
+      )
+    )
+    else()
+  )
+};
+
 declare function rdfGenTools:json-to-map($json as xs:string) as map(*)
 {
   map:merge(

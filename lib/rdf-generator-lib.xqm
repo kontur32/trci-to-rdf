@@ -3,6 +3,12 @@ module namespace rdfGenLib = 'rdf/generetor/lib';
 import module namespace rdfGenElements = 'rdf/generetor/elements'
   at 'rdf-generator-elements.xqm';
 
+import module namespace rdfSparql = 'rdf/generetor/sparql'
+  at 'rdf-generator-sparql.xqm';
+
+import module namespace rdfGenTools = 'rdf/generetor/tools'
+  at 'rdf-generator-tools.xqm';
+  
 (:~
  : Генерирует фильтр
  : @param $context контекст данных (данные и общие параметры схемы)
@@ -67,22 +73,37 @@ function rdfGenLib:propertyValue(
           switch ($schema/value/child::*/name())
           case 'xquery'
             return
-              $schema/value/xquery/text()
+              let $xq := $schema/value/xquery/text()
+              return
+                xquery:eval($xq, map{'':$context})
+          
           case 'sparql'
             return
-              $schema/value/sparql/text()
+              let $xq := rdfGenTools:getValue($schema/value/sparql)
+              return
+                rdfSparql:request($xq, $context)
               
           case 'parameter'
             return 
-              $context/parameters/child::*[name()=$schema/value/parameter/text()]/text()
+              let $xq :=
+                $context/parameters/child::*[name()=$schema/value/parameter/text()]/text()
+              return
+                xquery:eval($xq, map{'':$context})
+              
           case 'alias'
             return
-              $aliases/child::*[name()=$schema/value/alias/text()]/xquery/text()
+              let $xq := 
+                $aliases/child::*[name()=$schema/value/alias/text()]/xquery/text()
+              return
+                xquery:eval($xq, map{'':$context})
+              
           default
             return
-              $schema/value/xquery/text()
+              let $xq := $schema/value/xquery/text()
+              return
+                xquery:eval($xq, map{'':$context})
         return
-          xquery:eval($xquery, map{'':$context})
+         $xquery
       )
       else(
         if($schema/value/text())

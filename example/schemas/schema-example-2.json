@@ -11,7 +11,8 @@
         },
         "parameters":{
           "домен.сущности":"{{домен.сущности}}",
-          "домен.сущности.строки":"{{домен.сущности}}строки"
+          "домен.сущности.строки":"{{домен.сущности}}строки",
+          "RDF-endpoint": "http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp-artmotor1500/query"
         }
       },
       "table":{
@@ -41,9 +42,23 @@
         ],
         "row":{
           "type":"resource",
+          "context": [
+            {
+              "nameSpace":"",
+              "localName":"ФИО",
+              "value": {
+                "xquery": "./row/cell[@label='ФИО']/text()"
+              }
+            }
+          ],
+          "about2":{
+            "value":{
+              "sparql":"PREFIX свойство: <http://misis.roz37.ru/semantic/schema/> PREFIX класс: <http://misis.roz37.ru/semantic/онтология/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (?преподаватели AS ?result) WHERE { GRAPH ?g { ?graph rdf:type класс:РеестрППС. ?преподаватели rdf:type класс:Преподаватели; свойство:фамилия ?фамилия; свойство:имя ?имя; свойство:отчество ?отчество } FILTER (CONCAT(?фамилия, ' ', ?имя, ' ', ?отчество)='{{ФИО}}')}"
+            }
+          },
           "about":{
             "value":{
-              "xquery":"'{{домен.схема}}' || random:uuid()"
+              "sparql": {"URL":"{{семантический.контракт}}about-by-fio.rq"}
             }
           },
           "nameSpace":"{{домен.схема}}",

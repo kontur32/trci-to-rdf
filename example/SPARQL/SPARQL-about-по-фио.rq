@@ -1,0 +1,18 @@
+# находит в реестре URI преподавателя по заданным ФИО
+
+PREFIX свойство: <http://misis.roz37.ru/semantic/schema/>
+PREFIX класс: <http://misis.roz37.ru/semantic/онтология/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (?преподаватели AS ?result)
+WHERE {
+  GRAPH ?g
+  {
+    ?graph rdf:type класс:РеестрППС.
+    ?преподаватели rdf:type класс:Преподаватели;
+                   свойство:фамилия ?фамилия;
+                   свойство:имя ?имя;
+                   свойство:отчество ?отчество
+  }
+  FILTER (CONCAT(?фамилия, ' ', ?имя, ' ', ?отчество)='{{ФИО}}')
+}
