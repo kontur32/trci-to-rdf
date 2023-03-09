@@ -6,7 +6,22 @@ import module namespace rdfGenLib = 'rdf/generetor/lib'
 declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 (:~
- : Генерирует элемент rdfGen:Description
+ : Генерирует элемент rdf:resource
+ : @param $uri 
+ : @return аттрибут rdf:resource
+:)
+declare
+  %public
+function rdfGenElements:attributeResource(
+  $uri as xs:anyURI
+) as attribute(rdf:resource)
+{
+  attribute{"rdf:resource"}{$uri}
+};
+
+
+(:~
+ : Генерирует элемент rdf:about
  : @param $about контекст данных (данные и общие параметры схемы)
  : @param $elements элементы для добавления в контектс
  : @return возвращает контекст 
@@ -20,7 +35,9 @@ function rdfGenElements:buidElementAbout(
 {
   if($schema)
   then(
-    attribute{'rdf:about'}{rdfGenLib:propertyValue($context, $schema, $context/aliases)}
+    attribute{'rdf:about'}{
+      rdfGenLib:propertyValue($context, $schema, $context/aliases)
+    }
   )
   else()
 };

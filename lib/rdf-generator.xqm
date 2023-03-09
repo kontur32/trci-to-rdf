@@ -37,25 +37,20 @@ function rdfGen:cell(
     rdfGenLib:property($cell, $property, $context/aliases),
     
 (:-- properties --:)  
-  for $property in $schema/_[type="properties"]
-  
+  for $property in $schema/_[type="properties"]  
   let $filter := rdfGenLib:filter($context, $property)
-  where $filter
-  
+  where $filter  
   for $cell in $context/cell[$filter]
-  where $cell/text()
-  
+  where $cell/text()  
   let $cellProperties := 
     $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
   return
     $cellProperties,
   
   (:-- resource --:)  
-  for $property in $schema/_[type="resource"]
-  
+  for $property in $schema/_[type="resource"]  
   let $filter := rdfGenLib:filter($context, $property)
-  where $filter
-  
+  where $filter 
   for $cell in $context/cell[$filter]
   where $cell/text()
   
@@ -102,15 +97,24 @@ function rdfGen:row(
   $schema as element(row)
 ) as element()*
 {
+  
   let $body := rdfGen:cells($context, $schema/cell)
   let $properties := rdfGenLib:properties($context, $schema)
+  let $localProperties := rdfGenLib:context($context, $schema)
   return
     if($schema/type = "resource")
     then(
       let $rowRootPropery :=
         rdfGenLib:property(<data/>, $schema, $context/aliases)
+      
+      let $localContext :=
+        rdfGenLib:buildContext(
+          $context, <context>{$localProperties}</context>
+        )
+      
       let $rowDescription :=
-        rdfGenElements:description($context, $schema, ($properties, $body))
+        rdfGenElements:description($localContext, $schema, ($properties, $body))
+      
       return
         $rowRootPropery update insert node $rowDescription into .
     )

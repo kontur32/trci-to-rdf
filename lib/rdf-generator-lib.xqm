@@ -1,5 +1,8 @@
 module namespace rdfGenLib = 'rdf/generetor/lib';
 
+import module namespace rdfGenElements = 'rdf/generetor/elements'
+  at 'rdf-generator-elements.xqm';
+
 (:~
  : Генерирует фильтр
  : @param $context контекст данных (данные и общие параметры схемы)
@@ -65,6 +68,10 @@ function rdfGenLib:propertyValue(
           case 'xquery'
             return
               $schema/value/xquery/text()
+          case 'sparql'
+            return
+              $schema/value/sparql/text()
+              
           case 'parameter'
             return 
               $context/parameters/child::*[name()=$schema/value/parameter/text()]/text()
@@ -82,7 +89,7 @@ function rdfGenLib:propertyValue(
         then(
           if($schema/type/text()="resource" and not($schema/properties))
           then(
-            attribute{"resource"}{$schema/value/text()}
+            rdfGenElements:attributeResource($schema/value/text())
           )
           else(
             $schema/value/text()
@@ -123,12 +130,32 @@ function rdfGenLib:property(
 :)
 declare
   %public
+function rdfGenLib:context(
+  $context as element(),
+  $schema as element()
+) as element()*
+{
+  for $property in $schema/context/_
+  return
+    rdfGenLib:property($context, $property, $context/aliases)
+};
+
+(:~
+ : Генерирует триплеты для свойств
+ : @param $contex контекст данных (данные и общие параметры схемы)
+ : @param $schema схема элементов
+ : @param $aliases алиасы схемы
+:)
+declare
+  %public
 function rdfGenLib:properties(
   $context as element(),
   $schema as element()
 ) as element()*
 {
-  $schema/properties/_/rdfGenLib:property($context, ., $context/aliases)
+  for $property in $schema/properties/_
+  return
+    rdfGenLib:property($context, $property, $context/aliases)
 };
 
 (:~

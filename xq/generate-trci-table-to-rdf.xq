@@ -13,10 +13,10 @@ let $path := file:base-dir() || '..\example\'
 let $pathSchemas := $path || 'schemas\'
 let $pathTRCI := $path || 'TRCI\'
 
-let $file := fetch:xml($pathTRCI || "trci-example.xml")/file
+let $file := fetch:xml($pathTRCI || "список-ппс.xml")/file
 let $context := <data>{$file}</data>
 let $params :=rdfGenTools:json-to-map(fetch:text($path||'params-example.json'))
-let $schema := fetch:text($pathSchemas || "schema-example-2.json")
+let $schema := fetch:text($pathSchemas || "schema-список-ппс.json")
 let $descriptions := rdfGen:description($context, rdfGenTools:schema($schema, $params))
 return
    rdfGenElements:RDF($descriptions)
