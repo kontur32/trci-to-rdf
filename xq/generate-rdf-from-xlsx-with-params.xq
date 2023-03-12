@@ -10,11 +10,11 @@ import module namespace rdfGenTools = 'rdf/generetor/tools'
 import module namespace parse = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "../lib/xlsx/parseXLSX-to-TRCI.xqm";
 
-let $dataPath := file:base-dir() || '..\example\'
-let $f := file:read-binary($dataPath|| "..\example\xlsx\Predmeti.xlsx")
+let $dataPath := file:base-dir() || '..\example\реестр предметов\'
+let $f := file:read-binary($dataPath|| "xlsx\Predmeti.xlsx")
 let $trci := parse:xlsx($f, "")
 let $params :=
-  rdfGenTools:json-to-map(fetch:text($dataPath||'params-example.json')) 
+  rdfGenTools:json-to-map(fetch:text($dataPath||'params\params.json')) 
 
 return
   rdfGen:auto-trci-to-rdf($trci, $params)

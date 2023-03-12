@@ -8,8 +8,8 @@ import module namespace rdfGen = 'rdf/generetor'
 import module namespace parse = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "../lib/xlsx/parseXLSX-to-TRCI.xqm";
 
-let $dataPath := file:base-dir() || '..\example\'
-let $f := file:read-binary($dataPath|| "реестр предметов\xlsx\Predmeti.xlsx")
+let $f :=
+  file:read-binary(file:base-dir() || "..\example\реестр предметов\xlsx\Predmeti.xlsx")
 let $trci := parse:xlsx($f, "")
 
 return
