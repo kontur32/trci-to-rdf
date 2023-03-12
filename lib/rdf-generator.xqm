@@ -159,14 +159,19 @@ function rdfGen:table(
   $schema as element(table)
 ) as element()*
 {
-  let $rows := rdfGen:rows($context, $schema/row)
+  let $body := rdfGen:rows($context, $schema/row)
   let $properties := rdfGenLib:properties($context, $schema)
+  let $localProperties := rdfGenLib:context($context, $schema)
+  let $localContext :=
+        rdfGenLib:buildContext(
+          $context, <context>{$localProperties}</context>
+        )
   return
     if($schema/type = "resource")
     then(
-      rdfGenElements:description($context, $schema, ($properties, $rows))
+      rdfGenElements:description($localContext, $schema, ($properties, $body))
     )
-    else($rows)
+    else($body)
 };
 
 (:~
@@ -207,21 +212,73 @@ declare function rdfGen:description(
     $body
 };
 
-declare function rdfGen:trci-to-rdf(
-  $context as element(data),
-  $params
+(:~ 
+    преобразует trci в RDF-граф на основе автоматически сгенерированной схемы
+:)
+declare function rdfGen:auto-trci-to-rdf(
+  $file as element(file)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+  let $params :=
+    map{
+      "домен.онтология": "http://example.com/semantic/онтология/",
+      "домен.схема": "http://example.com/semantic/schema/",
+      "домен.сущности": "http://example.com/semantic/сущности/",
+      "домен.схема.префикс": "example",
+      "xmlns.rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "class.table": "Таблица",
+      "class.row": "Строка"
+    }
+  return
+    rdfGen:auto-trci-to-rdf($file, $params)
+};
+
+(:~ 
+    преобразует trci в RDF-граф на основе автоматически сгенерированной схемы
+:)
+declare function rdfGen:auto-trci-to-rdf(
+  $file as element(file),
+  $params as map(*)
 ) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
 {
   let $result := 
-    for $table in $context/file/table
+    for $table in $file/table
     let $schema :=
       rdfGenTools:schema(genSchema:Sample($table), $params)
     let $localContext :=
-      rdfGenLib:buidRootContext($context, $schema) 
+      rdfGenLib:buidRootContext(<data>{$file}</data>, $schema) 
     let $body :=
       rdfGen:tables($localContext, $schema/table)
     return
       $body
   return
     rdfGenElements:RDF($result)
+};
+
+
+(:~ 
+    преобразует trci в RDF-граф на основе схемы
+:)
+declare
+  %public
+function rdfGen:file-to-rdf(
+  $file as element(file),
+  $schemaFile as element(schema)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+ let $descriptions :=
+    for $i in $schemaFile/_
+    let $fetchTableParams :=
+      fetch:text(iri-to-uri($i/parameters/text()))
+    let $tableParams :=
+      rdfGenTools:json-to-map($fetchTableParams)
+    let $fetchTableSchema :=
+      fetch:text(iri-to-uri($i/URL/text()))
+    let $tableSchema :=
+      rdfGenTools:schema($fetchTableSchema, $tableParams)
+    let $context := <data>{$file}</data>
+    return
+      rdfGen:description($context, $tableSchema)  
+  return
+    rdfGenElements:RDF($descriptions)
 };

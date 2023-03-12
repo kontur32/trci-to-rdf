@@ -84,7 +84,7 @@ function genSchema:Sample($table as element(table)){
                 </value>
               </about>
               <nameSpace><![CDATA[{{домен.схема}}]]></nameSpace>
-              <localName><![CDATA[{{домен.схема.префикс}}:свойстваСтроки]]></localName>
+              <localName><![CDATA[{{домен.схема.префикс}}:строка]]></localName>
               <filter type="object">
                 <value type="object">
                   <xquery>.</xquery>

@@ -6,14 +6,15 @@ import module namespace rdfGen = 'rdf/generetor'
   at '../lib/rdf-generator.xqm';
 import module namespace rdfGenTools = 'rdf/generetor/tools'
   at '../lib/rdf-generator-tools.xqm';
-import module namespace genSchema = 'rdf/generetor/schema'
-  at '../lib/rdf-generator-schema.xqm';
-
+  
+import module namespace parse = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
+  at "../lib/xlsx/parseXLSX-to-TRCI.xqm";
 
 let $dataPath := file:base-dir() || '..\example\'
-let $context := <data>{fetch:xml($dataPath||"TRCI\trci-example.xml")/file}</data>
+let $f := file:read-binary($dataPath|| "..\example\xlsx\Predmeti.xlsx")
+let $trci := parse:xlsx($f, "")
 let $params :=
   rdfGenTools:json-to-map(fetch:text($dataPath||'params-example.json')) 
 
 return
-  rdfGen:trci-to-rdf($context, $params)
+  rdfGen:auto-trci-to-rdf($trci, $params)

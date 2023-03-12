@@ -1,0 +1,102 @@
+<file>
+  <table label="Анкетные данные">
+    <row>
+      <cell label="Характеристика">Значение</cell>
+      <cell label="ФИО">Садеков Ринат Наилевич</cell>
+      <cell label="Год рождения">1982</cell>
+      <cell label="Должность">профессор</cell>
+      <cell label="Кабинет">Б-903</cell>
+      <cell label="Рабочая эл. почта">r.sadekov@misis.ru</cell>
+      <cell label="Образование (вуз, специальность, год окончания)"/>
+      <cell label="Ученая степень, год присуждения">д.т.н., 2014</cell>
+      <cell label="Ученое звание, год присуждения">доцент, 2011</cell>
+      <cell label="Форма трудового договора (основное место работы/внешнее совместительство/внутреннее совместительство)">внешний совместитель</cell>
+      <cell label="ORCID">0000-0001-6286-358X</cell>
+      <cell label="РИНЦ ID (SPIN-код)">606270</cell>
+      <cell label="Общий стаж работы">24</cell>
+      <cell label="Стаж работы в НИТУ &quot;МИСиС&quot;">8</cell>
+      <cell label="Пед. стаж работы">24</cell>
+      <cell label="Количество научных трудов всего">более 100</cell>
+      <cell label="Количество учебно-методических трудов всего"/>
+      <cell label="h-индекс по Scopus/WoS (максимальный)">4</cell>
+      <cell label="Количество цитирований за последние 5 лет по Scopus/WoS">25</cell>
+      <cell label="Руководство аспирантами">2</cell>
+      <cell label="Выпуск докторантов">0</cell>
+    </row>
+  </table>
+  <table label="Интересы и достижения">
+    <row>
+      <cell label="Категория">Курсы, которые читает</cell>
+      <cell label="Год">2022</cell>
+      <cell label="Значение">Методы и средства обработки изображений, введние в нейронные сети, интеллектуальный анализ изображений, научное руководство дипломными работами в бакалавриате и магистратуре, руководство аспирантами, курирование работы аспирантов кафедры</cell>
+    </row>
+    <row>
+      <cell label="Категория">Научные интересы</cell>
+      <cell label="Год"/>
+      <cell label="Значение">Системы навигации и управления подвижными наземными объектами, интеллектуальный анализ изображений</cell>
+    </row>
+    <row>
+      <cell label="Категория">Награды</cell>
+      <cell label="Год">2019</cell>
+      <cell label="Значение">Благодарность Министра обороны (27 декабря 2019)</cell>
+    </row>
+    <row>
+      <cell label="Категория">Грант</cell>
+      <cell label="Год">2019</cell>
+      <cell label="Значение">Грант Президента РФ для государственной поддержки молодых российских ученых - докторов наук (МД-2102.2019.9)</cell>
+    </row>
+  </table>
+  <table label="Научные публикации">
+    <row>
+      <cell label="Индекс (Scopus/WoS/РИНЦ)">Scopus</cell>
+      <cell label="Квартиль (если известен)"/>
+      <cell label="Год публикации">2022</cell>
+      <cell label="Публикация (библиографическая запись)">Using 3D Object Detection DNN in an Autonomous Tram to Predict the Behaviour of Vehicles in the Road Scene</cell>
+      <cell label="Ссылка (если есть)"/>
+      <cell label="DOI">https://doi.org/10.23919/ICINS51784.2022.9815388</cell>
+    </row>
+    <row>
+      <cell label="Индекс (Scopus/WoS/РИНЦ)">Scopus</cell>
+      <cell label="Квартиль (если известен)">Q2</cell>
+      <cell label="Год публикации">2022</cell>
+      <cell label="Публикация (библиографическая запись)">A Review of Navigation Algorithms for Unmanned Aerial Vehicles Based on Computer Vision Systems</cell>
+      <cell label="Ссылка (если есть)"/>
+      <cell label="DOI"/>
+    </row>
+  </table>
+  <table label="Методическая работа">
+    <row>
+      <cell label="Категория">Онлайн курс</cell>
+      <cell label="Год">2023</cell>
+      <cell label="Название">Компьютерное зрение в интеллектуальных системах на транспорте</cell>
+    </row>
+  </table>
+  <table label="Профессиональная деятельность">
+    <row>
+      <cell label="Год начала">2018</cell>
+      <cell label="Год окончания">2020</cell>
+      <cell label="Должность">Начальник НИО</cell>
+      <cell label="Организация">Технополис ЭРА</cell>
+    </row>
+    <row>
+      <cell label="Год начала">2020</cell>
+      <cell label="Год окончания">2021</cell>
+      <cell label="Должность">технический директор </cell>
+      <cell label="Организация">ООО Смартвиз</cell>
+    </row>
+    <row>
+      <cell label="Год начала">2021</cell>
+      <cell label="Год окончания">н.в.</cell>
+      <cell label="Должность">главный инженер - разработчик</cell>
+      <cell label="Организация"/>
+    </row>
+  </table>
+  <table label="Повышение квалификации">
+    <row>
+      <cell label="Год">2022</cell>
+      <cell label="Программа">Компьютерное зрение</cell>
+      <cell label="Где проходил">ВШЭ</cell>
+      <cell label="Объем часов">36</cell>
+    </row>
+  </table>
+</file>

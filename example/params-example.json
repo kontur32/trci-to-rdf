@@ -1,11 +1,9 @@
 {
-	"домен.онтология": "http://misis.roz37.ru/semantic/онтология/",
-	"домен.схема": "http://misis.roz37.ru/semantic/schema/",
-	"домен.сущности": "http://misis.roz37.ru/semantic/сущности/",
-	"RDF-enpoint": "http://a.roz37.ru:3030/gs/query",
+	"домен.онтология": "http://example.com/semantic/онтология/",
+    "домен.схема": "http://example.com/semantic/schema/",
+    "домен.сущности": "http://example.com/semantic/сущности/",
+    "домен.схема.префикс": "example",
     "xmlns.rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "class.table": "Анкеты",
-    "class.row": "Преподаватели",
-    "домен.схема.префикс": "misis",
-    "семантический.контракт": "http://a.roz37.ru/lipers/семантический.контракт/мисис/анкета-преподавателя/анкетные-данные/"
+    "class.table": "Таблица",
+    "class.row": "Строка"
 }
