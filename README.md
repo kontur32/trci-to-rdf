@@ -11,13 +11,13 @@
 
 ## Примеры запуска
 
-- `lib/generate-schema.xq` получится такой [шаблон схемы](example/schemas/schema-example.json)
-- `lib/generate-rdf.xq` из [файла trci](example/TRCI/TRCI-example.xml) автоматически [RDF/XML](example/RDF/RDF-example.xml)
-- `lib/generate-trci-table-to-rdf.xq` на основе [готовой схемы](example/schemas/schema-example-2.json) для одной таблицы из такого [файла trci](example/TRCI/TRCI-example.xml) получится такой [RDF/XML](example/RDF/RDF-example-2.xml)
-- `lib/generate-trci-file-to-rdf.xq` на основе [готовой схемы](example/schemas/schema-file-example.json) для  файла из такого [файла trci](example/TRCI/TRCI-example.xml) получится такой [RDF/XML](example/RDF/RDF-example-3-file.xml)
+- `lib/generate-schema.xq` из файла `xlsx` автоматически генерирует [шаблон схемы](example/schemas/schema-example.json)
+- `lib/generate-rdf-from-xlsx.xq` из файла `xlsx` автоматически генерирует [RDF/XML](example/RDF/RDF-example.xml)
+- `lib/generate-rdf-from-xlsx-with-params.xq` из файла `xlsx`, применяя файл с параметрами ([params-example.json](example/params-example.json)), автоматически генерирует RDF/XML
+- `lib/generate-table-to-rdf.xq` на основе [готовой схемы таблицы](example/schemas/schema-example-2.json) из файла `xlsx` генерирует [RDF/XML](example/RDF/RDF-example-2.xml)
+- `lib/generate-trci-file-to-rdf.xq` на основе [готовой схемы файла](example/schemas/schema-file-example.json) из  файла из файла `xlsx` генерирует такой [RDF/XML](example/RDF/RDF-example-3-file.xml)
 
 ## Примеры работы со схемами
 
 1. [Реестр преметов (самый простой)](docs/Реестр-предметов.md)
 1. [Анкета преподавателя (чуть сложнее)](docs/Анкета-преподавателя.md)
-
