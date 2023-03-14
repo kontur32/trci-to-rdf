@@ -1,9 +1,0 @@
-{
-	"домен.онтология": "https://lipers24.ru/semantic/онтология/",
-    "домен.схема": "https://lipers24.ru/semantic/schema/",
-    "домен.сущности": "https://lipers24.ru/semantic/сущности/",
-    "домен.схема.префикс": "lipers",
-    "xmlns.rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "class.table": "Реестры",
-    "class.row": "Предмет"
-}
