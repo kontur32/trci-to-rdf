@@ -1,13 +1,13 @@
 module namespace rdfGenLib = 'rdf/generetor/lib';
 
 import module namespace rdfGenElements = 'rdf/generetor/elements'
-  at 'rdf-generator-elements.xqm';
+  at 'elements.xqm';
 
 import module namespace rdfSparql = 'rdf/generetor/sparql'
-  at 'rdf-generator-sparql.xqm';
+  at 'sparql.xqm';
 
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at 'rdf-generator-tools.xqm';
+  at 'tools.xqm';
   
 (:~
  : Генерирует фильтр

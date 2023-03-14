@@ -1,7 +1,7 @@
 module namespace rdfGenElements = 'rdf/generetor/elements';
 
 import module namespace rdfGenLib = 'rdf/generetor/lib'
-  at 'rdf-generator-lib.xqm';
+  at 'lib.xqm';
   
 declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 

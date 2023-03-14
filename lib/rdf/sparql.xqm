@@ -3,7 +3,7 @@ module namespace rdfSparql = 'rdf/generetor/sparql';
 declare namespace  sparql-results = "http://www.w3.org/2005/sparql-results#";
 
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at 'rdf-generator-tools.xqm';
+  at 'tools.xqm';
   
 (:~
  : Выполняет запрос к RDF-базе

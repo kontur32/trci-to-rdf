@@ -1,16 +1,16 @@
 module namespace rdfGen = 'rdf/generetor';
 
 import module namespace rdfGenElements = 'rdf/generetor/elements'
-  at 'rdf-generator-elements.xqm';
+  at 'elements.xqm';
 
 import module namespace rdfGenLib = 'rdf/generetor/lib'
-  at 'rdf-generator-lib.xqm';
+  at 'lib.xqm';
   
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at 'rdf-generator-tools.xqm';
+  at 'tools.xqm';
 
 import module namespace genSchema = 'rdf/generetor/schema'
-  at 'rdf-generator-schema.xqm';
+  at 'schema.xqm';
 
 (:~
  : Генерирует RDF ячейки 

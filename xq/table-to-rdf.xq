@@ -3,13 +3,13 @@
 :)
 
 import module namespace rdfGen = 'rdf/generetor'
-  at '../lib/rdf-generator.xqm';
+  at '../lib/rdf/main.xqm';
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at '../lib/rdf-generator-tools.xqm';
+  at '../lib/rdf/tools.xqm';
 import module namespace parse = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "../lib/xlsx/parseXLSX-to-TRCI.xqm";
 
-let $pathLocal := file:base-dir() || '..\example\реестр предметов\'
+let $pathLocal := file:base-dir() || '..\example\реестр-предметов\'
 let $filePath := $pathLocal|| "xlsx\Predmeti.xlsx"
 let $paramsPath := $pathLocal||'params\params.json'
 let $schemaPath := $pathLocal||"schemas\schema-2.json"

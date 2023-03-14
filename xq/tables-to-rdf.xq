@@ -3,11 +3,11 @@
 :)
 
 import module namespace rdfGen = 'rdf/generetor'
-  at '../lib/rdf-generator.xqm';
+  at '../lib/rdf/main.xqm';
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at '../lib/rdf-generator-tools.xqm';
+  at '../lib/rdf/tools.xqm';
 import module namespace rdfGenElements = 'rdf/generetor/elements'
-  at '../lib/rdf-generator-elements.xqm';
+  at '../lib/rdf/elements.xqm';
 
 let $baseURL := 
   "http://a.roz37.ru/lipers/семантический.контракт/мисис/анкета-преподавателя/"

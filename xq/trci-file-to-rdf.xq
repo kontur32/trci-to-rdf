@@ -5,9 +5,9 @@ import module namespace parse = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX"
   at "../lib/xlsx/parseXLSX-to-TRCI.xqm";
   
 import module namespace rdfGen = 'rdf/generetor'
-  at '../lib/rdf-generator.xqm';
+  at '../lib/rdf/main.xqm';
 import module namespace rdfGenTools = 'rdf/generetor/tools'
-  at '../lib/rdf-generator-tools.xqm';
+  at '../lib/rdf/tools.xqm';
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2' 
   at '../lib/client.fuseki2.xqm';
 
