@@ -1,0 +1,1815 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description>
+    <example:дата xmlns:example="http://example.com/semantic/schema/">2023-03-14T10:15:22.123+03:00</example:дата>
+    <example:label xmlns:example="http://example.com/semantic/schema/">Кодификатор предметов</example:label>
+    <rdf:type>http://example.com/semantic/онтология/Таблица</rdf:type>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/008b81df-6aec-41e7-8388-e95e6b7a8288">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (Игорь)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>р(И)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/4c0f0556-9916-4847-ba10-97744cc2079b">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>р(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/a65dac8c-8ae4-4ec5-a9c7-b0c9b0d3b548">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>р(Ар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/f1fd6b4b-be49-4894-8fc5-a8af9b9a7790">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>р</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1d2efd28-d9b6-4edf-b5d0-2fa8966c0ee2">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Родной язык (русский)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>рд</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1460f939-0d58-424f-b2e8-4024849f4765">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Литература</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>л</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/25c48d15-fa0b-4980-8beb-c864052e8173">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Родная литература (русская)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>лр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/3fbbcff4-f97c-44e3-91a8-cf597f7552cd">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Литературное чтение (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ч(Ар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/a61be1c1-76e9-4073-810d-28b9b90802f4">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Литературное чтение (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ч(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/b504cb7a-aef6-49fb-ba48-95e3971524c1">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Литературное чтение</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ч</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/bf3a5d58-aa1d-4f06-a514-7963839784a6">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Русский язык</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Литературное чтение на родном языке</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>чд</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/32d7d1f2-3046-4348-8664-ee7deb997ceb">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/d041595d-d6d9-498c-9aea-c68ef9e9b8cb">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Кирилл)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(К)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6cce3a53-07be-4651-8f85-757d1a7e9c92">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/b47f5292-915f-40f4-836c-c6dd28ba8831">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Игорь)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(И)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/48297158-4d9f-4cca-a42b-53bfeceb6ee8">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(Ар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/17d41975-793d-4d7e-b373-ee59877a9c45">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Арсений)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(А)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/3eb3b211-b346-4a95-ae24-875da55882f1">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-1>
+          <rdf:Description>
+            <example:label>Предметные области</example:label>
+            <example:значение>Математика</example:значение>
+          </rdf:Description>
+        </example:свойство-1>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (профиль)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(п)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/b46e3702-7cb8-4b1a-a381-fca56cd15dfd">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Алгебра</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>а</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/0da4b7f9-aad4-49c9-8b9b-4ce5200f58f4">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Геометрия</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>г</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/20a92411-382d-4648-8f0b-5f9973fef646">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Информатика</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>инф</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/252a5e85-3674-415b-bdb3-50fd467e65dd">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Информатика (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭИНФ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/18f8db72-7e88-494b-b18d-e30c0a0c00d9">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Иностранный язык (английский) (Лупанова Е.В.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>анг_Л</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5a00b4cf-9c78-4f81-98c1-8a7ae2a6383d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Иностранный язык (английский, Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>анг(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/ecfd55af-30a9-4994-aa4e-92a2238c7a19">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Иностранный язык (английский)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>анг</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/dde86f7d-8c28-48b4-8da3-3052095c0bf9">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Иностранный язык (английский, Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>анг(А)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/3116f16d-0d99-4a67-b9c1-a54393917d16">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Иностранный язык (немецкий)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>н</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/d8366c9a-aef5-4648-9985-236dce9f3dc0">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Французский язык (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>фр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5c1320a5-b703-4abb-9dcf-9f5ddfcc10ac">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>История</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ис</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/2f99364c-4a7f-4c4b-a3d7-dcf916ae8687">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Обществознание</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>о</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/4d3da708-317e-48ba-a6b7-d0bb585e00eb">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Окружающий мир (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>окр(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/b966a854-9583-47e0-bf49-174e4c62f933">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Окружающий мир (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>окр(Ар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/61988306-1903-49d9-af5b-30cbf092f4f7">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Окружающий мир</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>окр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/e3dcc699-f267-49f7-bc2e-ff3e11aab80d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>География</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>гео</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/7cb251fb-f78a-4a00-8fe2-9cb2270fd3e4">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ИЗО (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>изо(Арт)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/8706b3c3-3c4c-49c2-a45b-6097df9f8e6c">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ИЗО (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>изо(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/a797b050-8ce8-4a5f-b91b-3fd112172d75">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ИЗО</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>изо</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/991460fc-5bb3-4f35-9fcc-d354b11435d8">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Музыка (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>муз(А)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/45dd7891-5b07-4dc9-b019-c75fed8acb5d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Музыка (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>муз(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/83221ad5-5728-4422-bbac-cb77de3fb5fa">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Музыка</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>муз</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1d5da775-2eaf-442f-8f5e-7a5f7af81167">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Химия</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>х</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5f1170e9-3661-4021-be43-d23cf7e57e0a">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физика</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ф</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/59e182f5-1b3d-4e90-9c05-401232f8ff74">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Биология</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>б</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/4180bca3-2bdc-4cda-ab3f-ea48b3ad19bc">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Теннис</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>т</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/0f399cb8-1f3f-4c4f-b67d-255350ad13b9">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Бассейн</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>бас</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/97211ea5-fda4-4a70-aee8-33e5db795941">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ОБЖ</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>обж</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/d27a9780-7216-480c-acb9-ac8857702121">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Индивидуальный проект</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>инд</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/e7d70804-c49d-4c38-856f-c9ca39b0d139">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭР</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6d144bd7-03eb-4a42-8681-ec9dd4b7a5a2">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Английский язык (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭА</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6a456fdf-ef6b-4258-9bcc-199df63c8dca">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Обществознание (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭО</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/ed70f13e-5de9-42b1-ba50-23cca8f7bf72">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физика (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭФ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/58a18bb0-078e-45d5-8348-322dce9f55c9">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>История (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭИ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/eab52fb1-1556-4e78-ab40-b7cccc8770c3">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Информатика (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭИНФ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/89c39095-c706-4c60-9640-915d59cd0e91">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Химия (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭХ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/41a57259-4315-49f8-87de-165de76bd17f">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Биология (ОГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭБ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5d9b13d0-4694-4e93-b98a-dc7dd2c27a62">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭР</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5fe5e2ec-1af6-4b92-bde8-5b13fe687560">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Биология (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭБ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/acade680-7fd6-420d-a2ee-09876d8388c4">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Английский язык (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭА</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/7cdc2c8a-c895-483d-812a-82246eddd2a5">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Обществознание (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭО</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5463ea94-a138-4ca7-be25-57b64d44d604">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>История (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭИ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/d66c3966-6845-44e9-97f3-548be1fb1212">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Химия (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭХ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6e292ee2-28ad-40fb-9c65-6b4390625949">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физика (ЕГЭ)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ЕГЭФ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/95db78bd-64a0-4c9b-9bbc-9e413cba748e">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Математика (Ваня)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>м(В)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/fd294994-918c-42be-91fc-80e60876504f">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ОДНКР</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>од</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/df494667-ceb4-4875-aec2-93127e441e26">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ОРКСЭ</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>орксэ</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/16d33a36-eb81-46f4-ad9d-a9fa6e61b86d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Астрономия</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>астр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1d7e627e-1ae6-4acf-b151-c4a7d51b2732">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Самоподготовка</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>СП</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/53d89c03-541f-433b-bab9-52b08c104583">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>МХК</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>мхк</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/adceff73-7d55-4039-8286-e0c081e7020d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Технология</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>тех</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/41e3a302-2dd5-4284-b800-51f207a7c451">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Технология (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>тех(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/4690cbec-1e4c-4697-8e98-ec2fc624fd1c">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Технология (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>тех(А)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1ffa28bd-6a48-410e-bc58-6ebce93d60ca">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Психология</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>пси</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/2210dfc7-6d6f-4707-8d0b-ce0e5c9b14f9">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Вн.деят.</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>вн</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/70a72086-4154-4b21-9b60-445d336a1d4e">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Русский язык (Егор)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ер</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/9d68481e-5262-4b1c-8d83-341b7380865b">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Хореография (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>хор(Арт)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/07ab67e0-9a5d-4629-8f56-5b81249bd290">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Хореография (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>хор(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6232fa40-e5d0-4c01-949e-89b93ec9b16c">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Хореография</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>хор</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/185d71dc-8fbd-4fce-ba84-c0ee63382b5e">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Дин.час (Игорь)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>дин(И)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/5d307fe6-9414-487e-a2d9-4bc34e4d9380">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Дин.час (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>дин(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/37f23226-c614-462b-8245-d18edfd08d08">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Дин.час (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>дин(Арт)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/fe74c336-d151-4145-ad98-73383381368f">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Дин.час</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>дин</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/fb17fb78-a69a-41f5-a3fe-05e1a45df558">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Шахматы (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ш</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/30f734ed-8cd9-409d-9f51-b5e319611495">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Детали</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>д</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/6d34e662-2a74-4446-9af3-28d3f9642e7e">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Скорочтение (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>скор</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/c4f0b40f-a716-4b0c-a61f-bc02f7712d46">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Театральная студия (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>тр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/926f22a2-3c6e-4f50-b644-4c2b80b34a1d">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Вокал (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>вкл</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/f5587516-3956-4172-af77-c02ced8b7954">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физкультура (Макар)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>фзр(Макар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/7af45062-f237-4ab2-b86c-5d1054a3181a">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физкультура (Милана)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>фзр(М)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/8ac6368a-697b-456c-8c73-e8a86fad03ad">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физкультура (Артем)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>фзр(Ар)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/2f01d872-c0d9-4168-af53-90c594e27b17">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Физкультура</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>фзр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/dedc2457-08ba-4e9d-bdaa-873f42e05b98">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Экспедиция</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>эксп</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/7a0aebaa-180b-481c-8492-31c1dd3ed315">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>История (Лина)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ис(Л)</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/becb437c-c1f5-4530-ae94-e96bea2c3806">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Классный час</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>кч</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/1b2aff00-c2fa-4712-90e0-38f66cb87941">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Мнемотехника  (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>мн</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/14114b33-56ad-4ee3-b713-365093fda501">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Занимательная физика (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>зф</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/e128714f-d925-4184-95ac-8cc403eaeb65">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Занимательная грамматика (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>зз</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/16a55bd4-7264-44de-9b14-e4a75b3cade6">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>ОГЭ (География)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>ОГЭГЕО</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/a6735e26-a243-4f3e-b91f-5fcfc36a46b7">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Веселый карандаш (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>вск</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/e36858bf-952d-40d4-8101-294e16927565">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Развиваем память (вн.д.)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>пс</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+    <example:строка xmlns:example="http://example.com/semantic/schema/">
+      <rdf:Description rdf:about="http://example.com/semantic/schema/31642c53-eca0-4a9b-a168-359cc1c83484">
+        <rdf:type>http://example.com/semantic/онтология/Строка</rdf:type>
+        <example:свойство-2>
+          <rdf:Description>
+            <example:label>Учебные предметы</example:label>
+            <example:значение>Подвижные игры (спорт)</example:значение>
+          </rdf:Description>
+        </example:свойство-2>
+        <example:свойство-3>
+          <rdf:Description>
+            <example:label>Код предмета в УП</example:label>
+            <example:значение>игр</example:значение>
+          </rdf:Description>
+        </example:свойство-3>
+      </rdf:Description>
+    </example:строка>
+  </rdf:Description>
+</rdf:RDF>

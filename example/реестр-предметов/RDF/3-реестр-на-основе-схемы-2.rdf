@@ -1,0 +1,725 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description>
+    <lipers:дата xmlns:lipers="https://lipers24.ru/semantic/schema/">2023-03-14T11:02:51.01+03:00</lipers:дата>
+    <lipers:label xmlns:lipers="https://lipers24.ru/semantic/schema/">Кодификатор предметов</lipers:label>
+    <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Реестры"/>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#6ca006cb-3db3-499e-b890-0a226bd1c8be">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Русский язык (Игорь)</lipers:названиеПредмета>
+        <lipers:кодПредмета>р(И)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#a1d06ea1-1531-401a-a6b0-368a1e0359db">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Русский язык (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>р(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#adfef148-1f8e-4eb9-bd57-00fca4321708">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Русский язык (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>р(Ар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#3dccd74d-956a-4dc8-82ea-16d4a811c152">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Русский язык</lipers:названиеПредмета>
+        <lipers:кодПредмета>р</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4e88607d-b80a-479e-9a22-284d4ab2fe5d">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Родной язык (русский)</lipers:названиеПредмета>
+        <lipers:кодПредмета>рд</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#b8f4cd7f-5ef2-47c6-a00b-c7f59dcb5c93">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Литература</lipers:названиеПредмета>
+        <lipers:кодПредмета>л</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#ebea58af-64a6-43b4-a675-76c995a1c9d4">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Родная литература (русская)</lipers:названиеПредмета>
+        <lipers:кодПредмета>лр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#6ef271aa-09dd-4baf-9901-3c35431b9c57">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Литературное чтение (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ч(Ар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#459203ad-dfe9-4c3c-8cec-dc8a5724c1bc">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Литературное чтение (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ч(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4e74f02d-39d0-46c7-b3d8-6102b6f052f8">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Литературное чтение</lipers:названиеПредмета>
+        <lipers:кодПредмета>ч</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#a9602bbd-db47-491a-94c4-106a524131f4">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Русский язык</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Литературное чтение на родном языке</lipers:названиеПредмета>
+        <lipers:кодПредмета>чд</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#1f923896-fd66-4927-9346-1fd5c92eebdc">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика</lipers:названиеПредмета>
+        <lipers:кодПредмета>м</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#9d6da7a5-d4e0-4974-aab1-58a35a936601">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (Кирилл)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(К)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4ffff0c5-9403-4555-b12b-de8f644b0223">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#0358729d-6b57-496a-bcd2-f523c182adf8">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (Игорь)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(И)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#d8ba3214-6d88-4bbd-87ce-8a7341263a9b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(Ар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#f4be02a0-e7ec-4940-b786-a2b65b15cfa9">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (Арсений)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(А)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#d6a2316e-1b4c-4f7b-b48a-38e1135da6f3">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:предметнаяОбласть>Математика</lipers:предметнаяОбласть>
+        <lipers:названиеПредмета>Математика (профиль)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(п)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4dafb9e4-a891-4165-a109-63d2f8479f5d">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Алгебра</lipers:названиеПредмета>
+        <lipers:кодПредмета>а</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#881bdde1-c224-4e07-9491-272f5837fae1">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Геометрия</lipers:названиеПредмета>
+        <lipers:кодПредмета>г</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#426d9956-9e21-4feb-9b3c-09e8b41d06ce">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Информатика</lipers:названиеПредмета>
+        <lipers:кодПредмета>инф</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#8cfef1b1-b4ef-4af2-b50d-fa38ee817dea">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Информатика (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭИНФ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#915aa287-6d63-4a82-bd93-73d578f6e54d">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Иностранный язык (английский) (Лупанова Е.В.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>анг_Л</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#a6e01ed3-fda7-4e23-a6d0-d6bc59f6a51e">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Иностранный язык (английский, Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>анг(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#21df5339-d70a-4fd4-b356-b2f4f678b969">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Иностранный язык (английский)</lipers:названиеПредмета>
+        <lipers:кодПредмета>анг</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#2a4a2cbb-15ad-473f-8b31-d1d01aa248d2">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Иностранный язык (английский, Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>анг(А)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#38f73a79-3927-432d-b0e2-47bda605d343">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Иностранный язык (немецкий)</lipers:названиеПредмета>
+        <lipers:кодПредмета>н</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#7a71da43-024b-491c-bfc1-8ec3012086bb">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Французский язык (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>фр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#d8d6bf12-2b55-45f2-8e37-eb3f9c49f20b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>История</lipers:названиеПредмета>
+        <lipers:кодПредмета>ис</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#2195b2b7-51b3-40d4-bc0c-55495e99cbd1">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Обществознание</lipers:названиеПредмета>
+        <lipers:кодПредмета>о</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#ef20103d-1c0a-44ca-9401-d085d3e4e033">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Окружающий мир (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>окр(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#cb971418-6be3-4268-b549-7c2096cc2b90">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Окружающий мир (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>окр(Ар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#e882f41d-efcc-4f27-b5c3-73aad2d0b5e4">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Окружающий мир</lipers:названиеПредмета>
+        <lipers:кодПредмета>окр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#55668e44-6d31-46a5-90d5-2d83e75f466c">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>География</lipers:названиеПредмета>
+        <lipers:кодПредмета>гео</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#169c2fe3-adb8-4e85-a622-a828f7d0d040">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ИЗО (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>изо(Арт)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#e5bb4583-246c-4e18-a62b-54980ecb749b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ИЗО (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>изо(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#7b1aa1ef-7ce2-4956-8c32-1519a9bcb07f">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ИЗО</lipers:названиеПредмета>
+        <lipers:кодПредмета>изо</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#70943a16-4779-45d7-afcb-532e5bbfeef0">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Музыка (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>муз(А)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#bcc357c0-f87f-42ae-baad-df8661b33366">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Музыка (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>муз(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#0b699ea1-4093-4304-9d07-3dbd26be0b72">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Музыка</lipers:названиеПредмета>
+        <lipers:кодПредмета>муз</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#e1a716e0-b942-49ba-a02e-9dbe274fd49b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Химия</lipers:названиеПредмета>
+        <lipers:кодПредмета>х</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#433a056f-3d58-46f4-ae83-a1cb2d8c9985">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физика</lipers:названиеПредмета>
+        <lipers:кодПредмета>ф</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#474b8eed-4c83-427c-be0e-3f90166b39de">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Биология</lipers:названиеПредмета>
+        <lipers:кодПредмета>б</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#21325ed3-1f92-43eb-92f7-cf902636ebd1">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Теннис</lipers:названиеПредмета>
+        <lipers:кодПредмета>т</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#60bbf495-cf83-4b3e-8ab7-85babfc5c162">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Бассейн</lipers:названиеПредмета>
+        <lipers:кодПредмета>бас</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#dce94e18-670b-4809-a826-736d43f7783e">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ОБЖ</lipers:названиеПредмета>
+        <lipers:кодПредмета>обж</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#8a133cdc-ee99-41dd-8334-73e4abbc7ff6">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Индивидуальный проект</lipers:названиеПредмета>
+        <lipers:кодПредмета>инд</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#48a5e4d6-1847-4f78-8044-648b1f006873">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Русский язык (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭР</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#1045c97c-d27c-4753-a326-b3fa58282cf0">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Английский язык (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭА</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#353d5cab-b293-4dc7-b8cc-56cce16280b3">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Обществознание (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭО</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#cd3f902c-9143-45aa-82e5-96a5697dbefa">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физика (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭФ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#05bb6704-748a-4264-9488-406e82a367c1">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>История (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭИ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#c6c0a4e6-4ab9-4f27-8200-67de07d8f63b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Информатика (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭИНФ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#f10a019a-7f3a-458e-bac0-4eeb83481476">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Химия (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭХ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#202c38a7-9dad-4491-82ba-7ad89a0c7d30">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Биология (ОГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭБ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#b39df122-c058-4e4a-ad68-a83f7e680d4c">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Русский язык (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭР</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#19787e2c-0030-4780-a20c-5b9fad3367ed">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Биология (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭБ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#5bd3b1b0-2561-473a-8803-a6f693f90154">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Английский язык (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭА</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#e2d435f5-00a9-4d69-a7ec-67eef65a9152">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Обществознание (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭО</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#7871deac-a6d6-445e-912c-17bb8baac2b7">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>История (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭИ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#27031f78-c22a-4099-8ac9-a4ed02c0f8e8">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Химия (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭХ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#010f8eaa-c66f-4f13-82fa-516060ca858b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физика (ЕГЭ)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ЕГЭФ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#2d8a13d2-ca70-436e-8168-bda98244ba04">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Математика (Ваня)</lipers:названиеПредмета>
+        <lipers:кодПредмета>м(В)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4516577d-7d52-4a4f-bb5c-c9b703aac3f2">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ОДНКР</lipers:названиеПредмета>
+        <lipers:кодПредмета>од</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#1ee16d57-0501-4dcb-aac1-ae7b95b54f16">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ОРКСЭ</lipers:названиеПредмета>
+        <lipers:кодПредмета>орксэ</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#6aa8ed0b-63bb-437f-81bb-a0ea852c8e35">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Астрономия</lipers:названиеПредмета>
+        <lipers:кодПредмета>астр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#06ef3f72-faa7-4672-8e50-3589023820ae">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Самоподготовка</lipers:названиеПредмета>
+        <lipers:кодПредмета>СП</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#8933b420-ab37-4509-8cb7-616813914706">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>МХК</lipers:названиеПредмета>
+        <lipers:кодПредмета>мхк</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#aef818e3-ae97-494f-b0ba-1003b2a50564">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Технология</lipers:названиеПредмета>
+        <lipers:кодПредмета>тех</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#690f0fd3-bcd8-4ab1-987c-a6051b918fa4">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Технология (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>тех(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#24284591-5d6a-4909-8b46-fadade80388e">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Технология (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>тех(А)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#308d7e8d-dabd-4d5b-9392-fb2e16da8eb0">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Психология</lipers:названиеПредмета>
+        <lipers:кодПредмета>пси</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#a4a77b94-02f3-4d66-bdb5-e6c1acafa8d9">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Вн.деят.</lipers:названиеПредмета>
+        <lipers:кодПредмета>вн</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#30522cd8-b682-473f-bee1-202da02cc155">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Русский язык (Егор)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ер</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#48ffc529-4b07-4829-a90a-68a7bb73594d">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Хореография (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>хор(Арт)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#cbad80c2-0bcf-4ff5-bb3b-355df96f34e1">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Хореография (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>хор(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#985accb6-e094-42f1-8197-894a78a297b2">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Хореография</lipers:названиеПредмета>
+        <lipers:кодПредмета>хор</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#bf65443d-4ecb-4222-8b76-63d36abc300a">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Дин.час (Игорь)</lipers:названиеПредмета>
+        <lipers:кодПредмета>дин(И)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#3826f37d-9328-4524-abc0-9cac96e03715">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Дин.час (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>дин(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#85da14a5-4db0-4b93-87b6-9900cda43d6b">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Дин.час (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>дин(Арт)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#ccfa6bf4-8205-4838-a11d-e14d15e056da">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Дин.час</lipers:названиеПредмета>
+        <lipers:кодПредмета>дин</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#737fb117-4b62-498b-ac56-54f5958ebfce">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Шахматы (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ш</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#3153e5fa-a319-4806-8d55-896c509f0d77">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Детали</lipers:названиеПредмета>
+        <lipers:кодПредмета>д</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#73e1d6d5-f575-43f7-9c0a-db64b115fbc7">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Скорочтение (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>скор</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#f731fcfd-9332-4852-ab5a-31fa35aa5aa3">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Театральная студия (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>тр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#9f179785-dc03-416c-ad1c-14647d288773">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Вокал (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>вкл</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#026dd0cc-cd0a-4059-a2b8-9ce452aabd0d">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физкультура (Макар)</lipers:названиеПредмета>
+        <lipers:кодПредмета>фзр(Макар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4496bb8e-d08c-4c4b-8fe5-943943678cdf">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физкультура (Милана)</lipers:названиеПредмета>
+        <lipers:кодПредмета>фзр(М)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#4a1c3c53-f7ba-4bae-b605-ad832c4e6ca3">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физкультура (Артем)</lipers:названиеПредмета>
+        <lipers:кодПредмета>фзр(Ар)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#8ab95142-ef7c-432d-b735-b63a882522bc">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Физкультура</lipers:названиеПредмета>
+        <lipers:кодПредмета>фзр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#b2a1413c-aede-4460-8d42-337bf6e46a71">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Экспедиция</lipers:названиеПредмета>
+        <lipers:кодПредмета>эксп</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#609e6ac0-6ae3-4c77-99b3-aae8e711f0ab">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>История (Лина)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ис(Л)</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#e1814632-1014-4389-88d3-722c42277912">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Классный час</lipers:названиеПредмета>
+        <lipers:кодПредмета>кч</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#112c5167-95c0-4554-a945-cbd7a4b276ee">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Мнемотехника (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>мн</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#fa1779bd-655b-4279-8346-8d52a2d6b62f">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Занимательная физика (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>зф</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#6c00ebb5-32a5-4f31-86d9-3fba7c1a7fe4">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Занимательная грамматика (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>зз</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#1dec110d-fbba-45fd-a6f9-0535160d6ee0">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>ОГЭ (География)</lipers:названиеПредмета>
+        <lipers:кодПредмета>ОГЭГЕО</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#8084dc4a-0561-4678-b3bb-ce4851872966">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Веселый карандаш (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>вск</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#ea9f069d-57fc-4484-8a1f-76895e9c6809">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Развиваем память (вн.д.)</lipers:названиеПредмета>
+        <lipers:кодПредмета>пс</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+    <lipers:предмет xmlns:lipers="https://lipers24.ru/semantic/schema/">
+      <rdf:Description rdf:about="https://lipers24.ru/semantic/сущности/предметы#41ee168d-a22a-4234-a684-7629454b2142">
+        <rdf:type rdf:resource="https://lipers24.ru/semantic/онтология/Предмет"/>
+        <lipers:названиеПредмета>Подвижные игры (спорт)</lipers:названиеПредмета>
+        <lipers:кодПредмета>игр</lipers:кодПредмета>
+      </rdf:Description>
+    </lipers:предмет>
+  </rdf:Description>
+</rdf:RDF>
