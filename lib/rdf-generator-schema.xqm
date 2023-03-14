@@ -70,7 +70,7 @@ function genSchema:Sample($table as element(table)){
                 <value type="object"><xquery>./table/@label/data()</xquery></value>
               </_>
               <_ type="object">
-                <type>property</type>
+                <type>resource</type>
                 <nameSpace><![CDATA[{{xmlns.rdf}}]]></nameSpace>
                 <localName>rdf:type</localName>
                 <value><![CDATA[{{домен.онтология}}{{class.table}}]]></value>
@@ -92,7 +92,7 @@ function genSchema:Sample($table as element(table)){
               </filter>
               <properties type="array">
                 <_ type="object">
-                  <type>property</type>
+                  <type>resource</type>
                   <nameSpace><![CDATA[{{xmlns.rdf}}]]></nameSpace>
                   <localName>rdf:type</localName>
                   <value><![CDATA[{{домен.онтология}}{{class.row}}]]></value>
