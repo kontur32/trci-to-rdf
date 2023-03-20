@@ -1,0 +1,103 @@
+{
+  "schema":{
+    "context":{
+      "aliases":{
+        "парсер-нормализация-пробелов":{
+          "xquery":"normalize-space(.)"
+        }
+      },
+      "parameters":{
+        "RDF-endpoint": "{{root.RDF-endpoint}}"
+      }
+    },
+    "table":{
+      "type":"resource",
+      "filter": "^Интересы",
+      "context": [
+        {
+          "nameSpace":"",
+          "localName":"ФИО",
+          "value": {
+            "xquery": "./file/table[1]/row/cell[@label='ФИО']/text()"
+          }
+        }
+      ],
+      "about":{
+        "value":{
+          "sparql": {"URL":"{{root.семантический.контракт}}about-by-fio.rq"}
+        }
+      },
+      "row":{
+        "type":"resource",
+        "about":{
+          "value":{
+            "xquery":"'{{root.схема}}' || random:uuid()"
+          }
+        },
+        "nameSpace":"{{root.схема}}",
+        "localName":"{{root.префикс}}:разныеСведения",
+        "filter":{
+          "value":{
+            "xquery":"true()"
+          }
+        },
+        "properties":[
+          {
+            "nameSpace":"https://schema.org/",
+            "localName":"sch:DateTime",
+            "value":{
+              "xquery":"current-dateTime()"
+            }
+          },
+          {
+            "type": "resource",
+            "nameSpace":"{{root.xmlns.rdf}}",
+            "localName":"rdf:type",
+            "value": "{{root.схема}}{{root.онтология}}{{local.class.row}}"
+          }
+        ],
+        "cell":{
+          "properties":[
+            {
+              "filter": {
+                "value":{
+                  "xquery":"matches(./cell/@label/data(), '^Категория')"
+                }
+              },
+              "nameSpace":"{{root.схема}}",
+              "localName":"{{root.префикс}}:категорияРазныхСведений",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Год",
+              "nameSpace":"{{root.схема}}",
+              "localName":"{{root.префикс}}:год",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            },
+            {
+              "filter":"^Значение",
+              "nameSpace":"https://schema.org/",
+              "localName":"sch:description",
+              "value":{
+                "alias":"парсер-нормализация-пробелов"
+              },
+              "validator":{
+                "alias":"валидация-текста"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

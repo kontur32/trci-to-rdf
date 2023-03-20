@@ -1,0 +1,114 @@
+module namespace rdfFile = 'rdf/generetor/file';
+
+import module namespace rdfGen = 'rdf/generetor' 
+  at 'main.xqm';
+
+import module namespace rdfGenElements = 'rdf/generetor/elements'
+  at 'elements.xqm';
+
+import module namespace rdfGenLib = 'rdf/generetor/lib'
+  at 'lib.xqm';
+  
+import module namespace rdfGenTools = 'rdf/generetor/tools'
+  at 'tools.xqm';
+
+import module namespace genSchema = 'rdf/generetor/schema'
+  at 'schema.xqm';
+
+import module namespace trci = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
+  at "../xlsx/parseXLSX-to-TRCI.xqm";
+
+(:~ 
+    преобразует trci в RDF-граф на основе автоматически сгенерированной схемы
+:)
+declare function rdfFile:auto-trci-to-rdf(
+  $file as element(file)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+  let $params :=
+    map{
+      "домен.онтология": "http://example.com/semantic/онтология/",
+      "домен.схема": "http://example.com/semantic/schema/",
+      "домен.сущности": "http://example.com/semantic/сущности/",
+      "домен.схема.префикс": "example",
+      "xmlns.rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "class.table": "Таблица",
+      "class.row": "Строка"
+    }
+  return
+    rdfFile:auto-trci-to-rdf($file, $params)
+};
+
+(:~ 
+    преобразует trci в RDF-граф на основе автоматически сгенерированной схемы
+:)
+declare function rdfFile:auto-trci-to-rdf(
+  $file as element(file),
+  $params as map(*)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+  let $result := 
+    for $table in $file/table
+    let $schema :=
+      rdfGenTools:schema(genSchema:Sample($table), $params)
+    let $localContext :=
+      rdfGenLib:buidRootContext(<data>{$file}</data>, $schema) 
+    let $body :=
+      rdfGen:tables($localContext, $schema/table)
+    return
+      $body
+  return
+    rdfGenElements:RDF($result)
+};
+
+
+(:~ 
+    преобразует trci в RDF-граф на основе схемы
+:)
+declare
+  %public
+function rdfFile:trci-to-rdf(
+  $trci as element(file),
+  $schemaFile as element(schema),
+  $rootSettings as map(*)
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+ let $descriptions :=
+    for $i in $schemaFile/tables/_
+    let $fetchTableParams :=
+      rdfGenTools:fetch($i/settings/URL/text())
+    let $tableParams :=
+      rdfGenTools:json-to-map(json:parse($fetchTableParams)/json)
+    let $fetchTableSchema :=
+      rdfGenTools:fetch($i/schema/URL/text())
+    let $tableSchema :=
+      rdfGenTools:schema($fetchTableSchema, $tableParams, $rootSettings)
+    let $context := <data>{$trci}</data>
+    return
+      rdfGen:description($context, $tableSchema)  
+  return
+    rdfGenElements:RDF($descriptions)
+};
+
+(:~ 
+    преобразует xlsx в RDF-граф на основе схемы
+:)
+declare
+  %public
+function rdfFile:xlsx-to-rdf(
+  $rawFile as xs:base64Binary, 
+  $schema as xs:string,
+  $settings as xs:string
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
+{
+  let $rootSettings :=
+    rdfGenTools:json-to-map(json:parse($settings)/json)
+  let $schemaFile :=
+    rdfGenTools:schema($schema, $rootSettings)
+  let $listOftablesWithColumnDirection := 
+    string-join($schemaFile/tables/_[direction="column"]/label/text(), ";")
+  let $trci :=
+    trci:xlsx($rawFile, $listOftablesWithColumnDirection)
+  return
+    rdfFile:trci-to-rdf($trci, $schemaFile, $rootSettings)
+};

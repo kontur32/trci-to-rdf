@@ -1,0 +1,39 @@
+{
+	"schema": {
+		"label":"Анкета преподавателя",
+		"type":"xlsx",
+		"parameters":{
+			"RDF-endpoint": "{{root.RDF-endpoint}}"
+		},
+		"tables":[
+			{
+				"label":"Анкетные данные",
+				"direction":"column",
+				"schema" : {
+					"URL": "{{root.path}}анкетные-данные/schema.json"
+				},
+				"settings" : {
+					"URL": "{{root.path}}анкетные-данные/settings.json"
+				}
+			},
+			{
+				"label":"Интересы и достижения",
+				"schema" : {
+					"URL": "{{root.path}}интересы-и-достижения/schema.json"
+				},
+				"settings" : {
+					"URL": "{{root.path}}интересы-и-достижения/settings.json"
+				}
+			},
+			{
+				"label":"Научные публикации",
+				"schema" : {
+					"URL": "{{root.path}}научные-публикации/schema.json"
+				},
+				"settings" : {
+					"URL": "{{root.path}}научные-публикации/settings.json"
+				}
+			}
+		]
+	}
+}

@@ -27,17 +27,18 @@ declare namespace r = "http://schemas.openxmlformats.org/officeDocument/2006/rel
 declare 
   %public
 function xlsx:index-to-text( 
-    $data-sheet as document-node(), 
-    $strings-sheet as document-node() 
+    $dataSheet as document-node(), 
+    $stringsIndex as document-node() 
   ) as node()
 {
-  let $strings := $strings-sheet/sst/si
+  let $strings := $stringsIndex/sst/si
   let $new := 
-          copy $c := $data-sheet 
-          modify 
-                for $i in $c//c[ @t = 's' ]
-                return replace value of node $i/v with $strings[ number( $i/v/text() ) + 1 ]//t/text()
-          return $c
+    copy $c := $dataSheet 
+    modify 
+      for $i in $c//c[@t = 's']
+      return
+        replace value of node $i/v with $strings[number($i/v/text()) + 1]//t/text()
+    return $c
   return
     $new
 };
@@ -57,24 +58,23 @@ declare
   %public
 function xlsx:row-to-TRCI(
   $лист as document-node()
-) as element()
+) as element(Q{}table)
 {
   let $данныеЛиста := $лист/worksheet/sheetData
   let $заголовки := 
-      for $ячейка in $данныеЛиста/row[ 1 ]/c
+      for $ячейка in $данныеЛиста/row[1]/c
       where $ячейка/v/text()
       return 
         map{
           "метка" : $ячейка/v/text(),
-          "колонка" : replace( $ячейка/@r/data(), "\d", "" )
+          "колонка" : replace($ячейка/@r/data(), "\d", "")
         }
-
   let $номераСтрокСДанными := 
      for $строка in $данныеЛиста/row
      count $номерПоПорядку
      let $ячейки := 
        for $c in $строка/c
-       where replace( $c/@r/data(), "\d", "" ) = $заголовки?колонка
+       where replace($c/@r/data(), "\d", "") = $заголовки?колонка
        return
          $c/v/text()
      where $ячейки
@@ -82,21 +82,22 @@ function xlsx:row-to-TRCI(
        $номерПоПорядку
   
   return 
-    element { QName( '', 'table' ) }
+    element {QName('', 'table')}
       {
-        for $row in $данныеЛиста/row[ position() >= 2 and position() <= max( $номераСтрокСДанными ) ]
+        let $startPosition := 2
+        let $endPosition := max($номераСтрокСДанными)
+        for $row in $данныеЛиста/row
+        count $c
+        where $c >= $startPosition and $c <= $endPosition
         return
-          element { QName( '', 'row' ) }
+          element{QName('', 'row')}
             { 
               for $заголовок in $заголовки
               let $значениеЯчейки :=
-                $row/c[ replace( @r/data(), "\d", "" ) = $заголовок?колонка ]/v/text() 
+                $row/c[replace(@r/data(), "\d", "") = $заголовок?колонка]/v/text() 
               return 
-                  element { QName( '','cell' ) } 
-                    {
-                      attribute { 'label' } { $заголовок?метка }, 
-                      $значениеЯчейки
-                    }
+                element{QName('','cell')} 
+                  {attribute {'label'}{$заголовок?метка}, $значениеЯчейки}
             }
       }
 };
@@ -105,31 +106,30 @@ declare
   %public
 function xlsx:col-to-TRCI(
   $data-sheet as document-node()
-) as element ()
+) as element(Q{}table)
 {  
-  let $rows :=  $data-sheet//row[ c[ 1 ]/v[ normalize-space( text() ) ] ] (: непустые строки:)  
+  let $rows :=  $data-sheet//row[c[1]/v[normalize-space(text())]] (: непустые строки:)
   let $col-numbers := 
     max (
       for $i in $rows
       return count($i/c)
     )
-  
   return
-  element {QName ('', 'table')}
-  { 
-    for $i in 2 to $col-numbers
-    return
-      element {QName ('', 'row')}
-        {
-          for $r in $rows
-          return
-            element {QName('', 'cell')}
-            {
-              attribute {'label'} {$r/c[1]/v/text()},
-              $r/c[$i]/v/text()
-            }
-        }
-   }
+    element {QName ('', 'table')}
+    { 
+      for $i in 2 to $col-numbers
+      return
+        element {QName ('', 'row')}
+          {
+            for $r in $rows
+            return
+              element {QName('', 'cell')}
+              {
+                attribute {'label'} {$r/c[1]/v/text()},
+                $r/c[$i]/v/text()
+              }
+          }
+     }
 };
 
 (: трансформирует один лист $sheetPath книги в $file TRCI:)
@@ -139,42 +139,13 @@ function xlsx:binary-to-TRCI(
   $file as xs:base64Binary, 
   $sheetPath as xs:string,
   $IsColumnDirection as xs:boolean
-) as element()
+) as element(Q{}table)
 {
-  if($IsColumnDirection)
-  then(xlsx:binary-col-to-TRCI($file, $sheetPath))
-  else(xlsx:binary-row-to-TRCI($file, $sheetPath))
-};
-
-
-declare 
-  %public
-function xlsx:binary-row-to-TRCI(
-  $file as xs:base64Binary, 
-  $sheet-path as xs:string 
-) as element()
-{
-  let $sheet_data := parse-xml(
-              archive:extract-text($file, $sheet-path))
-   let $strings := parse-xml(
-                archive:extract-text($file, 'xl/sharedStrings.xml'))              
-   let $data := xlsx:index-to-text($sheet_data, $strings)             
-   return 
-    xlsx:row-to-TRCI( $data)
-};  
-
-declare 
-  %public
-function xlsx:binary-col-to-TRCI(
-  $file as xs:base64Binary, 
-  $sheet-path as xs:string 
-) as element()
-{
-  let $sheet_data := parse-xml(
-              archive:extract-text($file, $sheet-path))
-   let $strings := parse-xml(
-                archive:extract-text($file, 'xl/sharedStrings.xml'))              
-   let $data := xlsx:index-to-text($sheet_data, $strings)             
-   return 
-    xlsx:col-to-TRCI( $data)
+  let $sheet_data := parse-xml(archive:extract-text($file, $sheetPath))
+  let $strings := parse-xml(archive:extract-text($file, 'xl/sharedStrings.xml'))       
+  let $sheet := xlsx:index-to-text($sheet_data, $strings)             
+  return 
+    if($IsColumnDirection)
+    then(xlsx:col-to-TRCI($sheet))
+    else(xlsx:row-to-TRCI($sheet))
 };

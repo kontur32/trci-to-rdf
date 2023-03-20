@@ -15,7 +15,8 @@ declare
   %public
 function rdfSparql:request(
   $queryString as xs:string,
-  $context as element(data)
+  $context as element(data),
+  $endpoint as xs:anyURI
 ) as xs:string*
 {
   let $contextParams := 
@@ -27,7 +28,7 @@ function rdfSparql:request(
     json:parse(
       fetch:text(
         web:create-url(
-          $context/parameters/RDF-endpoint/text(),
+          $endpoint,
           map{
             "query": $query
           }

@@ -68,56 +68,58 @@ function rdfGenLib:propertyValue(
 {
   let $value :=
     if($schema/value/child::*)
+    then(
+      let $value := $schema/value
+      let $xquery :=
+        switch ($value/child::*/name())
+        case 'xquery'
+          return
+            let $xq := $value/xquery/text()
+            return
+              xquery:eval($xq, map{'':$context})
+        
+        case 'sparql'
+          return
+            let $xq := rdfGenTools:getValue($value/sparql)
+            let $endpoint as xs:anyURI :=
+              if($value/sparql/RDF-endpoint)
+              then($value/sparql/RDF-endpoint/xs:anyURI(text()))
+              else($context/parameters/RDF-endpoint/xs:anyURI(text()))
+            return
+              rdfSparql:request($xq, $context, $endpoint)
+        
+        case 'parameter'
+          return 
+            $context/parameters/child::*[name()=$value/parameter/text()]/text()
+            
+        case 'alias'
+          return
+            let $xq := 
+              $aliases/child::*[name()=$value/alias/text()]/xquery/text()
+            return
+              xquery:eval($xq, map{'':$context})
+            
+        default
+          return
+            let $xq := $value/xquery/text()
+            return
+              xquery:eval($xq, map{'':$context})
+      return
+       $xquery
+    )
+    else(
+      if($schema/value/text())
       then(
-        let $xquery :=
-          switch ($schema/value/child::*/name())
-          case 'xquery'
-            return
-              let $xq := $schema/value/xquery/text()
-              return
-                xquery:eval($xq, map{'':$context})
-          
-          case 'sparql'
-            return
-              let $xq := rdfGenTools:getValue($schema/value/sparql)
-              return
-                rdfSparql:request($xq, $context)
-              
-          case 'parameter'
-            return 
-              let $xq :=
-                $context/parameters/child::*[name()=$schema/value/parameter/text()]/text()
-              return
-                xquery:eval($xq, map{'':$context})
-              
-          case 'alias'
-            return
-              let $xq := 
-                $aliases/child::*[name()=$schema/value/alias/text()]/xquery/text()
-              return
-                xquery:eval($xq, map{'':$context})
-              
-          default
-            return
-              let $xq := $schema/value/xquery/text()
-              return
-                xquery:eval($xq, map{'':$context})
-        return
-         $xquery
-      )
-      else(
-        if($schema/value/text())
+        if($schema/type/text()="resource" and not($schema/properties))
         then(
-          if($schema/type/text()="resource" and not($schema/properties))
-          then(
-            rdfGenElements:attributeResource($schema/value/text())
-          )
-          else(
-            $schema/value/text()
-          )
+          rdfGenElements:attributeResource($schema/value/text())
         )
-        else($context/text())
+        else(
+          $schema/value/text()
+        )
       )
+      else($context/text())
+    )
    return
      $value
 };

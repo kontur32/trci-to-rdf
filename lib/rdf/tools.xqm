@@ -23,10 +23,10 @@ declare function rdfGenTools:getValue($element as element()) as xs:string*
 (:~ 
   преобразует json-строку в map()
  :)
-declare function rdfGenTools:json-to-map($json as xs:string) as map(*)
+declare function rdfGenTools:json-to-map($json as element()) as map(*)
 {
   map:merge(
-    json:parse($json)/json/child::*/map{./name():./text()}
+    $json/child::*/map{./name():./text()}
   )
 };
 
@@ -36,11 +36,27 @@ declare function rdfGenTools:json-to-map($json as xs:string) as map(*)
 declare
   %public
 function rdfGenTools:schema(
-  $json as xs:string,
-  $params as map(*)
+  $schema as xs:string,
+  $localParams as map(*)
 ) as element(schema)
 {
-  json:parse(rdfGenTools:replace($json, $params))/json/schema
+  rdfGenTools:schema($schema, $localParams, map{})
+};
+
+declare
+  %public
+function rdfGenTools:schema(
+  $schema as xs:string,
+  $localParams as map(*),
+  $rootParams as map(*)
+) as element(schema)
+{
+  json:parse(
+    rdfGenTools:replace(
+      rdfGenTools:replace($schema, $rootParams),
+      $localParams
+    )
+  )/json/schema
 };
 
 (:~ 
@@ -58,4 +74,17 @@ function rdfGenTools:replace(
     function($string, $d){replace($string, "\{\{" || $d?1 || "\}\}", $d?2)}
   return
     fold-left($mapToArrays, $string, $f)
+};
+
+(:~ 
+  получает ресурс 
+:)
+declare
+  %public
+function rdfGenTools:fetch(
+  $path as xs:string
+){
+  if(matches($path, '^http'))
+  then(fetch:text(iri-to-uri($path)))
+  else(fetch:text($path))
 };
