@@ -37,26 +37,18 @@ declare
   %public
 function rdfGenTools:schema(
   $schema as xs:string,
-  $localParams as map(*)
+  $settings as map(*)*
 ) as element(schema)
 {
-  rdfGenTools:schema($schema, $localParams, map{})
-};
-
-declare
-  %public
-function rdfGenTools:schema(
-  $schema as xs:string,
-  $localParams as map(*),
-  $rootParams as map(*)
-) as element(schema)
-{
-  json:parse(
-    rdfGenTools:replace(
-      rdfGenTools:replace($schema, $localParams),
-      $rootParams
+  let $str :=
+    fold-left(
+      $settings,
+      $schema,
+      function($string, $params){rdfGenTools:replace($string, $params)}
     )
-  )/json/schema
+  return
+    json:parse($str)/json/schema
+  
 };
 
 (:~ 

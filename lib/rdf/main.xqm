@@ -181,7 +181,8 @@ function rdfGen:tables(
   $schema as element(schema)
 ) as element()*
 {
-  let $localContext := rdfGenLib:buidRootContext(<data>{$trci}</data>, $schema)
+  let $localContext :=
+    rdfGenLib:buidRootContext(<data>{$trci}</data>, $schema)
   
   for $table in $localContext/file/table
   let $localTableContext := 
@@ -189,7 +190,9 @@ function rdfGen:tables(
       $localContext,
       (<currentNode>table</currentNode>, $table)
     )
-  let $filter := rdfGenLib:filter($localTableContext, $schema/table)
+  let $filter :=
+    rdfGenLib:filter($localTableContext, $schema/table)
+    
   where $filter 
   return
     rdfGen:table($localTableContext, $schema/table)

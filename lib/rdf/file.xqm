@@ -75,14 +75,14 @@ function rdfFile:trci-to-rdf(
 {
  let $tables :=
     for $i in $schemaFile/tables/_
-    let $fetchTableSettings :=
+    let $fetchLocalSettings :=
       rdfGenTools:fetch($i/settings/URL/text())
-    let $tableSettings :=
-      rdfGenTools:json-to-map(json:parse($fetchTableSettings)/json)
+    let $localSettings :=
+      rdfGenTools:json-to-map(json:parse($fetchLocalSettings)/json)
     let $fetchTableSchema :=
       rdfGenTools:fetch($i/schema/URL/text())
     let $tableSchema :=
-      rdfGenTools:schema($fetchTableSchema, $tableSettings, $rootSettings)
+      rdfGenTools:schema($fetchTableSchema, ($localSettings, $rootSettings))
     return
       rdfGen:tables($trci, $tableSchema)  
   return
