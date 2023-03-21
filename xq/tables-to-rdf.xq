@@ -46,6 +46,6 @@ let $context := <data>{fetch:xml($filePath)/file}</data>
 let $params := rdfGenTools:json-to-map(fetch:text($paramsPath))
 let $schema := fetch:text($schemaPath)
 
-let $descriptions := rdfGen:description($context, rdfGenTools:schema($schema, $params))
+let $descriptions := rdfGen:tables($context, rdfGenTools:schema($schema, $params))
 return
    rdfGenElements:RDF($descriptions)

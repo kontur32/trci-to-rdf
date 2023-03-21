@@ -27,7 +27,7 @@ let $schema :=
 
 (: генерирует содержание RDF-файла :)
 let $description :=
-  rdfGen:description(<data>{$file}</data>, $schema)
+  rdfGen:tables(<data>{$file}</data>, $schema)
 
 return
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">{

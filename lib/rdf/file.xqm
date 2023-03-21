@@ -73,21 +73,20 @@ function rdfFile:trci-to-rdf(
   $rootSettings as map(*)
 ) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
 {
- let $descriptions :=
+ let $tables :=
     for $i in $schemaFile/tables/_
-    let $fetchTableParams :=
+    let $fetchTableSettings :=
       rdfGenTools:fetch($i/settings/URL/text())
-    let $tableParams :=
-      rdfGenTools:json-to-map(json:parse($fetchTableParams)/json)
+    let $tableSettings :=
+      rdfGenTools:json-to-map(json:parse($fetchTableSettings)/json)
     let $fetchTableSchema :=
       rdfGenTools:fetch($i/schema/URL/text())
     let $tableSchema :=
-      rdfGenTools:schema($fetchTableSchema, $tableParams, $rootSettings)
-    let $context := <data>{$trci}</data>
+      rdfGenTools:schema($fetchTableSchema, $tableSettings, $rootSettings)
     return
-      rdfGen:description($context, $tableSchema)  
+      rdfGen:tables($trci, $tableSchema)  
   return
-    rdfGenElements:RDF($descriptions)
+    rdfGenElements:RDF($tables)
 };
 
 (:~ 

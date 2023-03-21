@@ -177,31 +177,20 @@ function rdfGen:table(
 declare
   %public
 function rdfGen:tables(
-  $context as element(data),
-  $schema as element(table)
-) as element()*
-{
-  for $table in $context/file/table
-  let $localContext := 
-    rdfGenLib:buildContext(
-      $context,
-      (<currentNode>table</currentNode>, $table)
-    )
-  let $filter := rdfGenLib:filter($localContext, $schema)
-  where $filter 
-  return
-    rdfGen:table($localContext, $schema)
-};
-
-declare function rdfGen:description(
-  $context as element(data),
+  $trci as element(file),
   $schema as element(schema)
 ) as element()*
 {
-  let $localContext :=
-    rdfGenLib:buidRootContext($context, $schema) 
-  let $body := 
-    rdfGen:tables($localContext, $schema/table)
+  let $localContext := rdfGenLib:buidRootContext(<data>{$trci}</data>, $schema)
+  
+  for $table in $localContext/file/table
+  let $localTableContext := 
+    rdfGenLib:buildContext(
+      $localContext,
+      (<currentNode>table</currentNode>, $table)
+    )
+  let $filter := rdfGenLib:filter($localTableContext, $schema/table)
+  where $filter 
   return
-    $body
+    rdfGen:table($localTableContext, $schema/table)
 };

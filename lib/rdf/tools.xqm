@@ -53,8 +53,8 @@ function rdfGenTools:schema(
 {
   json:parse(
     rdfGenTools:replace(
-      rdfGenTools:replace($schema, $rootParams),
-      $localParams
+      rdfGenTools:replace($schema, $localParams),
+      $rootParams
     )
   )/json/schema
 };

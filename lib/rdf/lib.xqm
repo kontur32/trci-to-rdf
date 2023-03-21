@@ -62,6 +62,28 @@ declare
   %public
 function rdfGenLib:propertyValue(
   $context as element(),
+  $schema as element()
+) as item()*
+{
+  rdfGenLib:propertyValue(
+    $context,
+    $schema,
+    <aliases>{$schema/context/aliases/child::*}</aliases>
+  )
+};
+
+
+(:~
+ : Генерирует значение элемента
+ : @param $data контекст данных (данные и общие параметры схемы)
+ : @param $schema схема содержит непосредственно значение или указание на обработчик
+ : @param $aliases набор елементов, содержащих инструкции и непосредственно значения -на них могут ссылаться элементы схемы
+ : @return возвращает значение 
+:)
+declare
+  %public
+function rdfGenLib:propertyValue(
+  $context as element(),
   $schema as element(),
   $aliases as element(aliases)
 ) as item()*
@@ -209,19 +231,28 @@ function rdfGenLib:parameters(
   $schema as element(schema)
 ) as element(parameters)
 {
-  let $aliases := <aliases>{$schema/context/aliases/child::*}</aliases>
-  return
-    <parameters>{
-      for $parameter in $schema/context/parameters/child::*
-      return
-        if($parameter/value/child::*)
-        then(
-          let $value := rdfGenLib:propertyValue($data, $parameter, $aliases)
-          return
-            $parameter update replace value of node . with $value
-        )
-        else($parameter)
-      }</parameters>
+  <parameters>{
+    for $parameter in $schema/context/parameters/child::*
+    return
+      if($parameter/value/child::*)
+      then(
+        let $value := rdfGenLib:propertyValue($data, $parameter)
+        return
+          $parameter update replace value of node . with $value
+      )
+      else($parameter)
+    }</parameters>
+};
+
+declare
+  %public
+function rdfGenLib:context2(
+  $data as element(data),
+  $schema as element(schema)
+) as element()*
+{
+    rdfGenLib:aliases($schema),
+    rdfGenLib:parameters($data, $schema)
 };
 
 (:~
