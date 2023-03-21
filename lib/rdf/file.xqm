@@ -52,7 +52,7 @@ declare function rdfFile:auto-trci-to-rdf(
     let $schema :=
       rdfGenTools:schema(genSchema:Sample($table), $params)
     let $localContext :=
-      rdfGenLib:buidRootContext(<data>{$file}</data>, $schema) 
+      rdfGenLib:rootContext(<data>{$file}</data>, $schema) 
     let $body :=
       rdfGen:tables($localContext, $schema/table)
     return

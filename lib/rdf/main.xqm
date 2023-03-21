@@ -72,7 +72,7 @@ function rdfGen:cells(
 ) as element()*
 {
   for $cell in $context/row/cell
-  let $localContext := rdfGenLib:buildContext($context, (<currentNode>cell</currentNode>, $cell))
+  let $localContext := rdfGenLib:addToContext($context, (<currentNode>cell</currentNode>, $cell))
   return
     rdfGen:cell($localContext, $schema/properties)
 };
@@ -94,7 +94,7 @@ function rdfGen:row(
   
   let $body := rdfGen:cells($context, $schema/cell)
   let $properties := rdfGenLib:properties($context, $schema)
-  let $localProperties := rdfGenLib:context($context, $schema)
+  let $localProperties := rdfGenLib:localContext($context, $schema)
   return
     if($schema/type = "resource")
     then(
@@ -102,7 +102,7 @@ function rdfGen:row(
         rdfGenLib:property(<data/>, $schema, $context/aliases)
       
       let $localContext :=
-        rdfGenLib:buildContext(
+        rdfGenLib:addToContext(
           $context, <context>{$localProperties}</context>
         )
       
@@ -130,7 +130,7 @@ function rdfGen:rows(
 {
   for $row in $context/table/row
   let $localContext :=
-    rdfGenLib:buildContext(
+    rdfGenLib:addToContext(
       $context, (<currentNode>row</currentNode>, $row)
     )
   let $filter := rdfGenLib:filter($localContext, $schema)
@@ -155,9 +155,9 @@ function rdfGen:table(
 {
   let $body := rdfGen:rows($context, $schema/row)
   let $properties := rdfGenLib:properties($context, $schema)
-  let $localProperties := rdfGenLib:context($context, $schema)
+  let $localProperties := rdfGenLib:localContext($context, $schema)
   let $localContext :=
-        rdfGenLib:buildContext(
+        rdfGenLib:addToContext(
           $context, <context>{$localProperties}</context>
         )
   return
@@ -182,11 +182,11 @@ function rdfGen:tables(
 ) as element()*
 {
   let $localContext :=
-    rdfGenLib:buidRootContext(<data>{$trci}</data>, $schema)
+    rdfGenLib:rootContext(<data>{$trci}</data>, $schema)
   
   for $table in $localContext/file/table
   let $localTableContext := 
-    rdfGenLib:buildContext(
+    rdfGenLib:addToContext(
       $localContext,
       (<currentNode>table</currentNode>, $table)
     )

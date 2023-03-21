@@ -175,7 +175,7 @@ function rdfGenLib:property(
 :)
 declare
   %public
-function rdfGenLib:context(
+function rdfGenLib:localContext(
   $context as element(),
   $schema as element()
 ) as element()*
@@ -246,7 +246,7 @@ function rdfGenLib:parameters(
 
 declare
   %public
-function rdfGenLib:context2(
+function rdfGenLib:context(
   $data as element(data),
   $schema as element(schema)
 ) as element()*
@@ -263,17 +263,15 @@ function rdfGenLib:context2(
 :)
 declare
   %public
-function rdfGenLib:buidRootContext(
+function rdfGenLib:rootContext(
   $context as element(data),
   $schema as element(schema)
 ) as element(data)
 {
-  let $aliases :=
-    rdfGenLib:aliases($schema)
-  let $parameters :=
-    rdfGenLib:parameters($context, $schema)
+  let $aliases := rdfGenLib:aliases($schema)
+  let $parameters := rdfGenLib:parameters($context, $schema)
   return
-    rdfGenLib:buildContext($context, ($aliases, $parameters))
+    rdfGenLib:addToContext($context, ($aliases, $parameters))
 };
 
 
@@ -285,13 +283,18 @@ function rdfGenLib:buidRootContext(
 :)
 declare
   %public
-function rdfGenLib:buildContext(
+function rdfGenLib:addToContext(
   $context as element(data),
   $elements as element()*
 ) as element(data)
 {
   let $f :=
-    function($c as element(data), $v as element()){$c update insert node $v into .}
+    function(
+      $c as element(data),
+      $v as element()
+    )as element(data)
+    {$c update insert node $v into .}
+  
   return
     fold-left($elements, $context, $f)
 };
