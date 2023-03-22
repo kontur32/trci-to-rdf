@@ -19,47 +19,40 @@ declare
   %private
 function rdfGen:cell(
   $context as element(data),
-  $schema as element(properties)
+  $schema as element(cell)
 ) as element()*
 {
-  for $property in $schema/_[type="property" or empty(type)]
-  
+  for $property in $schema/_
   let $filter := rdfGenLib:filter($context, $property)
   where $filter 
-  
-  let $cell :=  $context/cell[$filter]
+  let $cell :=  $context/cell
   where $cell/text()
   
   return
-    rdfGenLib:property($cell, $property, $context/aliases),
-    
-(:-- properties --:)  
-  for $property in $schema/_[type="properties"]  
-  let $filter := rdfGenLib:filter($context, $property)
-  where $filter  
-  for $cell in $context/cell[$filter]
-  where $cell/text()  
-  let $cellProperties := 
-    $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
-  return
-    $cellProperties,
-  
-  (:-- resource --:)  
-  for $property in $schema/_[type="resource"]  
-  let $filter := rdfGenLib:filter($context, $property)
-  where $filter 
-  for $cell in $context/cell[$filter]
-  where $cell/text()
-  
-  let $cellRootProperty :=
-    $property/rdfGenLib:property(<data/>, ., $context/aliases)
-  let $cellProperties := 
-    $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
-  let $cellDescription :=
-    rdfGenElements:description($context, $schema, $cellProperties)
-  return
-    $cellRootProperty update insert node $cellDescription into .
+    switch($property/type/text())
+    case("property")
+      return
+        rdfGenLib:property($cell, $property, $context/aliases)
+    case("properties")
+      return
+        let $cellProperties := 
+          $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
+        return
+          $cellProperties
+    case("resource")
+      return
+        let $cellRootProperty :=
+          $property/rdfGenLib:property(<data/>, ., $context/aliases)
+        let $cellProperties := 
+          $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
+        let $cellDescription :=
+          rdfGenElements:description($context, $schema, $cellProperties)
+        return
+          $cellRootProperty update insert node $cellDescription into .
+    default return
+      rdfGenLib:property($cell, $property, $context/aliases)
 };
+
 
 (:~
  : Генерирует RDF ячеек строки таблицы 
@@ -75,9 +68,13 @@ function rdfGen:cells(
 ) as element()*
 {
   for $cell in $context/row/cell
-  let $localContext := rdfGenContext:addToContext($context, (<currentNode>cell</currentNode>, $cell))
+  let $localContext :=
+    rdfGenContext:addToContext(
+      $context,
+      (<currentNode>{$schema/name()}</currentNode>, $cell)
+    )
   return
-    rdfGen:cell($localContext, $schema/properties)
+    rdfGen:cell($localContext, $schema)
 };
 
 
