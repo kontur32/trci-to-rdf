@@ -15,6 +15,9 @@ import module namespace rdfGenTools = 'rdf/generetor/tools'
 import module namespace genSchema = 'rdf/generetor/schema'
   at 'schema.xqm';
 
+import module namespace rdfGenContext = 'rdf/generetor/lib/context'
+  at 'context.xqm';
+
 import module namespace trci = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "../xlsx/parseXLSX-to-TRCI.xqm";
 
@@ -52,7 +55,7 @@ declare function rdfFile:auto-trci-to-rdf(
     let $schema :=
       rdfGenTools:schema(genSchema:Sample($table), $params)
     let $localContext :=
-      rdfGenLib:rootContext(<data>{$file}</data>, $schema) 
+      rdfGenContext:rootContext(<data>{$file}</data>, $schema) 
     let $body :=
       rdfGen:tables($localContext, $schema/table)
     return
