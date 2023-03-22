@@ -36,7 +36,7 @@ function rdfGenElements:buidElementAbout(
   if($schema)
   then(
     attribute{'rdf:about'}{
-      rdfGenLib:propertyValue($context, $schema, $context/aliases)
+      rdfGenLib:propertyValue($context, $schema)
     }
   )
   else()

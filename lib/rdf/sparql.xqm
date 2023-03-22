@@ -21,7 +21,7 @@ function rdfSparql:request(
 {
   let $contextParams := 
     map:merge(
-      $context/context/child::*/map:entry(./name(), ./text())
+      $context/parameters/child::*/map:entry(./name(), ./text())
     )
   let $query := rdfGenTools:replace($queryString, $contextParams)
   let $request as element(_):= 

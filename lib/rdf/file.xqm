@@ -5,9 +5,6 @@ import module namespace rdfGen = 'rdf/generetor'
 
 import module namespace rdfGenElements = 'rdf/generetor/elements'
   at 'elements.xqm';
-
-import module namespace rdfGenLib = 'rdf/generetor/lib'
-  at 'lib.xqm';
   
 import module namespace rdfGenTools = 'rdf/generetor/tools'
   at 'tools.xqm';
@@ -52,12 +49,9 @@ declare function rdfFile:auto-trci-to-rdf(
 {
   let $result := 
     for $table in $file/table
-    let $schema :=
-      rdfGenTools:schema(genSchema:Sample($table), $params)
-    let $localContext :=
-      rdfGenContext:rootContext(<data>{$file}</data>, $schema) 
-    let $body :=
-      rdfGen:tables($localContext, $schema/table)
+    let $schema := rdfGenTools:schema(genSchema:Sample($table), $params) 
+    let $localContext := rdfGenContext:context(<data>{$file}</data>, $schema)
+    let $body := rdfGen:tables($localContext, $schema/table)
     return
       $body
   return
@@ -72,12 +66,12 @@ declare
   %public
 function rdfFile:trci-to-rdf(
   $trci as element(file),
-  $schemaFile as element(schema),
+  $rootSchema as element(schema),
   $rootSettings as map(*)
 ) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)
 {
  let $tables :=
-    for $i in $schemaFile/tables/_
+    for $i in $rootSchema/tables/_
     let $fetchLocalSettings :=
       rdfGenTools:fetch($i/settings/URL/text())
     let $localSettings :=
@@ -86,8 +80,10 @@ function rdfFile:trci-to-rdf(
       rdfGenTools:fetch($i/schema/URL/text())
     let $tableSchema :=
       rdfGenTools:schema($fetchTableSchema, ($localSettings, $rootSettings))
+    let $contex := 
+      <data>{$trci}</data>
     return
-      rdfGen:tables($trci, $tableSchema)  
+      rdfGen:tables($contex, $tableSchema)  
   return
     rdfGenElements:RDF($tables)
 };

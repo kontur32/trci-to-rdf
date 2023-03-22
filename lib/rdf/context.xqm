@@ -2,25 +2,6 @@ module namespace rdfGenContext = 'rdf/generetor/lib/context';
 
 import module namespace rdfGenLib = 'rdf/generetor/lib'
   at 'lib.xqm';
-  
-  
-(:~
- : Генерирует триплеты для свойств
- : @param $contex контекст данных (данные и общие параметры схемы)
- : @param $schema схема элементов
- : @param $aliases алиасы схемы
-:)
-declare
-  %public
-function rdfGenContext:localContext(
-  $context as element(),
-  $schema as element()
-) as element()*
-{
-  for $property in $schema/context/_
-  return
-    rdfGenLib:property($context, $property, $context/aliases)
-};
 
 (:~
  : Формирует набор алиасов из схемы
@@ -68,31 +49,14 @@ declare
 function rdfGenContext:context(
   $data as element(data),
   $schema as element(schema)
-) as element()*
-{
-    rdfGenContext:aliases($schema),
-    rdfGenContext:parameters($data, $schema)
-};
-
-(:~
- : Формирует (расширяет) контекст 
- : @param $data контекст данных (данные и общие параметры схемы)
- : @param $elements элементы для добавления в контектс
- : @return возвращает контекст 
-:)
-declare
-  %public
-function rdfGenContext:rootContext(
-  $context as element(data),
-  $schema as element(schema)
 ) as element(data)
 {
-  let $aliases := rdfGenContext:aliases($schema)
-  let $parameters := rdfGenContext:parameters($context, $schema)
-  return
-    rdfGenContext:addToContext($context, ($aliases, $parameters))
+  $data update insert node
+  (
+    rdfGenContext:aliases($schema),
+    rdfGenContext:parameters($data, $schema)
+  ) into .
 };
-
 
 (:~
  : Формирует (расширяет) контекст 

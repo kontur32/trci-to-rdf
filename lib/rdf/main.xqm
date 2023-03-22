@@ -94,24 +94,15 @@ function rdfGen:row(
   $schema as element(row)
 ) as element()*
 {
-  
   let $body := rdfGen:cells($context, $schema/cell)
-  let $properties := rdfGenLib:properties($context, $schema)
-  let $localProperties := rdfGenContext:localContext($context, $schema)
   return
     if($schema/type = "resource")
     then(
+      let $properties := rdfGenLib:properties($context, $schema)
       let $rowRootPropery :=
         rdfGenLib:property(<data/>, $schema, $context/aliases)
-      
-      let $localContext :=
-        rdfGenContext:addToContext(
-          $context, <context>{$localProperties}</context>
-        )
-      
       let $rowDescription :=
-        rdfGenElements:description($localContext, $schema, ($properties, $body))
-      
+        rdfGenElements:description($context, $schema, ($properties, $body))
       return
         $rowRootPropery update insert node $rowDescription into .
     )
@@ -157,16 +148,11 @@ function rdfGen:table(
 ) as element()*
 {
   let $body := rdfGen:rows($context, $schema/row)
-  let $properties := rdfGenLib:properties($context, $schema)
-  let $localProperties := rdfGenContext:localContext($context, $schema)
-  let $localContext :=
-      rdfGenContext:addToContext(
-        $context, <context>{$localProperties}</context>
-      )
+  let $properties := rdfGenLib:properties($context, $schema) 
   return
     if($schema/type = "resource")
     then(
-      rdfGenElements:description($localContext, $schema, ($properties, $body))
+      rdfGenElements:description($context, $schema, ($properties, $body))
     )
     else($body)
 };
@@ -180,22 +166,18 @@ function rdfGen:table(
 declare
   %public
 function rdfGen:tables(
-  $trci as element(file),
+  $context as element(data),
   $schema as element(schema)
 ) as element()*
 {
-  let $localContext :=
-    rdfGenContext:rootContext(<data>{$trci}</data>, $schema)
-  
+  let $localContext := rdfGenContext:context($context, $schema)  
   for $table in $localContext/file/table
   let $localTableContext := 
     rdfGenContext:addToContext(
       $localContext,
       (<currentNode>table</currentNode>, $table)
     )
-  let $filter :=
-    rdfGenLib:filter($localTableContext, $schema/table)
-    
+  let $filter := rdfGenLib:filter($localTableContext, $schema/table)    
   where $filter 
   return
     rdfGen:table($localTableContext, $schema/table)
