@@ -1,24 +1,8 @@
 module namespace rdfGenElements = 'rdf/generetor/elements';
 
-import module namespace rdfGenLib = 'rdf/generetor/lib'
-  at 'lib.xqm';
+import module namespace rdfGenLib = 'rdf/generetor/lib' at 'lib.xqm';
   
 declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
-
-(:~
- : Генерирует элемент rdf:resource
- : @param $uri 
- : @return аттрибут rdf:resource
-:)
-declare
-  %public
-function rdfGenElements:attributeResource(
-  $uri as xs:anyURI
-) as attribute(rdf:resource)
-{
-  attribute{"rdf:resource"}{$uri}
-};
-
 
 (:~
  : Генерирует элемент rdf:about
@@ -60,17 +44,4 @@ function rdfGenElements:description(
     rdfGenElements:buidElementAbout($context, $schema/about)
   return
     element{'rdf:Description'}{if($about)then($about)else(), $body}
-};
-
-(:~
- : Генерирует элемент rdf:RDF
- : @param $body тело элемента
-:)
-declare
-  %public
-function rdfGenElements:RDF(
-  $body as element()*
-) as element(rdf:RDF)
-{
-  <rdf:RDF>{$body}</rdf:RDF>
 };

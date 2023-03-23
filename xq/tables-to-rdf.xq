@@ -48,4 +48,4 @@ let $schema := fetch:text($schemaPath)
 
 let $descriptions := rdfGen:tables($context, rdfGenTools:schema($schema, $params))
 return
-   rdfGenElements:RDF($descriptions)
+   element{QName('http://www.w3.org/1999/02/22-rdf-syntax-ns#','RDF')}{$descriptions}

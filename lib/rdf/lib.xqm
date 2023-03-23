@@ -20,7 +20,8 @@ declare
   %public
 function rdfGenLib:filter(
   $context as element(data),
-  $schema as element()
+  $schema as element(),
+  $nodeName as xs:string
 ) as xs:boolean
 {
   if($schema/filter/child::*)
@@ -33,12 +34,11 @@ function rdfGenLib:filter(
   else(
     if($schema/filter/text())
     then(
-      let $currentNodeName := $context/currentNode[last()]/text()
       let $filter := 
         <filter>
           <value>
             <xquery>{
-             "matches(./" || $currentNodeName || "/@label/data(), '" || $schema/filter/text() || "')"
+             "matches(./" || $nodeName || "/@label/data(), '" || $schema/filter/text() || "')"
             }</xquery>
           </value>
         </filter>
@@ -130,16 +130,8 @@ function rdfGenLib:propertyValue(
        $xquery
     )
     else(
-      if($schema/value/text())
-      then(
-        if($schema/type/text()="resource" and not($schema/properties))
-        then(
-          rdfGenElements:attributeResource($schema/value/text())
-        )
-        else(
-          $schema/value/text()
-        )
-      )
+      if($schema/value)
+      then($schema/value/text())
       else($context/text())
     )
    return

@@ -23,11 +23,10 @@ function rdfGen:cell(
 ) as element()*
 {
   for $property in $schema/_
-  let $filter := rdfGenLib:filter($context, $property)
-  where $filter 
   let $cell :=  $context/cell
-  where $cell/text()
-  
+  let $filter := rdfGenLib:filter($context, $property, $schema/name())
+  where $filter and $context/cell/text()
+
   return
     switch($property/type/text())
     case("property")
@@ -36,17 +35,17 @@ function rdfGen:cell(
     case("properties")
       return
         let $cellProperties := 
-          $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
+          $property/properties/_/rdfGenLib:property($context, ., $context/aliases)
         return
           $cellProperties
     case("resource")
       return
         let $cellRootProperty :=
-          $property/rdfGenLib:property(<data/>, ., $context/aliases)
+          $property/rdfGenLib:property($cell, ., $context/aliases)
         let $cellProperties := 
           $property/properties/_/rdfGenLib:property($cell, ., $context/aliases)
         let $cellDescription :=
-          rdfGenElements:description($context, $schema, $cellProperties)
+          rdfGenElements:description($context, $property, $cellProperties)
         return
           $cellRootProperty update insert node $cellDescription into .
     default return
@@ -68,11 +67,7 @@ function rdfGen:cells(
 ) as element()*
 {
   for $cell in $context/row/cell
-  let $localContext :=
-    rdfGenContext:addToContext(
-      $context,
-      (<currentNode>{$schema/name()}</currentNode>, $cell)
-    )
+  let $localContext := rdfGenContext:addToContext($context, $cell)
   return
     rdfGen:cell($localContext, $schema)
 };
@@ -120,11 +115,8 @@ function rdfGen:rows(
 ) as element()*
 {
   for $row in $context/table/row
-  let $localContext :=
-    rdfGenContext:addToContext(
-      $context, (<currentNode>row</currentNode>, $row)
-    )
-  let $filter := rdfGenLib:filter($localContext, $schema)
+  let $localContext := rdfGenContext:addToContext($context, $row)
+  let $filter := rdfGenLib:filter($localContext, $schema, $schema/name())
   where $filter 
   return
     rdfGen:row($localContext, $schema)
@@ -164,18 +156,13 @@ declare
   %public
 function rdfGen:tables(
   $context as element(data),
-  $schema as element(schema)
+  $schema as element()
 ) as element()*
 {
-  let $localContext := rdfGenContext:context($context, $schema)  
-  for $table in $localContext/file/table
-  let $localTableContext := 
-    rdfGenContext:addToContext(
-      $localContext,
-      (<currentNode>table</currentNode>, $table)
-    )
-  let $filter := rdfGenLib:filter($localTableContext, $schema/table)    
+  for $node in $context/file/table
+  let $localContext := rdfGenContext:addToContext($context, $node)
+  let $filter := rdfGenLib:filter($localContext, $schema, $schema/name())    
   where $filter 
   return
-    rdfGen:table($localTableContext, $schema/table)
+    rdfGen:table($localContext, $schema)
 };

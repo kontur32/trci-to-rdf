@@ -11,7 +11,7 @@ import module namespace rdfGenLib = 'rdf/generetor/lib'
 declare
   %public
 function rdfGenContext:aliases(
-  $schema as element(schema)
+  $schema as element()
 ) as element(aliases)
 {
   <aliases>{$schema/context/aliases/child::*}</aliases>
@@ -28,7 +28,7 @@ declare
   %public
 function rdfGenContext:parameters(
   $data as element(data),
-  $schema as element(schema)
+  $schema as element()
 ) as element(parameters)
 {
   <parameters>{
@@ -48,7 +48,7 @@ declare
   %public
 function rdfGenContext:context(
   $data as element(data),
-  $schema as element(schema)
+  $schema as element()
 ) as element(data)
 {
   $data update insert node

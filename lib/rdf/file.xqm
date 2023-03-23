@@ -3,9 +3,6 @@ module namespace rdfFile = 'rdf/generetor/file';
 import module namespace rdfGen = 'rdf/generetor' 
   at 'main.xqm';
 
-import module namespace rdfGenElements = 'rdf/generetor/elements'
-  at 'elements.xqm';
-  
 import module namespace rdfGenTools = 'rdf/generetor/tools'
   at 'tools.xqm';
 
@@ -55,7 +52,7 @@ declare function rdfFile:auto-trci-to-rdf(
     return
       $body
   return
-    rdfGenElements:RDF($result)
+   element{QName('http://www.w3.org/1999/02/22-rdf-syntax-ns#','RDF')}{$result}
 };
 
 
@@ -81,11 +78,11 @@ function rdfFile:trci-to-rdf(
     let $tableSchema :=
       rdfGenTools:schema($fetchTableSchema, ($localSettings, $rootSettings))
     let $contex := 
-      <data>{$trci}</data>
+        rdfGenContext:context(<data>{$trci}</data>, $tableSchema)
     return
-      rdfGen:tables($contex, $tableSchema)  
+      rdfGen:tables($contex, $tableSchema/table)  
   return
-    rdfGenElements:RDF($tables)
+     element{QName('http://www.w3.org/1999/02/22-rdf-syntax-ns#','RDF')}{$tables}
 };
 
 (:~ 
