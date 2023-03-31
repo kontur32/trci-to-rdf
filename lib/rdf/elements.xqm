@@ -13,7 +13,7 @@ declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare
   %public
 function rdfGenElements:buidElementAbout(
-  $context as element(data),
+  $context as element(),
   $schema as element()*
 ) as attribute(rdf:about)*
 {
@@ -35,7 +35,7 @@ function rdfGenElements:buidElementAbout(
 declare
   %public
 function rdfGenElements:description(
-  $context as element(data),
+  $context as element(),
   $schema as element()*,
   $body as element()*
 ) as element(rdf:Description)

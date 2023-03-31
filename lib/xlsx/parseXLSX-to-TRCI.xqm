@@ -8,6 +8,17 @@ declare
   %public
 function 
   parse:xlsx(
+    $rawFile as xs:base64Binary) as element(file)
+{
+   parse:xlsx($rawFile, "")
+};
+
+
+(: парсит все листы кники xlsx в формат trci :)
+declare 
+  %public
+function 
+  parse:xlsx(
     $rawFile as xs:base64Binary,
     $columnDirection as xs:string) as element(file)
 {

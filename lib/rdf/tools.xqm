@@ -1,8 +1,32 @@
 module namespace rdfGenTools = 'rdf/generetor/tools';
 
+
+(:~ 
+  по заданному URL фетчит схему
+:)
+declare function rdfGenTools:schemaGet($node as element()) as element(_)*
+{
+  json:parse(rdfGenTools:getValue($node))/json/_
+};
+(:~ 
+  по заданному URL фетчит схему
+:)
+declare function rdfGenTools:schemaFetch($path as xs:string) as element(_)*
+{
+  rdfGenTools:jsonFetch($path)/_
+};
+
+(:~ 
+  по заданному URL фетчит json в дерево
+:)
+declare function rdfGenTools:jsonFetch($path as xs:string) as element(json)
+{
+  json:parse(rdfGenTools:fetch($path))/json
+};
+
 (:~ 
   получает ресурс по URL или возвращает тектстовое значение элемента
- :)
+:)
 declare function rdfGenTools:getValue($element as element()) as xs:string*
 {
   if($element/text())
@@ -75,7 +99,8 @@ declare
   %public
 function rdfGenTools:fetch(
   $path as xs:string
-){
+) as xs:string
+{
   if(matches($path, '^http'))
   then(fetch:text(iri-to-uri($path)))
   else(fetch:text($path))

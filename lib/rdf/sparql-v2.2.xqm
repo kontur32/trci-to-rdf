@@ -15,13 +15,13 @@ declare
   %public
 function rdfSparql:request(
   $queryString as xs:string,
-  $context as element(),
+  $context as element(context),
   $endpoint as xs:anyURI
 ) as xs:string*
 {
   let $contextParams := 
     map:merge(
-      $context/parameters/child::*/map:entry(./name(), ./text())
+      $context/child::*[text()]/map:entry(./name(), ./text())
     )
   let $query := rdfGenTools:replace($queryString, $contextParams)
   let $request as element(_):= 

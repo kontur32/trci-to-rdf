@@ -27,7 +27,7 @@ function rdfGenLib:filter(
   if($schema/filter/child::*)
   then(
     let $result := 
-      rdfGenLib:propertyValue($context, $schema/filter, $context/aliases)
+      rdfGenLib:propertyValue($context, $schema/filter)
     return
       if($result)then(true())else(false())
   )
@@ -43,7 +43,7 @@ function rdfGenLib:filter(
           </value>
         </filter>
       let $result := 
-        rdfGenLib:propertyValue($context, $filter, $context/aliases)
+        rdfGenLib:propertyValue($context, $filter)
       return
         if($result)then(true())else(false())
     )
@@ -99,6 +99,10 @@ function rdfGenLib:propertyValue(
             let $xq := $value/xquery/text()
             return
               xquery:eval($xq, map{'':$context})
+        
+        case 'dynamic'
+          return
+            $context/dynamic/child::*[name()= $value/dynamic/text()]/text()
         
         case 'sparql'
           return
