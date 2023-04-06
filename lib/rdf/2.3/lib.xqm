@@ -55,6 +55,28 @@ function rdfGenLib:contextParams(
 };
 
 (:~
+: Вычисляет значение xquery
+:)
+declare
+  %public
+function rdfGenLib:xquery(
+  $context as element()*,
+  $schema as element(xquery)
+) as item()*
+{
+  let $xqueries := 
+    if($schema/child::*)
+    then($schema/child::*/text())
+    else($schema/text())
+  return
+    fold-left(
+      $xqueries,
+      $context,
+      function($c, $xquery){xquery:eval($xquery, map{'':$c})}
+    )
+};
+
+(:~
 : Генерирует значение элемента
 :)
 declare
@@ -72,20 +94,11 @@ function rdfGenLib:propertyValue(
         switch ($value/child::*/name())
         case 'xquery'
           return
-            let $xqueries := 
-              if($value/xquery/child::*)
-              then($value/xquery/child::*/text())
-              else($value/xquery/text())
-            return
-              fold-left(
-                $xqueries,
-                $context,
-                function($c, $xquery){xquery:eval($xquery, map{'':$c})}
-              )
+            rdfGenLib:xquery($context, $value/xquery) 
         
         case 'sparql'
           return
-            let $sparql := rdfGenTools:getValue($value/sparql)
+            let $sparql := rdfGenTools:getValue($value/sparql/include)
             
             let $localContext :=
               rdfGenLib:context(
@@ -95,15 +108,21 @@ function rdfGenLib:propertyValue(
             
             let $endpoint as xs:anyURI :=
               $localContext/RDF-endpoint/xs:anyURI(text())
-            
-            return
+            let $results as element(sparql) :=
               rdfSparql:request($sparql, $localContext, $endpoint)
+            return
+              if($value/sparql/xquery)
+              then(
+                let $localContext2 :=
+                  $localContext update insert node $results into .
+                return
+                  rdfGenLib:xquery($localContext2, $value/sparql/xquery)
+              )
+              else($results)
         
         default
           return
-            let $xq := $value/xquery/text()
-            return
-              xquery:eval($xq, map{'':$context})
+            rdfGenLib:xquery($context, $value/xquery)
       return
        $xquery
     )

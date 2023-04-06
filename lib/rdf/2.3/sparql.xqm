@@ -20,7 +20,7 @@ function rdfSparql:request(
   $queryString as xs:string,
   $context as element(context),
   $endpoint as xs:anyURI
-) as xs:string*
+) as element(sparql)
 { 
   let $contextParams := 
     map:merge(
@@ -28,7 +28,7 @@ function rdfSparql:request(
       /map:entry(./name(), ./text())
     )
   let $query := rdfGenTools:replace($queryString, $contextParams)
-  let $request as element(results):= 
+  let $request as element(json):= 
     json:parse(
       fetch:text(
         web:create-url(
@@ -38,7 +38,7 @@ function rdfSparql:request(
           }
         )
       )
-    )/json/results
+    )/json
   return
-    $request/bindings/_/result/value/text()
+    <sparql>{$request/results/child::*}</sparql>
 };
