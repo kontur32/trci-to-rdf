@@ -68,7 +68,7 @@ declare function local:set($sets as element(json)){
 let $sets := 
   json:parse(
     fetch:text(
-      "C:\Program Files (x86)\BaseX\webapp\garpix\trci-to-rdf\example\params-files\set-root.json")
+      file:base-dir() || "..\example\params-files\set-root.json")
     )/json
 
 return
