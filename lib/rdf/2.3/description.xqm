@@ -34,16 +34,16 @@ function description:description(
     rdfGenLib:context($contextRoot, $schemaRoot)
   
   for $i in $contextLocal/_0040list/child::*
+  
   let $contextElement as element(context) :=
     if($contextLocal/child::*/name()=$i/name())
     then(
-      $contextLocal update 
-        replace node ./child::*[name()=$i/name()] with $i
+      $contextLocal update replace node ./child::*[name()=$i/name()] with $i
     )
     else(
-      $contextLocal update
-        insert node $i into .
+      $contextLocal update insert node $i into .
     )
+  
   return
     element{"rdf:Description"}{
       if($schemaRoot/about)
@@ -53,7 +53,7 @@ function description:description(
       else(),
       for $i in $schemaRoot/properies/_
       return
-        prop:properties($contextElement, $i)
+          prop:properties($contextElement, $i)
     }
 };
 

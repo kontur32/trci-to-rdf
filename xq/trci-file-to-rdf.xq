@@ -11,7 +11,7 @@ import module namespace rdfFile = 'rdf/generetor/file'
 import module namespace rdfGenTools = 'rdf/generetor/tools'
   at '../lib/rdf/tools.xqm';
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2' 
-  at '../lib/client.fuseki2.xqm';
+  at '../lib/fuseki2.client.xqm';
 
 let $rdfEndpoint as xs:anyURI :=
   xs:anyURI("http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp-artmotor1500")

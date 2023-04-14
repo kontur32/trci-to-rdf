@@ -11,7 +11,7 @@ declare
 function cccr:cccr(
   $contextRoot as element(context),
   $schemaRoot as element()
-) 
+) as element(rdf:RDF)
 {
   element{"rdf:RDF"}{
     description:descriptions($contextRoot, $schemaRoot/descriptions)

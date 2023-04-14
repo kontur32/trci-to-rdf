@@ -54,15 +54,21 @@ declare
 function prop:properties(
   $contextRoot as element(context),
   $schemaRoot 
-) as element()
+) as element()*
 {
   let $contextLocal as element(context):= 
     rdfGenLib:context($contextRoot, $schemaRoot)
-  let $QName :=
-    QName(
-      $schemaRoot/QName/NameSpace/text(),
-      $schemaRoot/QName/PrefixedName/text()
+  
+  for $i in $contextLocal/_0040list/child::*
+  
+  let $contextElement as element(context) :=
+    if($contextLocal/child::*/name()=$i/name())
+    then(
+      $contextLocal update replace node ./child::*[name()=$i/name()] with $i
+    )
+    else(
+      $contextLocal update insert node $i into .
     )
   return
-    prop:property($contextLocal, $schemaRoot)
+    prop:property($contextElement, $schemaRoot)
 };

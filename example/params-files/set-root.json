@@ -1,0 +1,15 @@
+{
+    "set":[
+        "C:\\Program Files (x86)\\BaseX\\webapp\\garpix\\trci-to-rdf\\example\\params-files\\реестр-уровней-образования.json",
+        "C:\\Program Files (x86)\\BaseX\\webapp\\garpix\\trci-to-rdf\\example\\params-files\\реестр-учебных-планов.json",
+        "C:\\Program Files (x86)\\BaseX\\webapp\\garpix\\trci-to-rdf\\example\\params-files\\реестр-классов.json"
+    ],
+    "parameters":{
+        "remote":{
+            "sparql":{
+                "protocol":"sparql-1.1",
+                "endpoint":"http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp.lipers24.ru"
+            }
+        }
+    }
+}
