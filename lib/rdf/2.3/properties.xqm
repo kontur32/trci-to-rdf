@@ -59,16 +59,28 @@ function prop:properties(
   let $contextLocal as element(context):= 
     rdfGenLib:context($contextRoot, $schemaRoot)
   
-  for $i in $contextLocal/_0040list/child::*
-  
-  let $contextElement as element(context) :=
-    if($contextLocal/child::*/name()=$i/name())
+  return
+    if($contextLocal/_0040list/child::* and $schemaRoot/_0040list)
     then(
-      $contextLocal update replace node ./child::*[name()=$i/name()] with $i
+      for $i in $contextLocal/_0040list/child::*
+      let $contextElement as element(context) :=
+        if($contextLocal/child::*/name()=$i/name())
+        then(
+          $contextLocal update replace node ./child::*[name()=$i/name()] with $i
+        )
+        else(
+          $contextLocal update insert node $i into .
+        )
+      return
+        prop:property($contextElement, $schemaRoot)
     )
     else(
-      $contextLocal update insert node $i into .
+      let $contextElement as element(context) :=
+          $contextLocal update 
+            replace node ./_0040list 
+            with <_0040list>{./child::*[last()]}</_0040list>
+     
+      return
+        prop:property($contextElement, $schemaRoot)
     )
-  return
-    prop:property($contextElement, $schemaRoot)
 };

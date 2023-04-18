@@ -1,0 +1,9 @@
+{
+    "source":"C:\/Users\/kontu\/Downloads\/lipersBooks04-04.xlsx",
+    "schema":"https://semantics.lipers24.ru/схемы/библиотека/schema-v2.3-03.json",
+    "output": [
+        {
+            "type":"console"
+        }
+    ]
+}

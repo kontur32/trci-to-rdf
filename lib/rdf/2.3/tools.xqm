@@ -4,7 +4,7 @@ module namespace rdfGenTools = 'rdf/generetor/tools';
 (:~ 
   по заданному URL фетчит схему
 :)
-declare function rdfGenTools:schemaFetch($path as xs:string) as element()
+declare function rdfGenTools:schemaFetch($path as xs:string) as element(json)
 {
   rdfGenTools:jsonFetch($path)
 };

@@ -10,7 +10,6 @@ import module namespace cccr = 'rdf/generetor/cccr'
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2'
   at '../lib/fuseki2.client.xqm';
 
-
 declare function local:set(
   $output as element(output),
   $rdf as element(),
@@ -23,10 +22,7 @@ declare function local:set(
         switch ($i/type/text())
         case 'file'
           return
-            file:write(
-              $i/path/text(),
-              $rdf
-            )
+            file:write($i/path/text(), $rdf)
         case 'console'
           return
               $rdf
@@ -53,24 +49,29 @@ declare function local:set(
     else()
 };
 
-declare function local:set($sets as element(json)){
-  for $set in $sets/set/_
-  let $params := json:parse(fetch:text($set))/json
-  let $rawFile as xs:base64Binary := fetch:binary($params/source/text())
+declare function local:sets($sets as element(json)){
+  for $setPath in $sets/set/_
+  let $set as element(json) := json:parse(fetch:text($setPath))/json
+  let $parameters as element(parameters) := $sets/parameters
+  let $output as element(output) := $set/output
+  
+  let $rawFile as xs:base64Binary := fetch:binary($set/source/text())
   let $trci as element(file) := trci:xlsx($rawFile)
-  let $schemaRoot as element()* := rdfGenTools:schemaFetch($params/schema/text())
-  let $contextRoot := <context>{$trci}</context>
-  let $rdf := cccr:cccr($contextRoot, $schemaRoot)
+  let $contextRoot as element(context) := <context>{$trci}</context>
+  
+  let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(text())
+  let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
+  
+  let $rdf as element() := cccr:cccr($contextRoot, $schemaRoot)
   return
-    local:set($params/output, $rdf, $sets/parameters)
+    local:set($output, $rdf, $parameters)
 };
 
 let $sets := 
   json:parse(
-    fetch:text(
-      file:base-dir() || "..\example\params-files\set-root.json")
-    )/json
+    fetch:text(file:base-dir() || "..\example\params-files\set-root.json")
+  )/json
 
 return
-  local:set($sets)
+  local:sets($sets)
     

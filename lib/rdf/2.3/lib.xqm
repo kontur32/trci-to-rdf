@@ -19,8 +19,7 @@ function rdfGenLib:context(
   $schemaRoot as element(_)
 ) as element(context)
 {
-  let $localContextParams := 
-      rdfGenLib:contextParams($contextRoot, $schemaRoot)
+  let $localContextParams := rdfGenLib:contextParams($contextRoot, $schemaRoot)
     
   return
     fold-left(
@@ -48,8 +47,9 @@ function rdfGenLib:contextParams(
   return
     if($i/child::*)
     then(
-      element{$i/name()}
-      {rdfGenLib:propertyValue($contextRoot, $i)}
+      let $propertyValue := rdfGenLib:propertyValue($contextRoot, $i)
+      return
+        element{$i/name()}{$propertyValue}
     )
     else($i)
 };
