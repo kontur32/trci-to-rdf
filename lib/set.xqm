@@ -74,7 +74,7 @@ declare function set:sets($sets as element(json)){
 declare function set:main($path as xs:string){
   let $sets := 
   json:parse(
-    fetch:text(file:base-dir() || "..\example\params-files\set-root.json")
+    fetch:text(file:base-dir() || $path)
   )/json
 
 return
