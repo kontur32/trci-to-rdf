@@ -8,7 +8,7 @@ declare
 function view:main(){
   <result>{
     set:main(
-       file:base-dir() || "..\example\params-files\set-root.json"
+       file:base-dir() || "../example/params-files/set-root.json"
      )
   }</result>
   
