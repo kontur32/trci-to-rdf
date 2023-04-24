@@ -7,7 +7,7 @@
             "type":"console"
         },
         {
-            "type":"remote",
+            "type":"remote1",
             "server":{
                 "protocol":"sparql-1.1",
                 "endpoint":"http://ovz2.j40045666.px7zm.vps.myjino.ru:49408/tmp.lipers24.ru"
