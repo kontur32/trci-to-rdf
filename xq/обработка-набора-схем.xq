@@ -67,11 +67,18 @@ declare function local:sets($sets as element(json)){
     local:set($output, $rdf, $parameters)
 };
 
-let $sets := 
+
+declare function local:main($path as xs:string){
+  let $sets := 
   json:parse(
     fetch:text(file:base-dir() || "..\example\params-files\set-root.json")
   )/json
 
 return
   local:sets($sets)
+};
+
+ local:main(
+   file:base-dir() || "..\example\params-files\set-root.json"
+ )
     
