@@ -1,0 +1,10 @@
+<config>
+  <pulication.server>
+    <user.login></user.login>
+    <user.password></user.password>
+    <endpoint></endpoint>
+  </pulication.server>
+  <data.storage>
+    <local.path>C:\Users\kontu\YandexDisk-traineegx\userdata\наборы\</local.path>
+  </data.storage>
+</config>

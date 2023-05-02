@@ -1,4 +1,4 @@
-module namespace set = 'trci-to-rdf/lib/set';
+module namespace set = 'trci-to-rdf/lib/evalute.set';
 
 
 import module namespace trci = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
