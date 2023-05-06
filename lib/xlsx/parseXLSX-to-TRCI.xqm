@@ -20,7 +20,7 @@ declare
 function 
   parse:xlsx(
     $rawFile as xs:base64Binary,
-    $columnDirection as xs:string) as element(file)
+    $columnDirection as xs:string*) as element(file)
 {
   let $sheetsList :=
     archive:entries($rawFile)[contains(./text(), 'xl/worksheets/sheet')]/text()

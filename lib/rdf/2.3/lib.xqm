@@ -66,7 +66,9 @@ function rdfGenLib:xquery(
 {
   let $xqueries := 
     if($schema/child::*)
-    then($schema/child::*/text())
+    then(
+     $schema/child::*/text()
+    )
     else($schema/text())
   return
     fold-left(

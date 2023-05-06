@@ -13,7 +13,7 @@ import module namespace cccr = 'rdf/generetor/cccr'
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2'
   at 'fuseki2.client.xqm';
 
-declare function set:set(
+declare function set:output(
   $output as element(output),
   $rdf as element(),
   $parameters as element(parameters)?
@@ -52,31 +52,58 @@ declare function set:set(
     else()
 };
 
-declare function set:sets($sets as element(json)){
-  for $setPath in $sets/set/_
-  let $set as element(json) := json:parse(fetch:text($setPath))/json
-  let $parameters as element(parameters) := $sets/parameters
+declare
+  %private
+function set:sets(
+  $set as element(json),
+  $parameters as element(parameters)*
+){
+   
   let $output as element(output) := $set/output
+  let $columnDirectionList := $set/source/_/directory/column/text()
+  let $fileURIs as xs:anyURI* :=
+    if($set/source/_)
+    then(
+      let $path := $set/source/_/directory/path/text()
+      let $files := file:list($path)
+      for $i in $files
+      where matches($i, $set/source/_/directory/mask/text())
+      return
+        xs:anyURI($path || $i)
+    )
+    else(
+      xs:anyURI($set/source/text())
+    )
+  let $result :=
+    for $fileURI in $fileURIs
+    let $rawData as xs:base64Binary := fetch:binary($fileURI)
+    let $trci as element(file) := 
+      trci:xlsx($rawData, $columnDirectionList)
+      update insert node attribute {'URI'}{$fileURI} into .
+    
+    let $contextRoot as element(context) := <context>{$trci}</context>
+    
+    let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(text())
+    let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
+    
+    let $rdf as element()* := cccr:cccr($contextRoot, $schemaRoot)/child::*
+    return
+      $rdf
   
-  let $rawFile as xs:base64Binary := fetch:binary($set/source/text())
-  let $trci as element(file) := trci:xlsx($rawFile)
-  let $contextRoot as element(context) := <context>{$trci}</context>
-  
-  let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(text())
-  let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
-  
-  let $rdf as element() := cccr:cccr($contextRoot, $schemaRoot)
   return
-    set:set($output, $rdf, $parameters)
+    set:output(
+      $output,
+      element Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF{$result},
+      $parameters
+    )
 };
 
 
 declare function set:main($path as xs:string){
-  let $sets := 
-  json:parse(
-    fetch:text($path)
-  )/json
-
-return
-  set:sets($sets)
+  let $sets := json:parse(fetch:text($path))/json
+  for $setPath in $sets/set/_
+  let $set as element(json) := json:parse(fetch:text($setPath))/json
+  let $parameters as element(parameters)* := $sets/parameters
+  return
+    set:sets($set, $parameters)
 };

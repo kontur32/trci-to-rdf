@@ -14,7 +14,7 @@ declare
 function prop:property(
   $contextRoot as element(context),
   $schemaRoot 
-) as element()
+) as element()*
 {
   let $QName :=
     QName(
@@ -36,13 +36,14 @@ function prop:property(
            then(
              rdfGenLib:propertyValue($contextRoot, $property)
            )
-           else()
+           else($property/text())
        case "descriptions"
            return
              description:descriptions($contextRoot, $property)
        default 
          return
            rdfGenLib:propertyValue($contextRoot, $property)
+  where $value
   return
     element{$QName}{$value}
 };

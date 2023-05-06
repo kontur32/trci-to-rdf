@@ -51,7 +51,7 @@ function description:description(
         description:about($contextElement, $schemaRoot)
       )
       else(),
-      for $i in $schemaRoot/properies/_
+      for $i in $schemaRoot/properties/_
       return
           prop:properties($contextElement, $i)
     }
