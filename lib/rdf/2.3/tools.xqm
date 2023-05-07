@@ -27,11 +27,18 @@ declare function rdfGenTools:getValue($element as element()) as xs:string*
   else(
     if($element/URI)
     then(
-      fetch:text(
-        iri-to-uri(
-          $element/URI/text()
+      if(matches($element/URI/text(), "^http"))
+      then(
+        fetch:text(
+          iri-to-uri(
+            $element/URI/text()
+          )
         )
       )
+      else(
+        fetch:text($element/URI/text())
+      )
+      
     )
     else()
   )
