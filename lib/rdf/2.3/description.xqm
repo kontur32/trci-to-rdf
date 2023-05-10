@@ -18,7 +18,7 @@ function description:descriptions(
 {
   for $schemaElement in $schemaRoot/_
   return
-    description:description($contextRoot, $schemaElement)
+      description:description($contextRoot, $schemaElement)
 };
 
 
@@ -33,28 +33,24 @@ function description:description(
   let $contextLocal as element(context):= 
     rdfGenLib:context($contextRoot, $schemaRoot)
   
-  for $i in $contextLocal/_0040list/child::*
-  
+  for $i in $contextLocal/_0040list/child::* 
   let $contextElement as element(context) :=
-    if($contextLocal/child::*/name()=$i/name())
-    then(
-      $contextLocal update replace node ./child::*[name()=$i/name()] with $i
-    )
-    else(
-      $contextLocal update insert node $i into .
-    )
+      <context>{
+        $contextLocal/child::*[name()!=$i/name()],
+        $i
+      }</context>
   
   return
-    element{"rdf:Description"}{
-      if($schemaRoot/about)
-      then(
-        description:about($contextElement, $schemaRoot)
-      )
-      else(),
-      for $i in $schemaRoot/properties/_
-      return
-          prop:properties($contextElement, $i)
-    }
+      element{"rdf:Description"}{
+        if($schemaRoot/about)
+        then(
+            description:about($contextElement, $schemaRoot)
+        )
+        else(),
+        for $i in $schemaRoot/properties/_
+        return
+            prop:properties($contextElement, $i)
+      }
 };
 
 (:~ генерирует элемент rdf:about :)

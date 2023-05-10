@@ -77,10 +77,10 @@ function prop:properties(
     )
     else(
       let $contextElement as element(context) :=
-          $contextLocal update 
-            replace node ./_0040list 
-            with <_0040list>{./child::*[last()]}</_0040list>
-     
+          <context>{
+            $contextLocal/child::*[name()!="_0040list"],
+            <_0040list>{$contextLocal/child::*[last()]}</_0040list>
+          }</context>    
       return
         prop:property($contextElement, $schemaRoot)
     )

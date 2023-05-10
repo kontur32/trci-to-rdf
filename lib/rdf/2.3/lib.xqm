@@ -23,14 +23,14 @@ function rdfGenLib:context(
     
   return
     fold-left(
-        $localContextParams,
-        $contextRoot,
-        function($c, $p){
-          if($c/child::*/name()=$p/name())
-          then($c update replace node ./child::*[name()=$p/name()] with $p)
-          else($c update insert node $p into .)
-        }
-      )
+      $localContextParams,
+      $contextRoot,
+      function($c, $p){
+        if($c/child::*/name()=$p/name())
+        then($c update replace node ./child::*[name()=$p/name()] with $p)
+        else($c update insert node $p into .)
+      }
+    )
 };
 
 (:~
