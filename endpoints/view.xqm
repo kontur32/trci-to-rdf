@@ -8,11 +8,12 @@ import module namespace config = 'trci-to-rdf/lib/config'
 
 declare 
   %rest:GET
+  %rest:query-param('path', '{$path}')
   %rest:path("/trci-to-rdf/v")
-function view:main(){
+function view:main($path){
   <result>{
     set:main(
-       config:config()/data.storage/local.path || "set-root.json"
+       $path
      )
   }</result>
 };
