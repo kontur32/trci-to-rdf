@@ -6,11 +6,12 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
 declare 
   %rest:GET
   %rest:query-param('path', '{$path}')
+  %rest:query-param('root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/v")
-function view:main($path){
+function view:main($path, $root-path){
   <result>{
     set:main(
-       $path
+       $root-path || $path
      )
   }</result>
 };
