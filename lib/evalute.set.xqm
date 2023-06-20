@@ -44,8 +44,8 @@ declare function set:output(
             )
           return
             (
-              "Загрузка графа <" || $graphName || ">: " ||
-              ($result=("200", "201")??"ОК" !! 'Ошибка: ' || string-join($result, ', '))
+              "Загрузка графа <" || $graphName || ">: ",
+               $result
             ) 
         default return ()
     )

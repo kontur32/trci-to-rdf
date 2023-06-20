@@ -1,8 +1,5 @@
 module namespace rdfSparql = 'rdf/generetor/sparql';
 
-import module namespace rdfGenLib = 'rdf/generetor/lib'
-  at 'lib.xqm';
-
 import module namespace rdfGenTools = 'rdf/generetor/tools'
   at 'tools.xqm';
   
