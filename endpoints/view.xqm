@@ -4,6 +4,15 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
   at "../lib/evalute.set.xqm";
 
 declare 
+  %rest:POST('{$f}')
+  %rest:form-param("file","{$file}")
+  %rest:path("/trci-to-rdf/v/file")
+  %public
+function view:upload($file, $f){
+  file:write-text(file:base-dir() || '../var/' || random:uuid()||'.txt', $f || 'aaa')
+};
+
+declare 
   %rest:GET
   %rest:query-param('path', '{$path}')
   %rest:query-param('root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
