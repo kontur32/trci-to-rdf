@@ -5,12 +5,10 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
 
 declare 
   %rest:POST('{$f}')
-  %rest:form-param("file","{$file}")
   %rest:path("/trci-to-rdf/v/file")
   %public
-function view:upload($file, $f){
-  file:write(file:base-dir() || '../var/' || random:uuid()||'.txt', $f),
-  file:write-text(file:base-dir() || '../var/' || 'parameters.txt', string-join(request:parameter-names()))
+function view:upload($f){
+  file:write(file:base-dir() || '../var/' || random:uuid()||'.txt', $f//node/path)
 };
 
 declare 
