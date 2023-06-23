@@ -9,16 +9,21 @@ declare
   %public
 function view:upload($f){
   let $item := $f//node/path
+  let $sc :=
+    fetch:xml(
+      '/srv/nextcloud/data/kontur32/files/лицей/сценарии/map.xml'
+    )//node[path/text()=$item/text()]/sc/text()
+    
   return
   (
-    file:write(file:base-dir() || '../var/' || 'path.xml', $f//node/path),
-    if($item)
-    then(
-       view:main(
-         '/лицей/сценарии/set-реестр-школьников.json',
-         '/srv/nextcloud/data/kontur32/files/'
-       )
-    )
+    file:write(
+      file:base-dir() || '../var/' || 'path.xml',
+      <node>
+        {$f//node/path}
+        <sc>{$sc}</sc>
+      </node>
+    ),
+    if($sc)then(view:main($sc, ''))
   )
 };
 

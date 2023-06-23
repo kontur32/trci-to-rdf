@@ -3,5 +3,5 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
 
 
   set:main(
-    "C:\Users\kontu\Nextcloud2\лицей\сценарии\set-root.json"
+    "C:\Users\kontu\Nextcloud4\лицей\сценарии\set-реестр-школьников.json"
   )
