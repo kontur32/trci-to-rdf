@@ -12,18 +12,18 @@ function view:upload($f){
   let $sc :=
     fetch:xml(
       '/srv/nextcloud/data/kontur32/files/лицей/сценарии/map.xml'
-    )//node[path/text()=$item/text()]/sc/text()
+    )//node['/kontur32/files' || path/text()=$item/text()]/sc/text()
     
   return
   (
     file:write(
-      file:base-dir() || '../var/' || 'path.xml',
+      file:base-dir() || '../var/path.xml',
       <node>
-        {$f//node/path}
+        {$item}
         <sc>{$sc}</sc>
       </node>
     ),
-    if($sc)then(view:main($sc, ''))
+    if($sc)then(view:main($sc, '/srv/nextcloud/data/kontur32/files'))
   )
 };
 
