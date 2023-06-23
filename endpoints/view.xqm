@@ -8,7 +8,18 @@ declare
   %rest:path("/trci-to-rdf/v/file")
   %public
 function view:upload($f){
-  file:write(file:base-dir() || '../var/' || random:uuid()||'.txt', $f//node/path)
+  let $item := $f//node/path
+  return
+  (
+    file:write(file:base-dir() || '../var/' || 'path.xml', $f//node/path),
+    if($item)
+    then(
+       view:main(
+         '/лицей/сценарии/set-реестр-школьников.json',
+         '/srv/nextcloud/data/kontur32/files/'
+       )
+    )
+  )
 };
 
 declare 
