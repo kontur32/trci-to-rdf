@@ -8,8 +8,8 @@ declare
   %rest:form-param("file","{$file}")
   %rest:path("/trci-to-rdf/v/file")
   %public
-function view:upload($file, $f as xs:string){
-  file:write-text(file:base-dir() || '../var/' || random:uuid()||'.txt', $f),
+function view:upload($file, $f){
+  file:write(file:base-dir() || '../var/' || random:uuid()||'.txt', $f),
   file:write-text(file:base-dir() || '../var/' || 'parameters.txt', string-join(request:parameter-names()))
 };
 
