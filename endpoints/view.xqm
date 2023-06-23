@@ -9,7 +9,7 @@ declare
   %rest:path("/trci-to-rdf/v/file")
   %public
 function view:upload($file, $f){
-  file:write-text(file:base-dir() || '../var/' || random:uuid()||'.txt', $f || 'aaa')
+  file:write-text(file:base-dir() || '../var/' || random:uuid()||'.txt', $f)
 };
 
 declare 
