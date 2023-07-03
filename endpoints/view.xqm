@@ -9,10 +9,12 @@ declare
   %public
 function view:upload($f, $user, $dir){
   let $item := $f//node/path
-  let $sc :=
+  let $map := 
     fetch:xml(
       '/srv/nextcloud/data/' || $user || '/files/' || $dir || '/сценарии/map.xml'
-    )//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
+    )
+  let $sc :=
+    $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
     
   return
   (
@@ -28,6 +30,8 @@ function view:upload($f, $user, $dir){
         <sc>{$sc}</sc>
         <user>{$user}</user>
         <dir>{$dir}</dir>
+        <f>{$f}</f>
+        <map>{$map}</map>
       </node>,
     if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
   )
