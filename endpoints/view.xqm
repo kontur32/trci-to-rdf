@@ -17,7 +17,7 @@ function view:upload($f, $user, $dir){
     $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
   let $output :=
     <node>
-        {$item}
+        <item>{$item}</item>
         <sc>{$sc}</sc>
         <user>{$user}</user>
         <dir>{$dir}</dir>
