@@ -1,5 +1,5 @@
 import module namespace set = 'trci-to-rdf/lib/evalute.set'
-  at "../lib/evalute.set.xqm";
+  at "/opt/basex/webapp/garpix/trci-to-rdf/lib/evalute.set.xqm";
 
 
   set:main(

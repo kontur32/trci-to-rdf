@@ -1,5 +1,5 @@
 import module namespace rdfSparql = "rdf/generetor/sparql"
-  at "..\lib\rdf\2.3\sparql.xqm";
+  at "/opt/basex/webapp/garpix/trci-to-rdf/lib/rdf/2.3/sparql.xqm";
 
 declare function local:заполнитьФорму($данныеДляФормы, $шаблон, $endpoint){
  let $request :=

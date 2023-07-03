@@ -5,6 +5,31 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
 
 declare 
   %rest:POST('{$f}')
+  %rest:path("/trci-to-rdf/v/file/{$user}/{$dir}")
+  %public
+function view:upload($f, $user, $dir){
+  let $item := $f//node/path
+  let $sc :=
+    fetch:xml(
+      '/srv/nextcloud/data/' || $user || '/files/' || $dir || '/сценарии/map.xml'
+    )//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
+    
+  return
+  (
+    file:write(
+      file:base-dir() || '../var/path.xml',
+      <node>
+        {$item}
+        <sc>{$sc}</sc>
+      </node>
+    ),
+    if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
+  )
+};
+
+
+declare 
+  %rest:POST('{$f}')
   %rest:path("/trci-to-rdf/v/file")
   %public
 function view:upload($f){
