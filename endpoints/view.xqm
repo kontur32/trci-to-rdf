@@ -26,6 +26,8 @@ function view:upload($f, $user, $dir){
     <node>
         {$item}
         <sc>{$sc}</sc>
+        <user>{$user}</user>
+        <dir>{$dir}</dir>
       </node>,
     if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
   )
