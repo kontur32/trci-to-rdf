@@ -15,16 +15,7 @@ function view:upload($f, $user, $dir){
     )
   let $sc :=
     $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
-    
-  return
-  (
-    file:write(
-      file:base-dir() || '../var/path.xml',
-      <node>
-        {$item}
-        <sc>{$sc}</sc>
-      </node>
-    ),
+  let $output :=
     <node>
         {$item}
         <sc>{$sc}</sc>
@@ -32,7 +23,11 @@ function view:upload($f, $user, $dir){
         <dir>{$dir}</dir>
         <f>{$f}</f>
         <map>{$map}</map>
-      </node>,
+      </node>
+  return
+  (
+    file:write(file:base-dir() || '../var/path.xml', $output),
+    $output,
     if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
   )
 };
