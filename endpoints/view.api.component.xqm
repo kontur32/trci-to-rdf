@@ -5,9 +5,10 @@ import module namespace rdfSparql = "rdf/generetor/sparql"
 
 declare 
   %rest:GET
+  %rest:query-param('rdf-host', '{$rdf-host}', 'http://localhost:3030/kik.misis.ru')
   %rest:query-param('root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/api/v01/components/{$component}")
-function view:main($root-path, $component){
+function view:main($rdf-host, $root-path, $component){
   let $запрос := 
     fetch:text(
       $root-path || "/компоненты/" || $component || '/данные.rq'
@@ -24,7 +25,7 @@ function view:main($root-path, $component){
     rdfSparql:request(
       $запрос,
       $context,
-     xs:anyURI("http://localhost:3030/kik.misis.ru/sparql")
+     xs:anyURI($rdf-host || "/sparql")
    )//bindings/_
   let $xq := 
     fetch:text(
