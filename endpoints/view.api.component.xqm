@@ -5,7 +5,7 @@ import module namespace rdfSparql = "rdf/generetor/sparql"
 
 declare 
   %rest:GET
-  %rest:query-param('_rdf-host', '{$rdf-host}', 'http://localhost:3030/kik.misis.ru')
+  %rest:query-param('_rdf-host', '{$rdf-host}', 'http://fuseki:3030/kik.misis.ru')
   %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/components/{$component}")
 function view:main($rdf-host, $root-path, $domain, $component){
@@ -37,8 +37,6 @@ function view:main($rdf-host, $root-path, $domain, $component){
     )
     else(())
       
- 
-    
   let $result :=
     if($xq)
     then(xquery:eval($xq, map{'context':$context, 'data':$data}))

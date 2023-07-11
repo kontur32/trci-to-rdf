@@ -3,6 +3,9 @@ module namespace view = "trci-to-rdf/view";
 import module namespace set = 'trci-to-rdf/lib/evalute.set'
   at "../lib/evalute.set.xqm";
 
+(:
+  метод для обновления файла в RDF-хранилище для вэбхука nextcloud  
+:)
 declare 
   %rest:POST('{$f}')
   %rest:path("/trci-to-rdf/v/file/{$user}/{$dir}")
