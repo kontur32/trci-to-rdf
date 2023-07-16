@@ -3,6 +3,9 @@ module namespace view = "trci-to-rdf/view/api/component";
 import module namespace rdfSparql = "rdf/generetor/sparql"
   at "../lib/rdf/2.3/sparql.xqm";
 
+(:
+  комментарий
+:)
 declare 
   %rest:GET
   %rest:query-param('_rdf-host', '{$rdf-host}', 'http://fuseki:3030/kik.misis.ru')
