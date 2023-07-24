@@ -1,6 +1,6 @@
 module namespace view = "trci-to-rdf/view/api/component";
 
-import module namespace rdfSparql = "rdf/generetor/sparql"
+import module namespace rdfSparql = "rdf/generetor/sparql/2.3"
   at "../lib/rdf/2.3/sparql.xqm";
 
 (:

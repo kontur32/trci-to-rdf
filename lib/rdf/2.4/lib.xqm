@@ -1,9 +1,9 @@
-module namespace rdfGenLib = 'rdf/generetor/lib/2.3';
+module namespace rdfGenLib = 'rdf/generetor/lib/2.4';
 
-import module namespace rdfGenTools = 'rdf/generetor/tools/2.3'
+import module namespace rdfGenTools = 'rdf/generetor/tools/2.4'
   at 'tools.xqm';
   
-import module namespace rdfSparql = 'rdf/generetor/sparql/2.3'
+import module namespace rdfSparql = 'rdf/generetor/sparql/2.4'
   at 'sparql.xqm';
   
 declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
@@ -16,12 +16,27 @@ declare
   %public
 function rdfGenLib:context(
   $contextRoot as element(context),
-  $schemaRoot as element(_)
+  $schemaRoot as element()
 ) as element(context)
 {
   let $localContextParams := rdfGenLib:contextParams($contextRoot, $schemaRoot)
-    
   return
+    rdfGenLib:context-update(
+      $localContextParams,
+      $contextRoot
+    )
+};
+
+(:~
+: Генерирует контекст
+:)
+declare
+  %public
+function rdfGenLib:context-update(
+  $localContextParams as element()*,
+  $contextRoot as element(context)
+) as element(context)
+{
     fold-left(
       $localContextParams,
       $contextRoot,
@@ -33,6 +48,7 @@ function rdfGenLib:context(
     )
 };
 
+
 (:~
 : Генерирует параметры контекста
 :)
@@ -40,7 +56,7 @@ declare
   %private
 function rdfGenLib:contextParams(
   $contextRoot as element(context),
-  $schemaRoot as element(_)
+  $schemaRoot as element()
 ) as element()*
 {
   for $i in $schemaRoot/context/child::*

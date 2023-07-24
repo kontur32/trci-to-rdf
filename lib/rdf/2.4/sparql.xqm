@@ -1,6 +1,6 @@
-module namespace rdfSparql = 'rdf/generetor/sparql/2.3';
+module namespace rdfSparql = 'rdf/generetor/sparql/2.4';
 
-import module namespace rdfGenTools = 'rdf/generetor/tools/2.3'
+import module namespace rdfGenTools = 'rdf/generetor/tools/2.4'
   at 'tools.xqm';
   
 declare namespace  sparql-results = "http://www.w3.org/2005/sparql-results#";

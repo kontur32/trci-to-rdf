@@ -1,4 +1,4 @@
-module namespace rdfGenTools = 'rdf/generetor/tools/2.3';
+module namespace rdfGenTools = 'rdf/generetor/tools/2.4';
 
 
 (:~ 

@@ -4,11 +4,14 @@ module namespace set = 'trci-to-rdf/lib/evalute.set';
 import module namespace trci = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "xlsx/parseXLSX-to-TRCI.xqm";
 
-import module namespace rdfGenTools = 'rdf/generetor/tools'
+import module namespace rdfGenTools = 'rdf/generetor/tools/2.3'
   at 'rdf/2.3/tools.xqm';
 
-import module namespace cccr = 'rdf/generetor/cccr'
+import module namespace cccr.2.3 = 'rdf/generetor/cccr/2.3'
   at 'rdf/2.3/cccr.xqm';
+  
+import module namespace cccr.2.4 = 'rdf/generetor/cccr/2.4'
+  at 'rdf/2.4/cccr.xqm';
 
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2'
   at 'fuseki2.client.xqm';
@@ -86,14 +89,19 @@ function set:sets(
     let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(text())
     let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
     
-    let $rdf as element()* := cccr:cccr($contextRoot, $schemaRoot)/child::*
     return
-      $rdf
+      switch ($schemaRoot/version/text())
+      case '2.3'
+        return cccr.2.3:cccr($contextRoot, $schemaRoot)
+      case '2.4'
+        return cccr.2.4:cccr($contextRoot, $schemaRoot)
+      default 
+        return cccr.2.3:cccr($contextRoot, $schemaRoot)
   
   return
     set:output(
       $output,
-      element Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF{$result},
+      $result,
       $parameters
     )
 };
