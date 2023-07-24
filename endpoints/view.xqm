@@ -30,6 +30,7 @@ function view:upload($f, $user, $dir){
   return
   (
     file:write(file:base-dir() || '../var/path.xml', $output),
+    file:write(file:base-dir() || '../var/output.xml', view:main($sc, '/srv/nextcloud/data/'|| $user || '/files')),
     $output,
     if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
   )
