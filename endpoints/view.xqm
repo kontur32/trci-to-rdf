@@ -64,12 +64,24 @@ function view:upload($f){
 declare 
   %rest:GET
   %rest:query-param('path', '{$path}')
-  %rest:query-param('root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
+  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/v")
 function view:main($path, $root-path){
   <result>{
     set:main(
        $root-path || $path
+     )
+  }</result>
+};
+
+declare 
+  %rest:GET
+  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
+  %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/sets/{$set}")
+function view:main2($domain, $set, $root-path){
+  <result>{
+    set:main(
+       $root-path || $domain || '/сценарии/set-' || $set || '.json'
      )
   }</result>
 };
