@@ -5,3 +5,9 @@ declare function config:config()
 {
   doc("../config/config.xml")/config
 };
+
+declare function config:param($param)
+  as xs:string*
+{
+  config:config()/param[@id=$param]/text()
+};

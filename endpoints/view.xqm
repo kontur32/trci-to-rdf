@@ -3,6 +3,9 @@ module namespace view = "trci-to-rdf/view";
 import module namespace set = 'trci-to-rdf/lib/evalute.set'
   at "../lib/evalute.set.xqm";
 
+import module namespace config = 'trci-to-rdf/lib/config'
+  at "../lib/config.xqm";
+
 (:
   метод для обновления файла в RDF-хранилище для вэбхука nextcloud  
 :)
@@ -86,13 +89,13 @@ function view:main($path, $root-path){
 :)
 declare 
   %rest:GET
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
+  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/')
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set, $root-path){
   view:main(
     replace(request:hostname(), '^data\.', ''),
     $set,
-    $root-path
+    $root-path || config:param('user') || '/files/'
   )
 };
 
