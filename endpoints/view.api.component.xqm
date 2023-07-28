@@ -4,7 +4,7 @@ import module namespace rdfSparql = "rdf/generetor/sparql/2.3"
   at "../lib/rdf/2.3/sparql.xqm";
 
 (:
-  комментарий
+  вызов метода запуска компонента без параметра "domains"
 :)
 declare 
   %rest:GET
@@ -21,7 +21,7 @@ function view:main2($rdf-host, $root-path, $component){
 };
 
 (:
-  комментарий
+  вызов метода выполнения компонента по изввлечению данных из базы
 :)
 declare 
   %rest:GET

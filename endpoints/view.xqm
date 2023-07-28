@@ -81,6 +81,23 @@ function view:main($path, $root-path){
 
 
 (:
+  без параметра domain актуальный метод вызова обработки сценария
+  надо привязать к методу автообработки из вэбхука nextcloud
+:)
+declare 
+  %rest:GET
+  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
+  %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
+function view:main2($set, $root-path){
+  view:main(
+    replace(request:hostname(), '^data\.', ''),
+    $set,
+    $root-path
+  )
+};
+
+
+(:
   актуальный метод вызова обработки сценария
   надо привязать к методу автообработки из вэбхука nextcloud
 :)
