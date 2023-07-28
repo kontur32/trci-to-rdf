@@ -15,11 +15,15 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/components/{$component}")
 function view:main2($component){
-  view:main(
-    config:param('rdfHost'),
-    config:param('rootPath') || config:param('user') || '/files/',
-    replace(request:hostname(), '^data\.', ''),
-    $component)
+  let $domain := replace(request:hostname(), '^data\.', '')
+  let $user := config:param('user') ?? config:param('user') !! $domain
+  return
+    view:main(
+      config:param('rdfHost'),
+      config:param('rootPath') || $user || '/files/',
+      $domain,
+      $component
+    )
 };
 
 (:

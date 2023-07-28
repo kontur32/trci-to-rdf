@@ -92,11 +92,14 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set){
-  view:main(
-    replace(request:hostname(), '^data\.', ''),
-    $set,
-    config:param('rootPath') || config:param('user') || '/files/'
-  )
+  let $domain := replace(request:hostname(), '^data\.', '')
+  let $user := config:param('user') ?? config:param('user') !! $domain
+  return
+    view:main(
+      $domain,
+      $set,
+      config:param('rootPath') || $user || '/files/'
+    )
 };
 
 
