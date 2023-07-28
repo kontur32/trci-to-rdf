@@ -2,22 +2,24 @@ module namespace view = "trci-to-rdf/view/api/component";
 
 import module namespace rdfSparql = "rdf/generetor/sparql/2.3"
   at "../lib/rdf/2.3/sparql.xqm";
+  
+import module namespace config = 'trci-to-rdf/lib/config'
+  at "../lib/config.xqm";
+  
 
 (:
-  вызов метода запуска компонента без параметра "domains"
+  вызов метода запуска компонента без параметра "domains" 
+  и с пользователем и корневым путем из конфига
 :)
 declare 
   %rest:GET
-  %rest:query-param('_rdf-host', '{$rdf-host}', 'http://fuseki:3030/')
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/api/v01/components/{$component}")
-function view:main2($rdf-host, $root-path, $component){
+function view:main2($component){
   view:main(
-    $rdf-host,
-    $root-path,
+    config:param('rdfHost'),
+    config:param('rootPath') || config:param('user') || '/files/',
     replace(request:hostname(), '^data\.', ''),
     $component)
-  
 };
 
 (:

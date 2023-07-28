@@ -84,18 +84,18 @@ function view:main($path, $root-path){
 
 
 (:
-  без параметра domain актуальный метод вызова обработки сценария
+  без параметров domain и с пользователем корневым путем из конфига 
+  актуальный метод вызова обработки сценария
   надо привязать к методу автообработки из вэбхука nextcloud
 :)
 declare 
   %rest:GET
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/')
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
-function view:main2($set, $root-path){
+function view:main2($set){
   view:main(
     replace(request:hostname(), '^data\.', ''),
     $set,
-    $root-path || config:param('user') || '/files/'
+    config:param('rootPath') || config:param('user') || '/files/'
   )
 };
 
