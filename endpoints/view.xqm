@@ -8,13 +8,13 @@ import module namespace set = 'trci-to-rdf/lib/evalute.set'
 :)
 declare 
   %rest:POST('{$f}')
-  %rest:path("/trci-to-rdf/v/file/{$user}/{$dir}")
+  %rest:path("/trci-to-rdf/v/file/{$user}/{$domain}")
   %public
-function view:upload($f, $user, $dir){
+function view:upload($f, $user, $domain){
   let $item := $f//node/path
   let $map := 
     fetch:xml(
-      '/srv/nextcloud/data/' || $user || '/files/' || $dir || '/сценарии/map.xml'
+      '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
     )
   let $sc :=
     $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
@@ -23,7 +23,7 @@ function view:upload($f, $user, $dir){
         <item>{$item}</item>
         <sc>{$sc}</sc>
         <user>{$user}</user>
-        <dir>{$dir}</dir>
+        <dir>{$domain}</dir>
         <f>{$f}</f>
         <map>{$map}</map>
       </node>
@@ -61,6 +61,11 @@ function view:upload($f){
   )
 };
 
+
+(:
+  старый вызов запуска обработки сценария 
+  используется в вызове метода автообновления - отрефакторить
+:)
 declare 
   %rest:GET
   %rest:query-param('path', '{$path}')
@@ -74,11 +79,16 @@ function view:main($path, $root-path){
   }</result>
 };
 
+
+(:
+  актуальный метод вызова обработки сценария
+  надо привязать к методу автообработки из вэбхука nextcloud
+:)
 declare 
   %rest:GET
   %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/sets/{$set}")
-function view:main2($domain, $set, $root-path){
+function view:main($domain, $set, $root-path){
   <result>{
     set:main(
        $root-path || $domain || '/сценарии/set-' || $set || '.json'
