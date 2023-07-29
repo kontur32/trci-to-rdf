@@ -13,13 +13,13 @@ declare function config:param($param)
 };
 
 (:
-  нерериует путь к папке пользователя с файлами в контейнере nextcloud
+  генерирует путь к папке пользователя с файлами в контейнере nextcloud
 :)
 declare function config:rootPath() as xs:string {
   let $domain := replace(request:hostname(), '^data\.', '')
   let $user := config:param('user') ?? config:param('user') !! $domain
   return
-    config:param('rootPath') || $user || '/files/'
+    config:param('rootPath') || $user || '/files/' || $domain || '/'
 }; 
 
 (:
