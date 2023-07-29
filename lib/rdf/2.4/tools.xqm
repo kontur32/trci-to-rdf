@@ -1,5 +1,7 @@
 module namespace rdfGenTools = 'rdf/generetor/tools/2.4';
 
+import module namespace config = 'trci-to-rdf/lib/config'
+  at "../../../lib/config.xqm";
 
 (:~ 
   по заданному URL фетчит схему
@@ -36,7 +38,9 @@ declare function rdfGenTools:getValue($element as element()) as xs:string*
         )
       )
       else(
-        fetch:text($element/URI/text())
+        fetch:text(
+          config:setPath($element/URI/text())
+        )
       )
       
     )

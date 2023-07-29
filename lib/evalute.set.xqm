@@ -75,7 +75,7 @@ function set:sets(
     if($set/source/_)
     then(
       let $path := $set/source/_/directory/path/text()
-      let $dirPath := set:setPath($path)
+      let $dirPath := config:setPath($path)
       let $files := file:list($dirPath)
       for $i in $files
       where matches($i, $set/source/_/directory/mask/text())
@@ -86,7 +86,7 @@ function set:sets(
     )
     else(
       xs:anyURI(
-        set:setPath($set/source/text())
+        config:setPath($set/source/text())
       )
     )
   let $result :=
@@ -98,7 +98,7 @@ function set:sets(
     
     let $contextRoot as element(context) := <context>{$trci}</context>
     
-    let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(set:setPath(text()))
+    let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(config:setPath(text()))
     let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
     
     return
@@ -119,19 +119,12 @@ function set:sets(
 };
 
 (:
-  генерирует полный путь
-:)
-declare function set:setPath($path as xs:string) as xs:string {
-  starts-with($path, '/') ?? $path !! config:rootPath() || $path
-};
-
-(:
   обрабатывает сценарии из набора
 :)
 declare function set:main($path as xs:string){
   let $sets := json:parse(fetch:text($path))/json
   for $path in $sets/set/_
-  let $setPath := set:setPath($path)
+  let $setPath := config:setPath($path)
   let $set as element(json) := json:parse(fetch:text($setPath))/json
   let $parameters as element(parameters)* := $sets/parameters
   return

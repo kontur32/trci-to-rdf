@@ -12,6 +12,14 @@ declare function config:param($param)
   config:config()/param[@id=$param]/text()
 };
 
+
+(:
+  генерирует полный путь
+:)
+declare function config:setPath($path as xs:string) as xs:string {
+  starts-with($path, '/') ?? $path !! config:rootPath() || $path
+};
+
 (:
   генерирует путь к папке пользователя с файлами в контейнере nextcloud
 :)
