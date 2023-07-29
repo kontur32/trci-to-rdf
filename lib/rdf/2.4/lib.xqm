@@ -6,6 +6,9 @@ import module namespace rdfGenTools = 'rdf/generetor/tools/2.4'
 import module namespace rdfSparql = 'rdf/generetor/sparql/2.4'
   at 'sparql.xqm';
   
+import module namespace config = 'trci-to-rdf/lib/config'
+  at "../../../lib/config.xqm";
+  
 declare namespace rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 
@@ -125,7 +128,10 @@ function rdfGenLib:propertyValue(
               )
             
             let $endpoint as xs:anyURI :=
-              $localContext/RDF-endpoint/xs:anyURI(text())
+              if($localContext/RDF-endpoint/xs:anyURI(text()))
+              then($localContext/RDF-endpoint/xs:anyURI(text()))
+              else(xs:anyURI(config:param('rdfHost') || config:dataDomain() || '/sparql'))
+            
             let $results as element(sparql) :=
               rdfSparql:request($sparql, $localContext, $endpoint)
             return
