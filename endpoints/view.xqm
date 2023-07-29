@@ -92,11 +92,11 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set){
-    view:main(
-      config:rootPath(),
-      config:dataDomain(),
-      $set
-    )
+  <result>{
+    set:main(
+       config:rootPath() || 'сценарии/set-' || $set || '.json'
+     )
+  }</result>
 };
 
 
