@@ -95,9 +95,12 @@ function view:main2($set){
   let $result := 
     if(file:exists(config:rootPath() || 'сценарии/set-' || $set || '.json'))
     then(
-       set:main(
-         config:rootPath() || 'сценарии/set-' || $set || '.json'
-       )
+      <result>{
+        set:main(
+          config:rootPath() || 'сценарии/set-' || $set || '.json'
+        )
+      }</result>
+       
     )
     else(
       if(file:exists(config:rootPath() || 'сценарии/' || $set || '.json'))
@@ -105,13 +108,16 @@ function view:main2($set){
         let $setPath := config:rootPath() || 'сценарии/' || $set || '.json'
         let $set as element(json) := json:parse(fetch:text($setPath))/json
         return
-          set:sets($set, ())
+          <result>{
+            set:sets($set, ())
+          }</result>
+          
       )
       else(<err:SET01>сценарий {$set} не найден</err:SET01>)
       
     )
   return
-    <result>{$result}</result>
+    $result
 };
 
 
