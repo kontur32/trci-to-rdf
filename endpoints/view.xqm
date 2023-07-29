@@ -92,11 +92,20 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set){
-  <result>{
-    set:main(
-       config:rootPath() || 'сценарии/set-' || $set || '.json'
-     )
-  }</result>
+  let $result := 
+    if(file:exists(config:rootPath() || 'сценарии/set-' || $set || '.json'))
+    then(
+       set:main(
+         config:rootPath() || 'сценарии/set-' || $set || '.json'
+       )
+    )
+    else(
+      set:sets(
+         config:rootPath() || 'сценарии/' || $set || '.json', ()
+       )
+    )
+  return
+    <result>{$result}</result>
 };
 
 

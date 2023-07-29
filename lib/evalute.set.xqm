@@ -63,7 +63,7 @@ declare function set:output(
 };
 
 declare
-  %private
+  %public
 function set:sets(
   $set as element(json),
   $parameters as element(parameters)*
