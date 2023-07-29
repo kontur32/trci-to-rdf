@@ -39,18 +39,18 @@ declare function set:output(
           return
           let $graphName := $i/parameters/graphName/text()
           let $server :=
-            if($i/server)
-            then($i/server)
+            if($i/server/endpoint)
+            then($i/server//endpoint/text())
             else(
-              if($parameters/remote/sparql)
-              then($parameters/remote/sparql)
+              if($parameters/remote/sparql/endpoint/text())
+              then($parameters/remote/sparql/endpoint/text())
               else('http://fuseki:3030/' || config:dataDomain())
             )
           let $result :=
             fuseki2:upload-rdf(
               $rdf,
               $graphName,
-              $server/endpoint/text()
+              $server
             )
           return
             (
