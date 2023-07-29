@@ -41,7 +41,11 @@ declare function set:output(
           let $server :=
             if($i/server)
             then($i/server)
-            else($parameters/remote/sparql)
+            else(
+              if($parameters/remote/sparql)
+              then($parameters/remote/sparql)
+              else('http://fuseki:3030/' || config:dataDomain())
+            )
           let $result :=
             fuseki2:upload-rdf(
               $rdf,
