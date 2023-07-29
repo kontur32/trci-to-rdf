@@ -6,7 +6,6 @@ import module namespace rdfSparql = "rdf/generetor/sparql/2.3"
 import module namespace config = 'trci-to-rdf/lib/config'
   at "../lib/config.xqm";
   
-
 (:
   вызов метода запуска компонента без параметра "domains" 
   и с пользователем и корневым путем из конфига
