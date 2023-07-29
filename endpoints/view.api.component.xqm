@@ -6,6 +6,8 @@ import module namespace rdfSparql = "rdf/generetor/sparql/2.3"
 import module namespace config = 'trci-to-rdf/lib/config'
   at "../lib/config.xqm";
   
+
+  
 (:
   вызов метода запуска компонента без параметра "domains" 
   и с пользователем и корневым путем из конфига
@@ -14,13 +16,10 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/components/{$component}")
 function view:main2($component){
-  let $domain := replace(request:hostname(), '^data\.', '')
-  let $user := config:param('user') ?? config:param('user') !! $domain
-  return
     view:main(
       config:param('rdfHost'),
-      config:param('rootPath') || $user || '/files/',
-      $domain,
+      config:rootPath(),
+      config:dataDomain(),
       $component
     )
 };

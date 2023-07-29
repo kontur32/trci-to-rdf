@@ -11,3 +11,20 @@ declare function config:param($param)
 {
   config:config()/param[@id=$param]/text()
 };
+
+(:
+  нерериует путь к папке пользователя с файлами в контейнере nextcloud
+:)
+declare function config:rootPath() as xs:string {
+  let $domain := replace(request:hostname(), '^data\.', '')
+  let $user := config:param('user') ?? config:param('user') !! $domain
+  return
+    config:param('rootPath') || $user || '/files/'
+}; 
+
+(:
+  извлекает имя домена из хоста в запросе
+:)
+declare function config:dataDomain() as xs:string {
+  replace(request:hostname(), '^data\.', '')
+}; 
