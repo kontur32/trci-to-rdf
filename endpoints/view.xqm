@@ -92,13 +92,10 @@ declare
   %rest:GET
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set){
-  let $domain := replace(request:hostname(), '^data\.', '')
-  let $user := config:param('user') ?? config:param('user') !! $domain
-  return
     view:main(
-      $domain,
-      $set,
-      config:param('rootPath') || $user || '/files/'
+      config:rootPath(),
+      config:dataDomain(),
+      $set
     )
 };
 
@@ -111,7 +108,7 @@ declare
   %rest:GET
   %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
   %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/sets/{$set}")
-function view:main($domain, $set, $root-path){
+function view:main($root-path, $domain, $set){
   <result>{
     set:main(
        $root-path || $domain || '/сценарии/set-' || $set || '.json'
