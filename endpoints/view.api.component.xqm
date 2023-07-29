@@ -28,10 +28,10 @@ function view:main2($component){
 declare 
   %rest:GET
   %rest:query-param('_rdf-host', '{$rdf-host}', 'http://fuseki:3030/')
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
+  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/localhost')
   %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/components/{$component}")
 function view:main($rdf-host, $root-path, $domain, $component){
-  let $path := $root-path || "/" || $domain ||  "/компоненты/" || $component 
+  let $path := $root-path || "/компоненты/" || $component 
   let $запрос := 
     fetch:text(
       $path || '/данные.rq'
