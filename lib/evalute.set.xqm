@@ -15,6 +15,9 @@ import module namespace cccr.2.4 = 'rdf/generetor/cccr/2.4'
 
 import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2'
   at 'fuseki2.client.xqm';
+  
+import module namespace config = 'trci-to-rdf/lib/config'
+  at "../lib/config.xqm";
 
 declare function set:output(
   $output as element(output),
@@ -109,7 +112,8 @@ function set:sets(
 
 declare function set:main($path as xs:string){
   let $sets := json:parse(fetch:text($path))/json
-  for $setPath in $sets/set/_
+  for $path in $sets/set/_
+  let $setPath := starts-with($path, '/')?? $path !! config:rootPath() || $path
   let $set as element(json) := json:parse(fetch:text($setPath))/json
   let $parameters as element(parameters)* := $sets/parameters
   return
