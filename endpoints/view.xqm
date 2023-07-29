@@ -100,10 +100,15 @@ function view:main2($set){
        )
     )
     else(
-      let $setPath := config:rootPath() || 'сценарии/' || $set || '.json'
-      let $set as element(json) := json:parse(fetch:text($setPath))/json
-      return
-        set:sets($set, ())
+      if(file:exists(config:rootPath() || 'сценарии/' || $set || '.json'))
+      then(
+        let $setPath := config:rootPath() || 'сценарии/' || $set || '.json'
+        let $set as element(json) := json:parse(fetch:text($setPath))/json
+        return
+          set:sets($set, ())
+      )
+      else(<err:SET01>сценарий {$set} не найден</err:SET01>)
+      
     )
   return
     <result>{$result}</result>
