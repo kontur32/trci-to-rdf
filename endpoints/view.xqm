@@ -100,9 +100,10 @@ function view:main2($set){
        )
     )
     else(
-      set:sets(
-         config:rootPath() || 'сценарии/' || $set || '.json', ()
-       )
+      let $setPath := config:rootPath() || 'сценарии/' || $set || '.json'
+      let $set as element(json) := json:parse(fetch:text($setPath))/json
+      return
+        set:sets($set, ())
     )
   return
     <result>{$result}</result>
