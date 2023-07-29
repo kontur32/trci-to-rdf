@@ -49,8 +49,8 @@ declare function set:output(
           let $result :=
             fuseki2:upload-rdf(
               $rdf,
-              $graphName,
-              $server
+              xs:anyURI($graphName),
+              xs:anyURI($server)
             )
           return
             (
