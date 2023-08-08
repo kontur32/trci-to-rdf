@@ -24,8 +24,9 @@ declare function config:setPath($path as xs:string) as xs:string {
   генерирует путь к папке пользователя с файлами в контейнере nextcloud
 :)
 declare function config:rootPath() as xs:string {
-  let $domain := replace(request:hostname(), '^data\.', '')
-  let $user := config:param('user') ?? config:param('user') !! $domain
+  let $domain := config:dataDomain()
+  let $user :=
+    config:param('user') ?? config:param('user') !! $domain
   return
     config:param('rootPath') || $user || '/files/' || $domain || '/'
 }; 
@@ -34,5 +35,5 @@ declare function config:rootPath() as xs:string {
   извлекает имя домена из хоста в запросе
 :)
 declare function config:dataDomain() as xs:string {
-  replace(request:hostname(), '^data\.', '')
+  config:param('domain') ?? config:param('domain') !! replace(request:hostname(), '^data\.', '')
 }; 

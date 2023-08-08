@@ -1,4 +1,5 @@
 <config>
+  <param id="domain">localhost</param>
   <param id="user"></param>
   <param id="rootPath">/srv/nextcloud/data/</param>
   <param id="rdfHost">http://fuseki:3030/</param>
