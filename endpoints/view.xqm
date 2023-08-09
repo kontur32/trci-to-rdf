@@ -23,6 +23,7 @@ function view:upload($f, $user, $domain){
   let $logRecord :=
     <node>
         <файл>{$item}</файл>
+        <полноеИмяФайла>{'/srv/nextcloud/data/' || $item/text()}</полноеИмяФайла>
         <сценарий>{$sc}</сценарий>
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
