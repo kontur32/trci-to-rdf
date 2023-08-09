@@ -19,12 +19,13 @@ function view:upload($f, $user, $domain){
     fetch:xml(
       '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
     )
-  let $sc := $map//node[matches($itemPath/text(), path/text())]/sc/text()
+  let $scNode := $map//node[matches($itemPath/text(), path/text())]
+  let $sc := $scNode/sc/text()
   let $logRecord :=
     <node>
         <файл>{$itemPath}</файл>
-        <корневойПуть>{$sc/root/text()}</корневойПуть>
-        <имяФайла>{substring-after($itemPath/text(), $sc/root/text())}</имяФайла>
+        <корневойПуть>{$scNode/root/text()}</корневойПуть>
+        <имяФайла>{substring-after($itemPath/text(), $scNode/root/text())}</имяФайла>
         <сценарий>{$sc}</сценарий>
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
