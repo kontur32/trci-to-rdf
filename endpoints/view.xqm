@@ -30,13 +30,19 @@ function view:upload($f, $user, $domain){
         <телоЗапроса>{$f}</телоЗапроса>
         {$map}
       </node>
+  let $result :=
+     if($sc)then(set:main('/srv/nextcloud/data/'|| $user || '/files' || $sc))
   return
-  (
-    file:write(file:base-dir() || '../var/path.xml', $output),
-    file:write(file:base-dir() || '../var/output.xml', view:main($sc, '/srv/nextcloud/data/'|| $user || '/files')),
-    $output,
-    if($sc)then(view:main($sc, '/srv/nextcloud/data/'|| $user || '/files'))
-  )
+    (
+      file:write(
+        file:base-dir() || '../var/path.xml',
+        $output
+      ),
+      file:write(
+        file:base-dir() || '../var/output.xml',
+        $result
+      )
+    )
 };
 
 
@@ -81,7 +87,6 @@ function view:main($path, $root-path){
      )
   }</result>
 };
-
 
 (:
   без параметров domain и с пользователем корневым путем из конфига 
