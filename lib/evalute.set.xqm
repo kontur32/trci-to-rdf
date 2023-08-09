@@ -151,10 +151,10 @@ function set:main(
 declare
   %public
 function set:main(
-  $path as xs:string,
+  $setPath as xs:string,
   $sourcePath as xs:string*
 ){
-  let $sets := json:parse(fetch:text($path))/json
+  let $sets := json:parse(fetch:text($setPath))/json
   for $path in $sets/set/_
   let $setPath := config:setPath($path)
   let $set as element(json) := json:parse(fetch:text($setPath))/json
