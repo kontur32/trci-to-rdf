@@ -102,7 +102,7 @@ function set:sets(
         )
       )
       else(
-        $sourcePath
+        xs:anyURI($sourcePath)
       )
     )
   let $result :=
