@@ -102,7 +102,7 @@ function set:sets(
         )
       )
       else(
-        xs:anyURI($sourcePath)
+        xs:anyURI(config:setPath($sourcePath))
       )
     )
   let $result :=

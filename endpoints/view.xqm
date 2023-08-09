@@ -37,7 +37,7 @@ function view:upload($f, $user, $domain){
      then(
        set:main(
          '/srv/nextcloud/data/'|| $user || '/files' || $sc,
-         $itemPath/text()
+         substring-after($itemPath/text(), $scNode/root/text())
        )
      )
   return
