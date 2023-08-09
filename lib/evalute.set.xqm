@@ -68,6 +68,16 @@ function set:sets(
   $set as element(json),
   $parameters as element(parameters)*
 ){
+  set:sets($set, $parameters, '')
+};
+
+declare
+  %public
+function set:sets(
+  $set as element(json),
+  $parameters as element(parameters)*,
+  $sourcePath as xs:string*
+){
    
   let $output as element(output) := $set/output
   let $columnDirectionList := $set/source/_/directory/column/text()
@@ -85,8 +95,14 @@ function set:sets(
         )
     )
     else(
-      xs:anyURI(
-        config:setPath($set/source/text())
+      if($set/source/text())
+      then(
+        xs:anyURI(
+          config:setPath($set/source/text())
+        )
+      )
+      else(
+        $sourcePath
       )
     )
   let $result :=
@@ -121,12 +137,28 @@ function set:sets(
 (:
   обрабатывает сценарии из набора
 :)
-declare function set:main($path as xs:string){
+declare
+  %public
+function set:main(
+  $path as xs:string
+){
+  set:main($path, '')
+};
+
+(:
+  обрабатывает сценарии из набора
+:)
+declare
+  %public
+function set:main(
+  $path as xs:string,
+  $sourcePath as xs:string*
+){
   let $sets := json:parse(fetch:text($path))/json
   for $path in $sets/set/_
   let $setPath := config:setPath($path)
   let $set as element(json) := json:parse(fetch:text($setPath))/json
   let $parameters as element(parameters)* := $sets/parameters
   return
-    set:sets($set, $parameters)
+    set:sets($set, $parameters, $sourcePath)
 };

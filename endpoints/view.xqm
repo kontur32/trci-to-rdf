@@ -30,7 +30,13 @@ function view:upload($f, $user, $domain){
         {$map}
       </node>
   let $result :=
-     if($sc)then(set:main('/srv/nextcloud/data/'|| $user || '/files' || $sc))
+     if($sc)
+     then(
+       set:main(
+         '/srv/nextcloud/data/'|| $user || '/files' || $sc,
+         $item/text()
+       )
+     )
   return
     (
       file:write(file:base-dir() || '../var/path.xml', $logRecord),
