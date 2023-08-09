@@ -23,12 +23,12 @@ function view:upload($f, $user, $domain){
     $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
   let $output :=
     <node>
-        <item>{$item}</item>
-        <sc>{$sc}</sc>
-        <user>{$user}</user>
-        <dir>{$domain}</dir>
-        <f>{$f}</f>
-        <map>{$map}</map>
+        <файл>{$item}</файл>
+        <сценарий>{$sc}</сценарий>
+        <пользователь>{$user}</пользователь>
+        <доменДанных>{$domain}</доменДанных>
+        <телоЗапроса>{$f}</телоЗапроса>
+        {$map}
       </node>
   return
   (
