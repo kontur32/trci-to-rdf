@@ -20,7 +20,7 @@ function view:upload($f, $user, $domain){
       '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
     )
   let $sc :=
-    $map//node['/' || $user || '/files' || path/text()=$item/text()]/sc/text()
+    $map//node[path/text()= $item/text()]/sc/text()
   let $output :=
     <node>
         <файл>{$item}</файл>
