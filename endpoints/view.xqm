@@ -14,16 +14,17 @@ declare
   %rest:path("/trci-to-rdf/v/file/{$user}/{$domain}")
   %public
 function view:upload($f, $user, $domain){
-  let $item := $f//node/path
+  let $itemPath := $f//node/path
   let $map := 
     fetch:xml(
       '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
     )
-  let $sc := $map//node[matches($item/text(), path/text())]/sc/text()
+  let $sc := $map//node[matches($itemPath/text(), path/text())]/sc/text()
   let $logRecord :=
     <node>
-        <файл>{$item}</файл>
-        <полноеИмяФайла>{'/srv/nextcloud/data/' || $item/text()}</полноеИмяФайла>
+        <файл>{$itemPath}</файл>
+        <корневойПуть>{$sc/root/text()}</корневойПуть>
+        <имяФайла>{substring-after($itemPath/text(), $sc/root/text())}</имяФайла>
         <сценарий>{$sc}</сценарий>
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
@@ -35,7 +36,7 @@ function view:upload($f, $user, $domain){
      then(
        set:main(
          '/srv/nextcloud/data/'|| $user || '/files' || $sc,
-         '/srv/nextcloud/data/' || $item/text()
+         $itemPath/text()
        )
      )
   return
