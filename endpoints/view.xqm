@@ -19,9 +19,8 @@ function view:upload($f, $user, $domain){
     fetch:xml(
       '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
     )
-  let $sc :=
-    $map//node[path/text()= $item/text()]/sc/text()
-  let $output :=
+  let $sc := $map//node[path/text()= $item/text()]/sc/text()
+  let $logRecord :=
     <node>
         <файл>{$item}</файл>
         <сценарий>{$sc}</сценарий>
@@ -34,42 +33,10 @@ function view:upload($f, $user, $domain){
      if($sc)then(set:main('/srv/nextcloud/data/'|| $user || '/files' || $sc))
   return
     (
-      file:write(
-        file:base-dir() || '../var/path.xml',
-        $output
-      ),
-      file:write(
-        file:base-dir() || '../var/output.xml',
-        $result
-      )
+      file:write(file:base-dir() || '../var/path.xml', $logRecord),
+      file:write(file:base-dir() || '../var/output.xml', $result)
     )
 };
-
-
-declare 
-  %rest:POST('{$f}')
-  %rest:path("/trci-to-rdf/v/file")
-  %public
-function view:upload($f){
-  let $item := $f//node/path
-  let $sc :=
-    fetch:xml(
-      '/srv/nextcloud/data/kontur32/files/лицей/сценарии/map.xml'
-    )//node['/kontur32/files' || path/text()=$item/text()]/sc/text()
-    
-  return
-  (
-    file:write(
-      file:base-dir() || '../var/path.xml',
-      <node>
-        {$item}
-        <sc>{$sc}</sc>
-      </node>
-    ),
-    if($sc)then(view:main($sc, '/srv/nextcloud/data/kontur32/files'))
-  )
-};
-
 
 (:
   старый вызов запуска обработки сценария 
@@ -89,9 +56,8 @@ function view:main($path, $root-path){
 };
 
 (:
-  без параметров domain и с пользователем корневым путем из конфига 
-  актуальный метод вызова обработки сценария
-  надо привязать к методу автообработки из вэбхука nextcloud
+  domain и пользователем из запроса или конфига 
+  актуальный метод принудительного вызова обработки сценария
 :)
 declare 
   %rest:GET
@@ -119,25 +85,7 @@ function view:main2($set){
           
       )
       else(<err:SET01>сценарий {$set} не найден</err:SET01>)
-      
     )
   return
     $result
-};
-
-
-(:
-  актуальный метод вызова обработки сценария
-  надо привязать к методу автообработки из вэбхука nextcloud
-:)
-declare 
-  %rest:GET
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/localhost')
-  %rest:path("/trci-to-rdf/api/v01/domains/{$domain}/sets/{$set}")
-function view:main($root-path, $domain, $set){
-  <result>{
-    set:main(
-       $root-path || 'сценарии/set-' || $set || '.json'
-     )
-  }</result>
 };
