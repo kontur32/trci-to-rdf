@@ -155,10 +155,23 @@ function set:main(
   $sourcePath as xs:string*
 ){
   let $sets := json:parse(fetch:text($setPath))/json
+  let $parameters as element(parameters)* := $sets/parameters
   for $path in $sets/set/_
   let $setPath := config:setPath($path)
   let $set as element(json) := json:parse(fetch:text($setPath))/json
-  let $parameters as element(parameters)* := $sets/parameters
+  return
+    set:sc($path, $parameters, $sourcePath)
+};
+
+declare
+  %public
+function set:sc(
+  $scPath as xs:string,
+  $parameters as element(parameters)*,
+  $sourcePath as xs:string*
+){
+  let $setPath := config:setPath($scPath)
+  let $set as element(json) := json:parse(fetch:text($setPath))/json
   return
     set:sets($set, $parameters, $sourcePath)
 };
