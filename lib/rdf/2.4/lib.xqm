@@ -93,7 +93,21 @@ function rdfGenLib:xquery(
     fold-left(
       $xqueries,
       $context,
-      function($c, $xquery){xquery:eval($xquery, map{'':$c})}
+      function($c, $xquery){
+        let $modulePath := config:param('modulePath')
+        let $currentExquery := 
+          if(file:exists($modulePath))
+          then(
+              replace(
+                "import module namespace modules = 'cccr/modules' at '%1';",
+                "%1", $modulePath
+              ) || $xquery
+          )
+          else($xquery)
+        
+        return
+          xquery:eval($currentExquery, map{'':$c})
+      }
     )
 };
 
