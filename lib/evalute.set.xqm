@@ -18,11 +18,15 @@ import module namespace fuseki2 = 'http://garpix.com/semantik/app/fuseki2'
   
 import module namespace config = 'trci-to-rdf/lib/config'
   at "../lib/config.xqm";
+  
+import module namespace rdfGenLib = 'rdf/generetor/lib/2.4' at 'rdf/2.4/lib.xqm';
 
+(: выводит результаты обработки сценария :)
 declare function set:output(
   $output as element(output),
   $rdf as element(),
-  $parameters as element(parameters)?
+  $parameters as element(parameters)?,
+  $context as element(context)
 ){
    if($output/_)
     then(
@@ -37,7 +41,7 @@ declare function set:output(
               $rdf
         case 'remote'
           return
-          let $graphName := $i/parameters/graphName/text()
+          let $graphName := rdfGenLib:propertyValue($context, $i/parameters/graphName)
           let $server :=
             if($i/server/endpoint)
             then($i/server//endpoint/text())
@@ -105,6 +109,7 @@ function set:sets(
         xs:anyURI(config:setPath($sourcePath))
       )
     )
+  
   let $result :=
     for $fileURI in $fileURIs
     let $rawData as xs:base64Binary := fetch:binary($fileURI)
@@ -117,7 +122,7 @@ function set:sets(
     let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(config:setPath(text()))
     let $schemaRoot as element(json) := rdfGenTools:schemaFetch($schemaPath)
     
-    return
+    let $rdf := 
       switch ($schemaRoot/version/text())
       case '2.3'
         return cccr.2.3:cccr($contextRoot, $schemaRoot)
@@ -126,12 +131,15 @@ function set:sets(
       default 
         return cccr.2.3:cccr($contextRoot, $schemaRoot)
   
+    return
+      set:output(
+        $output,
+        $rdf,
+        $parameters,
+        $contextRoot
+      )
   return
-    set:output(
-      $output,
-      $result,
-      $parameters
-    )
+    $result
 };
 
 (:
@@ -163,6 +171,9 @@ function set:main(
     set:sc($path, $parameters, $sourcePath)
 };
 
+(:
+  обрабатывает один сценарий
+:)
 declare
   %public
 function set:sc(
