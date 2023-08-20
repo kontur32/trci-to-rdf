@@ -15,28 +15,35 @@ declare
   %public
 function view:upload($f, $user, $domain){
   let $itemPath := $f//node/internalPath
-  let $map := 
-    fetch:xml(
-      '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
-    )
-  let $scNode := $map//node[matches($itemPath/text(), path/text())]
-  let $sc := $scNode/sc/text()
+  
+  let $scenarion :=
+    for $i in file:list('/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии')
+    where not(matches($i, '^set-')) and matches($i, 'json$')
+    let $json as element(json) :=
+      json:parse(
+        fetch:text('/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/'||$i )
+      )/json
+    where $json//path
+    where matches($itemPath/text(), $json//path)
+    return
+      $json
+ 
   let $logRecord :=
     <node>
-        <файл>{$itemPath}</файл>
-        <имяФайла>{$itemPath/text()}</имяФайла>
-        <сценарий>{$sc}</сценарий>
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
+        <файл>{$itemPath}</файл>
+        <сценарий>{$scenarion}</сценарий>
         <телоЗапроса>{$f}</телоЗапроса>
-        {$map}
       </node>
+  
   let $output :=
-     if($sc)
+     if($scenarion)
      then(
        try{
-         set:main(
-           '/srv/nextcloud/data/'|| $user || '/files' || $sc,
+         set:sets(
+           $scenarion,
+           (),
            $itemPath/text()
          )
        }catch*{
