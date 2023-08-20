@@ -14,7 +14,7 @@ declare
   %rest:path("/trci-to-rdf/v/file/{$user}/{$domain}")
   %public
 function view:upload($f, $user, $domain){
-  let $itemPath := $f//node/path
+  let $itemPath := $f//node/internalPath
   let $map := 
     fetch:xml(
       '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/map.xml'
@@ -24,26 +24,29 @@ function view:upload($f, $user, $domain){
   let $logRecord :=
     <node>
         <файл>{$itemPath}</файл>
-        <корневойПуть>{$scNode/root/text()}</корневойПуть>
-        <имяФайла>{substring-after($itemPath/text(), $scNode/root/text())}</имяФайла>
+        <имяФайла>{$itemPath/text()}</имяФайла>
         <сценарий>{$sc}</сценарий>
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
         <телоЗапроса>{$f}</телоЗапроса>
         {$map}
       </node>
-  let $result :=
+  let $output :=
      if($sc)
      then(
-       set:main(
-         '/srv/nextcloud/data/'|| $user || '/files' || $sc,
-         substring-after($itemPath/text(), $scNode/root/text())
-       )
+       try{
+         set:main(
+           '/srv/nextcloud/data/'|| $user || '/files' || $sc,
+           $itemPath/text()
+         )
+       }catch*{
+         <error></error>
+       }
      )
   return
     (
       file:write(file:base-dir() || '../var/path.xml', $logRecord),
-      file:write(file:base-dir() || '../var/output.xml', $result)
+      file:write(file:base-dir() || '../var/output.xml', $output)
     )
 };
 
