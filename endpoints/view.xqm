@@ -23,8 +23,8 @@ function view:upload($f, $user, $domain){
       json:parse(
         fetch:text('/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/'||$i )
       )/json
-    where $json//path
-    where matches($itemPath/text(), $json//path)
+    where $json//matches
+    where matches($itemPath/text(), $json//matches)
     return
       $json
  
