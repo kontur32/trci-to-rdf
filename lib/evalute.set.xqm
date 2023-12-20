@@ -1,5 +1,6 @@
 module namespace set = 'trci-to-rdf/lib/evalute.set';
 
+declare namespace rdf ="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 import module namespace trci = "http://www.iro37.ru/stasova/api/v1.1/parseXLSX" 
   at "xlsx/parseXLSX-to-TRCI.xqm";
@@ -86,6 +87,7 @@ function set:sets(
    
   let $output as element(output) := $set/output
   let $columnDirectionList := $set/source/_/directory/column/text()
+  
   let $fileURIs as xs:anyURI* :=
     if($set/source/_)
     then(
@@ -113,11 +115,23 @@ function set:sets(
   
   let $result :=
     for $fileURI in $fileURIs
-    let $rawData as xs:base64Binary := fetch:binary($fileURI)
-    let $trci as element(file) := 
-      trci:xlsx($rawData, $columnDirectionList)
-      update insert node attribute {'URI'}{$fileURI} into .
     
+    let $trci as element(file) := 
+      switch(replace($fileURI, ".*.([a-z]{4})$", "$1"))
+      case "xlsx"return
+        let $rawData as xs:base64Binary := fetch:binary($fileURI)
+        return
+          trci:xlsx($rawData, $columnDirectionList)
+          update insert node attribute {'URI'}{$fileURI} into .
+      case "docx"return
+        let $rawData as xs:base64Binary := fetch:binary($fileURI)
+        return
+          <file>{parse-xml(archive:extract-text($rawData, 'word/document.xml'))}</file>
+          update insert node attribute {'URI'}{$fileURI} into .
+      default return
+        <file>{fetch:xml($fileURI)/child::*}</file>
+        update insert node attribute {'URI'}{$fileURI} into .
+        
     let $contextRoot as element(context) := <context>{$trci}</context>
     
     let $schemaPath as xs:anyURI := $set/schema/xs:anyURI(config:setPath(text()))
@@ -133,14 +147,19 @@ function set:sets(
         return cccr.2.3:cccr($contextRoot, $schemaRoot)
   
     return
-      set:output(
+     [
         $output,
         $rdf,
         $parameters,
         $contextRoot
-      )
+    ]
   return
-    $result
+    set:output(
+      $output,
+      element{"rdf:RDF"}{$result?2/rdf:Description},
+      $parameters,
+      $result[1]?4
+    )
 };
 
 (:

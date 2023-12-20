@@ -23,10 +23,21 @@ declare function config:setPath($path as xs:string) as xs:string {
 (:
   генерирует путь к папке пользователя с файлами в контейнере nextcloud
 :)
+declare function config:scenarioPath() as xs:string {
+  let $path := 
+    if(config:param('сценарии'))
+    then(config:param('сценарии'))
+    else('сценарии')
+  return
+    config:rootPath() || $path || '/'
+};
+
+(:
+  генерирует путь к папке пользователя с файлами в контейнере nextcloud
+:)
 declare function config:rootPath() as xs:string {
   let $domain := config:dataDomain()
-  let $user :=
-    config:param('user') ?? config:param('user') !! $domain
+  let $user := config:param('user') ?? config:param('user') !! $domain
   return
     config:param('rootPath') || $user || '/files/' || $domain || '/'
 }; 

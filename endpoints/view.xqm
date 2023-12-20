@@ -58,23 +58,6 @@ function view:upload($f, $user, $domain){
 };
 
 (:
-  старый вызов запуска обработки сценария 
-  используется в вызове метода автообновления - отрефакторить
-:)
-declare 
-  %rest:GET
-  %rest:query-param('path', '{$path}')
-  %rest:query-param('_root-path', '{$root-path}', '/srv/nextcloud/data/kontur32/files/')
-  %rest:path("/trci-to-rdf/v")
-function view:main($path, $root-path){
-  <result>{
-    set:main(
-       $root-path || $path
-     )
-  }</result>
-};
-
-(:
   domain и пользователем из запроса или конфига 
   актуальный метод принудительного вызова обработки сценария
 :)
@@ -83,25 +66,19 @@ declare
   %rest:path("/trci-to-rdf/api/v01/sets/{$set}")
 function view:main2($set){
   let $result := 
-    if(file:exists(config:rootPath() || 'сценарии/set-' || $set || '.json'))
+    if(file:exists(config:scenarioPath() || 'set-' || $set || '.json'))
     then(
       <result>{
-        set:main(
-          config:rootPath() || 'сценарии/set-' || $set || '.json'
-        )
+        set:main(config:scenarioPath() || 'set-' || $set || '.json')
       }</result>
-       
     )
     else(
-      if(file:exists(config:rootPath() || 'сценарии/' || $set || '.json'))
+      if(file:exists(config:scenarioPath() || $set || '.json'))
       then(
-        let $setPath := config:rootPath() || 'сценарии/' || $set || '.json'
+        let $setPath := config:scenarioPath() || $set || '.json'
         let $set as element(json) := json:parse(fetch:text($setPath))/json
         return
-          <result>{
-            set:sets($set, ())
-          }</result>
-          
+          <result>{set:sets($set, ())}</result>
       )
       else(<err:SET01>сценарий {$set} не найден</err:SET01>)
     )
