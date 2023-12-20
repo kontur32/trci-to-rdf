@@ -33,6 +33,7 @@ function view:upload($f, $user, $domain){
         <пользователь>{$user}</пользователь>
         <доменДанных>{$domain}</доменДанных>
         <файл>{$itemPath}</файл>
+        <файл2>{config:filePath($itemPath/text())}</файл2>
         <сценарий>{$scenarion}</сценарий>
         <телоЗапроса>{$f}</телоЗапроса>
       </node>

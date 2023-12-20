@@ -13,6 +13,25 @@ declare function config:param($param)
 };
 
 
+
+(:
+  ищет файл по маске начиная с указанного пути
+:)
+declare function config:filePath($mask){
+  config:filePath(config:rootPath() || 'данные/', $mask)
+};
+
+declare function config:filePath($paht, $mask){
+  (
+    for $i in file:list($paht)
+    return
+      if(file:is-dir($paht || $i))
+      then(config:filePath($paht|| $i, $mask))
+      else($paht || $i)
+  )[matches(., $mask)]
+};
+
+
 (:
   генерирует полный путь
 :)
