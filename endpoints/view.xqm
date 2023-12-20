@@ -45,7 +45,7 @@ function view:upload($f, $user, $domain){
          set:sets(
            $scenarion,
            (),
-           $itemPath/text()
+           config:filePath($itemPath/text())
          )
        }catch*{
          <error></error>
