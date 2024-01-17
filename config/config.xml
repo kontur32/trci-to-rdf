@@ -1,9 +1,0 @@
-<config>
-  <param id="сценарии">сценарии</param>
-  <param id="domain">localhost</param>
-  <param id="user">localhost</param>
-  <param id="rootPath">/srv/nextcloud/data/</param>
-  <param id="modulePath1">/srv/nextcloud/data/localhost/files/localhost/modules/modules.xqm</param>
-  <param id="modulePath">/home/kontur32/nextcloud/localhost/modules/modules.xqm</param>
-  <param id="rdfHost">http://fuseki:3030/</param>
-</config>
