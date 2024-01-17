@@ -14,15 +14,13 @@ declare
   %rest:path("/trci-to-rdf/v/file/{$user}/{$domain}")
   %public
 function view:upload($f, $user, $domain){
-  let $itemPath := $f//node/internalPath
-  
+  let $itemPath := 
+    if($f//object_name)then($f//object_name)else($f//node/internalPath)
+  let $rootScenarioPath := '/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии'
   let $scenarion :=
-    for $i in file:list('/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии')
+    for $i in file:list($rootScenarioPath)
     where not(matches($i, '^set-')) and matches($i, 'json$')
-    let $json as element(json) :=
-      json:parse(
-        fetch:text('/srv/nextcloud/data/' || $user || '/files/' || $domain || '/сценарии/'||$i )
-      )/json
+    let $json as element(json) := json:parse(fetch:text($rootScenarioPath||$i))/json
     where $json//matches
     where matches($itemPath/text(), $json//matches)
     return
@@ -45,7 +43,10 @@ function view:upload($f, $user, $domain){
          set:sets(
            $scenarion,
            (),
-           config:filePath($itemPath/text())
+           if(starts-with($itemPath/text(), '/'))
+           then(config:filePath($itemPath/text()))
+           else($itemPath/text())
+           
          )
        }catch*{
          <error></error>
@@ -57,6 +58,7 @@ function view:upload($f, $user, $domain){
       file:write(file:base-dir() || '../var/output.xml', $output)
     )
 };
+
 
 (:
   domain и пользователем из запроса или конфига 

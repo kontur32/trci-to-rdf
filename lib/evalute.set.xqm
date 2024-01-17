@@ -109,7 +109,12 @@ function set:sets(
         )
       )
       else(
-        xs:anyURI(config:setPath($sourcePath))
+        xs:anyURI(
+          if(starts-with($sourcePath, '/'))
+          then(config:setPath($sourcePath))
+          else($sourcePath)
+          
+        )
       )
     )
   
