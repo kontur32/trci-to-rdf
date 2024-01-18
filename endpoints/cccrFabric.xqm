@@ -24,7 +24,7 @@ function view:main($object_name as xs:string, $url as xs:string){
     where $json//matches
     where matches($object, $json//matches/text())
     return
-      $json/json
+      $json
   
   return
       <json type="object">
