@@ -37,7 +37,7 @@ function view:main($object_name as xs:string, $url as xs:string){
       $scenario/output,
       $rdf,
       (),
-      <context></context>
+      <context><file URI="{$object_name}"/></context>
     )
    => serialize()
     
