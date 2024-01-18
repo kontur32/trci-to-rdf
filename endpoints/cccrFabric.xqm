@@ -23,9 +23,10 @@ function view:main($object_name as xs:string, $url as xs:string){
     where $json//matches
     where matches($object, $json//matches/text())
     return
-      $scenarioRootPath || $i
+      $json/json
+  
   let $rdf := 
-    cccFabric:cccrFabric(xs:anyURI($scenario), xs:anyURI($url))
+    cccFabric:cccrFabric(xs:anyURI($scenario/schema/text()), xs:anyURI($url))
     => serialize()
   return
       <json type="object">
