@@ -16,6 +16,7 @@ function view:main($object_name as xs:string, $url as xs:string){
   let $object := web:decode-url($object_name)
   let $scenarioRootPath := 
     '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/сценарии/' 
+  
   let $scenario :=
     for $i in file:list($scenarioRootPath)[matches(., 'json$')]
     let $json := 
@@ -25,13 +26,10 @@ function view:main($object_name as xs:string, $url as xs:string){
     return
       $json/json
   
-  let $rdf := 
-    cccFabric:cccrFabric(xs:anyURI($scenario/schema/text()), xs:anyURI($url))
-    => serialize()
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
-        <scenario type="string">{$rdf}</scenario>
+        <scenario type="string">{$scenario/schema/text()}</scenario>
         <url type="string">{$url}</url>
       </json>
 };
