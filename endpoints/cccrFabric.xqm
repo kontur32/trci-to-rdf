@@ -30,7 +30,7 @@ function view:main($object_name as xs:string, $url as xs:string){
   
   let $rdf := 
     cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) 
-    => serialize()
+    
   
   let $output := 
     set:output(
