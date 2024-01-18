@@ -25,11 +25,14 @@ function view:main($object_name as xs:string, $url as xs:string){
     where matches($object, $json//matches/text())
     return
       $json
-  
+  let $rdf := 
+    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url))
+    => serialize()
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
         <scenario type="string">{file:exists($rootPath || $scenario/schema/text())}</scenario>
         <url type="string">{$url}</url>
+        <rdf type="string">{$rdf}</rdf>
       </json>
 };
