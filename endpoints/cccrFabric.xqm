@@ -20,17 +20,16 @@ function view:main($object_name as xs:string, $url as xs:string){
   let $scenario :=
     for $i in file:list($scenarioRootPath)
     where not(matches($i, '^set-')) and matches($i, 'json$')
-    let $json as element(json) :=
-      json:parse(fetch:text($scenarioRootPath ||$i ))/json
+    let $json as element(json) := json:parse(fetch:text($scenarioRootPath ||$i))/json
     where $json//matches
     where matches($itemPath/text(), $json//matches)
     return
-      $scenarioRootPath ||$i
+      $scenarioRootPath || $i
    
    return
       <json type="object">
         <object__name type="string">{web:decode-url($object_name)}</object__name>
-        <scenario>{$scenario}</scenario>
+        <scenario>{string-join(file:list($scenarioRootPath))}</scenario>
         <url>{$url}</url>
       </json>
 };
