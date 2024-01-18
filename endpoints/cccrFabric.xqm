@@ -3,6 +3,9 @@ module namespace view = "trci-to-rdf/view";
 import module namespace cccFabric = 'trci-to-rdf/lib/evalute.cccFabric'
   at "../lib/cccrFabric.xqm";
   
+import module namespace set = 'trci-to-rdf/lib/evalute.set'
+  at "../lib/evalute.set.xqm";
+  
 import module namespace config = 'trci-to-rdf/lib/config'
   at "../lib/config.xqm";
   
@@ -26,13 +29,17 @@ function view:main($object_name as xs:string, $url as xs:string){
       $json
   
   let $rdf := 
-    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) => serialize()
+    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) 
+    => serialize()
   
+  let $output as element(output) := $scenario/output => serialize()
+    
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
         <scenario type="string">{file:exists($rootPath || $scenario/schema/text())}</scenario>
         <url type="string">{$url}</url>
         <rdf type="string">{$rdf}</rdf>
+        <output type="string">{$output}</output>
       </json>
 };
