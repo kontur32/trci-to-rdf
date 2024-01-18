@@ -19,7 +19,8 @@ function view:main($object_name as xs:string, $url as xs:string){
     for $i in file:list($scenarioRootPath)[matches(., 'json$')]
     let $json := 
       try{json:parse(fetch:text($scenarioRootPath ||$i))/json}catch*{}
-    where $json
+    where $json//matches
+    where matches($object_name, $json//matches/text())
     return
       $i
   return
