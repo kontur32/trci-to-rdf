@@ -26,8 +26,7 @@ function view:main($object_name as xs:string, $url as xs:string){
       $json
   
   let $rdf := 
-    $rootPath || $scenario/schema/text() => xs:anyURI() =>
-    cccFabric:cccrFabric(xs:anyURI($url)) => serialize()
+    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) => serialize()
   
   return
       <json type="object">
