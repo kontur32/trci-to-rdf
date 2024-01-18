@@ -39,7 +39,6 @@ function view:main($object_name as xs:string, $url as xs:string){
         <object__name type="string">{$object}</object__name>
         <scenario type="string">{file:exists($rootPath || $scenario/schema/text())}</scenario>
         <url type="string">{$url}</url>
-        <rdf type="string">{$rdf}</rdf>
         <output type="string">{$output}</output>
       </json>
 };
