@@ -38,7 +38,7 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
       $scenario/output,
       $rdf,
       (),
-      <context><file URI="{$bucket_name || '/' || $object_name}"/></context>
+      <context><file URI="{$bucket_name || '/' || $object}"/></context>
     )
    => serialize()
     
