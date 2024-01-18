@@ -14,8 +14,8 @@ declare
   %rest:path("/api/v0.1/yandex/serverless/docs")
 function view:main($object_name as xs:string, $url as xs:string){
   let $object := web:decode-url($object_name)
-  let $scenarioRootPath := 
-    '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/сценарии/' 
+  let $rootPath := '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/'
+  let $scenarioRootPath := $rootPath || 'сценарии/' 
   
   let $scenario :=
     for $i in file:list($scenarioRootPath)[matches(., 'json$')]
@@ -29,7 +29,7 @@ function view:main($object_name as xs:string, $url as xs:string){
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
-        <scenario type="string">{$scenario/schema/text()}</scenario>
+        <scenario type="string">{file:exists($rootPath || $scenario/schema/text())}</scenario>
         <url type="string">{$url}</url>
       </json>
 };
