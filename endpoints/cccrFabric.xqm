@@ -15,11 +15,17 @@ declare
 function view:main($object_name as xs:string, $url as xs:string){
   let $scenarioRootPath := 
     '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/сценарии/' 
-  
+  let $scenario :=
+    for $i in file:list($scenarioRootPath)[matches(., 'json$')]
+    let $json := 
+      try{json:parse(fetch:text($scenarioRootPath ||$i))/json}catch*{}
+    where $json
+    return
+      $i
   return
       <json type="object">
         <object__name type="string">{web:decode-url($object_name)}</object__name>
-        <scenario type="string">{string-join(file:list($scenarioRootPath)[matches(., 'json$')])}</scenario>
+        <scenario type="string">{string-join($scenario)}</scenario>
         <url type="string">{$url}</url>
       </json>
 };
