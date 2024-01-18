@@ -13,23 +13,12 @@ declare
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
 function view:main($object_name as xs:string, $url as xs:string){
-  let $itemPath := $object_name
   let $scenarioRootPath := 
-    '/srv/nextcloud/data/' || 'lipers24.ru' || '/files/' || 'lipers24.ru' || '/сценарии'
-  
-  let $scenario :=
-    for $i in file:list($scenarioRootPath)
-    where not(matches($i, '^set-')) and matches($i, 'json$')
-    let $json as element(json) := json:parse(fetch:text($scenarioRootPath ||$i))/json
-    where $json//matches
-    where matches($itemPath/text(), $json//matches)
-    return
-      $scenarioRootPath || $i
-   
+    '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/сценарии/' 
    return
       <json type="object">
         <object__name type="string">{web:decode-url($object_name)}</object__name>
-        <scenario>{string-join(file:list($scenarioRootPath))}</scenario>
+        <scenario>{$scenarioRootPath}</scenario>
         <url>{$url}</url>
       </json>
 };
