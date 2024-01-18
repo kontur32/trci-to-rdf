@@ -59,8 +59,9 @@ declare function set:output(
             )
           return
             (
-              "Endpoint: " || $server ||
-              "Загрузка графа <" || $graphName || ">: "
+              "Endpoint: " || $server,
+              "Загрузка графа <" || $graphName || ">: ",
+               $result
             ) 
         default return ()
     )
