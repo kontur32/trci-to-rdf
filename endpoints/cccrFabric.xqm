@@ -1,8 +1,8 @@
 module namespace view = "trci-to-rdf/view";
 
-import module namespace set = 'trci-to-rdf/lib/evalute.set'
-  at "../lib/evalute.set.xqm";
-
+import module namespace cccFabric = 'trci-to-rdf/lib/evalute.cccFabric'
+  at "../lib/cccrFabric.xqm";
+  
 import module namespace config = 'trci-to-rdf/lib/config'
   at "../lib/config.xqm";
   
@@ -23,7 +23,8 @@ function view:main($object_name as xs:string, $url as xs:string){
     where $json//matches
     where matches($object, $json//matches/text())
     return
-      $i
+      $scenarioRootPath || $i
+  let $rdf := cccFabric:cccrFabric(xs:anyURI($scenario), xs:anyURI($url) )
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
