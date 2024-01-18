@@ -32,7 +32,7 @@ function view:main($object_name as xs:string, $url as xs:string){
     cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) 
     => serialize()
   
-  let $output as element(output) := $scenario/output => serialize()
+  let $output := $scenario/output => serialize()
     
   return
       <json type="object">
