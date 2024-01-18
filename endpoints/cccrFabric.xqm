@@ -19,15 +19,16 @@ function view:main($object_name as xs:string, $url as xs:string){
   
   let $scenario :=
     for $i in file:list($scenarioRootPath)[matches(., 'json$')]
-    let $json := 
-      try{json:parse(fetch:text($scenarioRootPath ||$i))/json}catch*{}
+    let $json := try{json:parse(fetch:text($scenarioRootPath ||$i))/json}catch*{}
     where $json//matches
     where matches($object, $json//matches/text())
     return
       $json
+  
   let $rdf := 
-    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url))
-    => serialize()
+    $rootPath || $scenario/schema/text() => xs:anyURI() =>
+    cccFabric:cccrFabric(xs:anyURI($url)) => serialize()
+  
   return
       <json type="object">
         <object__name type="string">{$object}</object__name>
