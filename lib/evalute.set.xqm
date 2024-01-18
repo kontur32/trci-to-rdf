@@ -45,7 +45,7 @@ declare function set:output(
           let $graphName := rdfGenLib:propertyValue($context, $i/parameters/graphName)
           let $server :=
             if($i/server/endpoint)
-            then($i/server//endpoint/text())
+            then($i/server/endpoint/text())
             else(
               if($parameters/remote/sparql/endpoint/text())
               then($parameters/remote/sparql/endpoint/text())

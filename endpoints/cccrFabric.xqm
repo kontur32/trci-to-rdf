@@ -11,11 +11,12 @@ import module namespace config = 'trci-to-rdf/lib/config'
   
 declare 
   %rest:GET
+  %rest:query-param("bucket_name", "{$bucket_name}", "")
   %rest:query-param("object_name", "{$object_name}", "")
   %rest:query-param("url", "{$url}", "")
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
-function view:main($object_name as xs:string, $url as xs:string){
+function view:main($bucket_name as xs:string, $object_name as xs:string, $url as xs:string){
   let $object := web:decode-url($object_name)
   let $rootPath := '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/'
   let $scenarioRootPath := $rootPath || 'сценарии/' 
@@ -37,12 +38,13 @@ function view:main($object_name as xs:string, $url as xs:string){
       $scenario/output,
       $rdf,
       (),
-      <context><file URI="{$object_name}"/></context>
+      <context><file URI="{$bucket_name || '/' || $object_name}"/></context>
     )
    => serialize()
     
   return
       <json type="object">
+        <bucket__name type="string">{$bucket_name}</bucket__name>
         <object__name type="string">{$object}</object__name>
         <scenario type="string">{file:exists($rootPath || $scenario/schema/text())}</scenario>
         <url type="string">{$url}</url>
