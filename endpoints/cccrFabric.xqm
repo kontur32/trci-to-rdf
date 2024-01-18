@@ -18,7 +18,7 @@ function view:main($object_name as xs:string, $url as xs:string){
    return
       <json type="object">
         <object__name type="string">{web:decode-url($object_name)}</object__name>
-        <scenario>{$scenarioRootPath}</scenario>
-        <url>{$url}</url>
+        <scenario type="string">{xs:string(file:is-dir($scenarioRootPath))}</scenario>
+        <url type="string">{$url}</url>
       </json>
 };
