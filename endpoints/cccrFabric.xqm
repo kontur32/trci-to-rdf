@@ -30,17 +30,27 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
       $json
   
   let $rdf := 
-    cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url)) 
+    if($scenario)
+    then(
+      try{
+        cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url))
+      }catch*{}
+    )
+    else()
+    
     
   
   let $output := 
-    set:output(
-      $scenario/output,
-      $rdf,
-      (),
-      <context><file URI="{$bucket_name || '/' || $object}"/></context>
+    if($rdf)
+    then(
+      try{
+        let $context :=  <context><file URI="{$bucket_name || '/' || $object}"/></context>
+        return
+          set:output($scenario/output, $rdf, (), $context)
+           => serialize()
+      }catch*{}
     )
-   => serialize()
+    else()
     
   return
       <json type="object">
