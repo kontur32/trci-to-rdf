@@ -57,7 +57,7 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
         <scenario type="object">
           <schema type="object">
             <path type="string">{$rootPath || $scenario/schema/text()}</path>
-            <exists type="string">{file:exists($scenarioRootPath || $scenario/schema/text())}</exists>
+            <exists type="string">{file:exists($rootPath || $scenario/schema/text())}</exists>
           </schema>
         </scenario>
         <url type="string">{$url}</url>
