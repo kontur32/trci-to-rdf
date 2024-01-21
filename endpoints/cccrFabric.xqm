@@ -55,8 +55,8 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
         <bucket__name type="string">{$bucket_name}</bucket__name>
         <object__name type="string">{$object}</object__name>
         <scenario type="object">
-          <path type="string">{$rootPath || $scenario/schema/text()}</path>
-          <exists type="string">{file:exists($rootPath || $scenario/schema/text())}</exists>
+          <path type="string">{$scenarioRootPath || $scenario/schema/text()}</path>
+          <exists type="string">{file:exists($scenarioRootPath || $scenario/schema/text())}</exists>
         </scenario>
         <url type="string">{$url}</url>
         <output type="string">{$output}</output>
