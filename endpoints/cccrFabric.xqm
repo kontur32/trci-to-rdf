@@ -37,8 +37,6 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
       }catch*{}
     )
     else()
-    
-    
   
   let $output := 
     if($rdf)
@@ -48,9 +46,9 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
         return
           set:output($scenario/output, $rdf, (), $context)
            => serialize()
-      }catch*{}
+      }catch*{"не удалось выполнить сценарий"}
     )
-    else()
+    else("не удалось сгенерировать rdf")
     
   return
       <json type="object">
