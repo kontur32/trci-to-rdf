@@ -11,6 +11,7 @@ import module namespace config = 'trci-to-rdf/lib/config'
   
 declare 
   %rest:GET
+  %rest:query-param("domain", "{$domain}", "")
   %rest:query-param("bucket_name", "{$bucket_name}", "")
   %rest:query-param("object_name", "{$object_name}", "")
   %rest:query-param("file_url", "{$file_url}", "")
@@ -18,7 +19,7 @@ declare
   %rest:query-param("scenario_url", "{$scenario_url}", "")
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
-function view:main($bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url, $scenario_url){
+function view:main($domain, $bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url, $scenario_url){
   let $object := web:decode-url($object_name)  
   let $scenario := try{json:parse(fetch:text($scenario_url))/json}catch*{}
   let $rdf := 
@@ -34,7 +35,7 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $file_u
     if($rdf)
     then(
       try{
-        let $context :=  <context><file URI="{$bucket_name || '/' || $object}"/></context>
+        let $context :=  <context><file URI="{$domain || '/' || $object}"/></context>
         return
           set:output($scenario/output, $rdf, (), $context)
            => serialize()
