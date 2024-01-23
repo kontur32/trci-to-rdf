@@ -19,25 +19,13 @@ declare
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
 function view:main($bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url, $scenario_url){
-  let $object := web:decode-url($object_name)
-  let $rootPath := '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/'
-  let $scenarioRootPath := $rootPath || 'сценарии/' 
-  
-  let $scenario :=
-    for $i in file:list($scenarioRootPath)[matches(., 'json$')]
-    let $json := try{json:parse(fetch:text($scenarioRootPath ||$i))/json}catch*{}
-    where $json//matches
-    where matches($object, $json//matches/text())
-    return
-      $json
-  
+  let $object := web:decode-url($object_name)  
   let $scenario := try{json:parse(fetch:text($scenario_url))/json}catch*{}
-  let $schemaURL := $schema_url
   let $rdf := 
     if($scenario)
     then(
       try{
-        cccFabric:cccrFabric(xs:anyURI($schemaURL), xs:anyURI($file_url))
+        cccFabric:cccrFabric(xs:anyURI($schema_url), xs:anyURI($file_url))
       }catch*{}
     )
     else()
@@ -59,12 +47,13 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $file_u
         <bucket__name type="string">{$bucket_name}</bucket__name>
         <object__name type="string">{$object}</object__name>
         <scenario type="object">
+          <output type="string">{serialize($scenario/output)}</output>
           <schema type="object">
-            <path type="string">{$rootPath || $scenario/schema/text()}</path>
-            <exists type="string">{file:exists($rootPath || $scenario/schema/text())}</exists>
+            <path type="string">{$schema_url}</path>
+            <exists type="string">{}</exists>
           </schema>
         </scenario>
-        <url type="string">{$file_url}</url>
+        <file__url type="string">{$file_url}</file__url>
         <output type="string">{$output}</output>
       </json>
 };
