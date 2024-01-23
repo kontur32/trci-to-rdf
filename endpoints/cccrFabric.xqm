@@ -13,10 +13,11 @@ declare
   %rest:GET
   %rest:query-param("bucket_name", "{$bucket_name}", "")
   %rest:query-param("object_name", "{$object_name}", "")
-  %rest:query-param("url", "{$url}", "")
+  %rest:query-param("file_url", "{$file_url}", "")
+  %rest:query-param("schema_url", "{$schema_url}", "")
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
-function view:main($bucket_name as xs:string, $object_name as xs:string, $url as xs:string){
+function view:main($bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url){
   let $object := web:decode-url($object_name)
   let $rootPath := '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/'
   let $scenarioRootPath := $rootPath || 'сценарии/' 
@@ -28,12 +29,13 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
     where matches($object, $json//matches/text())
     return
       $json
-  
+  let $schemaURL := $rootPath || $scenario/schema/text()
+  let $schemaURL := $schema_url
   let $rdf := 
     if($scenario)
     then(
       try{
-        cccFabric:cccrFabric(xs:anyURI($rootPath || $scenario/schema/text()), xs:anyURI($url))
+        cccFabric:cccrFabric(xs:anyURI($schemaURL), xs:anyURI($file_url))
       }catch*{}
     )
     else()
@@ -60,7 +62,7 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $url as
             <exists type="string">{file:exists($rootPath || $scenario/schema/text())}</exists>
           </schema>
         </scenario>
-        <url type="string">{$url}</url>
+        <url type="string">{$file_url}</url>
         <output type="string">{$output}</output>
       </json>
 };
