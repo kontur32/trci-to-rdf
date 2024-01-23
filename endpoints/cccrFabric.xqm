@@ -15,9 +15,10 @@ declare
   %rest:query-param("object_name", "{$object_name}", "")
   %rest:query-param("file_url", "{$file_url}", "")
   %rest:query-param("schema_url", "{$schema_url}", "")
+  %rest:query-param("scenario_url", "{$scenario_url}", "")
   %output:method("json")
   %rest:path("/api/v0.1/yandex/serverless/docs")
-function view:main($bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url){
+function view:main($bucket_name as xs:string, $object_name as xs:string, $file_url as xs:string, $schema_url, $scenario_url){
   let $object := web:decode-url($object_name)
   let $rootPath := '/srv/nextcloud/data/lipers24.ru/files/lipers24.ru/'
   let $scenarioRootPath := $rootPath || 'сценарии/' 
@@ -29,7 +30,8 @@ function view:main($bucket_name as xs:string, $object_name as xs:string, $file_u
     where matches($object, $json//matches/text())
     return
       $json
-  let $schemaURL := $rootPath || $scenario/schema/text()
+  
+  let $scenario := try{json:parse(fetch:text($scenario_url))/json}catch*{}
   let $schemaURL := $schema_url
   let $rdf := 
     if($scenario)
