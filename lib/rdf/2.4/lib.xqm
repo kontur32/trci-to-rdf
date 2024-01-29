@@ -130,7 +130,7 @@ function rdfGenLib:propertyValue(
         case 'xquery'
           return
             let $xquery := 
-              if($value/xquery/text())
+              if($value/xquery/text() or $value/xquery/_)
               then($value/xquery)
               else(
                 <xquery>{fetch:text($value/xquery/URI/text())}</xquery>
