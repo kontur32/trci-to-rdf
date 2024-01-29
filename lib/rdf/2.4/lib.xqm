@@ -129,7 +129,14 @@ function rdfGenLib:propertyValue(
         switch ($value/child::*/name())
         case 'xquery'
           return
-            rdfGenLib:xquery($context, $value/xquery) 
+            let $xquery := 
+              if($value/xquery/text())
+              then($value/xquery)
+              else(
+                <xquery>{fetch:text($value/xquery/URI/text())}</xquery>
+              )
+            return
+              rdfGenLib:xquery($context, $xquery) 
         
         case 'sparql'
           return
