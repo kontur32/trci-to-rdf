@@ -17,10 +17,32 @@ function prop:property(
 ) as element()*
 {
   let $QName :=
-    QName(
-      $schemaRoot/QName/NameSpace/text(),
-      $schemaRoot/QName/PrefixedName/text()
-    )
+      if($schemaRoot/QName/PrefixedName/text())
+      then(
+        QName(
+          $schemaRoot/QName/NameSpace/text(),
+          $schemaRoot/QName/PrefixedName/text()
+        )
+      )
+      else(
+        if($schemaRoot/QName/PrefixedName/compute)
+        then(
+          QName(
+            $schemaRoot/QName/NameSpace/text(),
+            rdfGenLib:propertyValue(
+              $contextRoot,
+              $schemaRoot/QName/PrefixedName
+            )
+          )
+        )
+        else(
+          QName(
+            $schemaRoot/QName/NameSpace/text(),
+            "namespace:property"
+          )
+        )
+      )
+      
   let $types := ("URI", "literal", "description")
   let $property := $schemaRoot/child::*[name()=$types]
   let $value :=
