@@ -26,7 +26,11 @@ function view:main($domain, $bucket_name as xs:string, $object_name as xs:string
     if($scenario)
     then(
       try{
-        cccFabric:cccrFabric(xs:anyURI($schema_url), xs:anyURI($file_url))
+        cccFabric:cccrFabric(
+          xs:anyURI($schema_url),
+          xs:anyURI($file_url),
+          $scenario/mimeType/text()
+        )
       }catch*{}
     )
     else()

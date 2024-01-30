@@ -15,11 +15,21 @@ function cccFabric:cccrFabric(
   $schemaURI as  xs:anyURI,
   $fileURI as xs:anyURI
 ) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF) {
+  cccFabric:cccrFabric($schemaURI, $fileURI, "")
+};
+
+declare
+  %public
+function cccFabric:cccrFabric(
+  $schemaURI as  xs:anyURI,
+  $fileURI as xs:anyURI,
+  $mimeType as xs:string
+) as element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF) {
   let $schemaRoot as element(json) := 
     ($schemaURI => fetch:binary() => convert:binary-to-string()=> json:parse())/json
   let $contextRoot as element (context) := 
     element{'context'}{
-      $fileURI => fetch:binary() => cccFabric:parseData($schemaRoot)
+      fetch:binary($fileURI) => cccFabric:parseData($schemaRoot, $mimeType)
       update insert node attribute {'URI'}{$fileURI} into .
     }
   return
@@ -28,7 +38,7 @@ function cccFabric:cccrFabric(
 
 
 (:
-  парсит бинарные данные и упаковывает в контекст
+  для сохранения наследуемости кода 
 :)
 declare
   %public
@@ -36,7 +46,23 @@ function cccFabric:parseData(
   $rawData as xs:base64Binary,
   $schemaRoot as element(json)
 ) as element(file) {
-  let $mimeType := $schemaRoot/mimeType/text()
+  cccFabric:parseData(
+    $rawData,
+    $schemaRoot,
+    $schemaRoot/mimeType/text()
+  )
+};
+
+(:
+  парсит бинарные данные и упаковывает в контекст
+:)
+declare
+  %public
+function cccFabric:parseData(
+  $rawData as xs:base64Binary,
+  $schemaRoot as element(json),
+  $mimeType as xs:string
+) as element(file) {
   let $columnDirectionList := $schemaRoot/columnDirectionList/text()
   let $data := 
     switch($mimeType)
