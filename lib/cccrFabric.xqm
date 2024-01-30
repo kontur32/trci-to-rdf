@@ -67,7 +67,7 @@ function cccFabric:parseData(
   let $data := 
     switch($mimeType)
     case "xlsx"return
-      trci:xlsx($rawData, $columnDirectionList)/file/child::*
+      trci:xlsx($rawData, $columnDirectionList)
     case "docx"return
       element{'file'}{
         parse-xml(archive:extract-text($rawData, 'word/document.xml'))

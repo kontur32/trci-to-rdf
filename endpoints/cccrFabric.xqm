@@ -29,7 +29,7 @@ function view:main($domain, $bucket_name as xs:string, $object_name as xs:string
         cccFabric:cccrFabric(
           xs:anyURI($schema_url),
           xs:anyURI($file_url),
-          $scenario/mimeType/text()
+          $scenario/mimeType/text()??$scenario/mimeType/text()!!""
         )
       }catch*{}
     )
